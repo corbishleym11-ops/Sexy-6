@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #070D0B; }
+  * { box-sizing: border-box; -webkit-text-size-adjust: 100%; }
+  button { touch-action: manipulation; }
+  a { color: #E8B84B; text-decoration: none; }
+  a:hover { color: #FFD87A; }
+  ::selection { background: #E8B84B; color: #0B0D10; }
+  input, select, button { font-family: inherit; }
+  select option { background: #16191E; color: #F2F4F7; }
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #070D0B; font-family: Barlow, sans-serif; color: #F2F4F7; padding: 0 0 80px;">
+  <div style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, #0C1712 0%, #091210 55%, #070D0B 100%);"></div>
+    <div style="position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.016) 0 6.66%, rgba(0,0,0,0) 6.66% 13.32%);"></div>
+    <div style="position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(0,0,0,0) 0 calc(10% - 2px), rgba(255,255,255,0.075) calc(10% - 2px) 10%);"></div>
+    <div style="position: absolute; left: 0; right: 0; top: 28%; height: 1px; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 10px, rgba(0,0,0,0) 10px 34px);"></div>
+    <div style="position: absolute; left: 0; right: 0; top: 72%; height: 1px; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 10px, rgba(0,0,0,0) 10px 34px);"></div>
+    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+      <img src="sexy6-mark.png" alt="" style="width: min(46vw, 620px); opacity: 0.085; filter: saturate(0.85);" />
+    </div>
+    <div style="position: absolute; inset: 0; background: radial-gradient(120% 80% at 50% 45%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.72) 100%);"></div>
+  </div>
+
+
+  <div style="border-bottom: 1px solid #23272E; background: rgba(8,14,11,0.86); position: sticky; top: 0; z-index: 20; backdrop-filter: blur(10px);">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 16px clamp(14px, 3vw, 28px); display: flex; align-items: center; gap: clamp(10px, 2vw, 24px); flex-wrap: wrap;">
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(30px, 7vw, 40px); letter-spacing: 0.02em; line-height: 0.9; text-transform: uppercase; color: #F2F4F7;">SEXY <span style="color: #E8B84B;">6</span></div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #7C858F; padding-bottom: 4px;">SEASON III · 2026</div>
+      </div>
+      <div style="flex: 1;"></div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #7C858F;">Feed</div>
+        <div style="display: flex; align-items: center; gap: 7px; padding: 6px 12px; border: 1px solid #23272E; border-radius: 999px; background: #14171C;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: {{ feedDot }};"></div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #C6CCD3;">{{ feedLabel }}</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid #23272E; border-radius: 999px; background: #14171C;">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ modeColor }};">{{ modeLabel }}</div>
+          <button onClick="{{ toggleMode }}" style="border: none; background: transparent; color: #6E767F; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 0;" style-hover="color:#E8B84B;">{{ modeAction }}</button>
+        </div>
+        <button onClick="{{ refresh }}" style="padding: 7px 14px; border-radius: 999px; border: 1px solid #E8B84B; background: transparent; color: #E8B84B; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;" style-hover="background:#E8B84B;color:#0B0D10;">Sync</button>
+      </div>
+    </div>
+    <div style="max-width: 1360px; margin: 0 auto; padding: 0 clamp(14px, 3vw, 28px); display: flex; gap: 4px; overflow-x: auto;">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="6">
+        <button onClick="{{ t.go }}" style="border: none; background: transparent; padding: 12px 16px 14px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: {{ t.color }}; border-bottom: 3px solid {{ t.line }}; white-space: nowrap;">{{ t.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <sc-if value="{{ warn }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1360px; margin: 16px auto 0; padding: 0 clamp(14px, 3vw, 28px); position: relative; z-index: 1;">
+      <div style="display: flex; align-items: center; gap: 14px; padding: 12px 18px; border-radius: 4px; background: #2A1416; border-left: 4px solid #E0464C;">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #E0464C;">Flag on the play</div>
+        <div style="font-size: 15px; color: #F0CFD1;">{{ warn }}</div>
+        <div style="flex: 1;"></div>
+        <button onClick="{{ clearWarn }}" style="border: none; background: transparent; color: #8A6E70; cursor: pointer; font-size: 20px; line-height: 1;">×</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="max-width: 1360px; margin: 0 auto; padding: clamp(16px, 3vw, 28px); position: relative; z-index: 1;">
+
+    <!-- ============ THIS WEEK ============ -->
+    <sc-if value="{{ isWeek }}" hint-placeholder-val="{{ true }}">
+      <div>
+        <div style="display: flex; align-items: flex-end; gap: 20px; margin-bottom: 22px; flex-wrap: wrap;">
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #E8B84B;">The Slate</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(32px, 7vw, 46px); line-height: 1; text-transform: uppercase;">Week {{ week }}</div>
+          </div>
+          <div style="display: flex; gap: 6px; align-items: center; padding-bottom: 6px;">
+            <button onClick="{{ prevWeek }}" style="width: 34px; height: 34px; border-radius: 4px; border: 1px solid #23272E; background: #14171C; color: #C6CCD3; cursor: pointer; font-size: 16px;">‹</button>
+            <select value="{{ week }}" onChange="{{ setWeek }}" style="padding: 8px 12px; border-radius: 4px; border: 1px solid #23272E; background: #14171C; color: #F2F4F7; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase;">
+              <sc-for list="{{ weekOpts }}" as="w" hint-placeholder-count="4">
+                <option value="{{ w.v }}">{{ w.label }}</option>
+              </sc-for>
+            </select>
+            <button onClick="{{ nextWeek }}" style="width: 34px; height: 34px; border-radius: 4px; border: 1px solid #23272E; background: #14171C; color: #C6CCD3; cursor: pointer; font-size: 16px;">›</button>
+          </div>
+          <div style="flex: 1;"></div>
+          <div style="display: flex; gap: 10px; padding-bottom: 6px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 9px; padding: 10px 14px; border-radius: 4px; border: 1px solid {{ lockBorder }}; background: #14171C;">
+              <div style="font-size: 13px;">{{ lockGlyph }}</div>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ lockColor }};">{{ lockLabel }}</div>
+              <button onClick="{{ toggleLock }}" style="border: none; background: transparent; color: #6E767F; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; padding: 0;" style-hover="color:#E8B84B;">{{ lockAction }}</button>
+            </div>
+            <sc-if value="{{ canEdit }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ importWeek }}" style="padding: 10px 16px; border-radius: 4px; border: 1px solid #2F3A46; background: #14171C; color: #C6CCD3; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;" style-hover="border-color:#E8B84B;color:#E8B84B;">Pull games from feed</button>
+            </sc-if>
+            <sc-if value="{{ canEdit }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ toggleEditor }}" style="padding: 10px 16px; border-radius: 4px; border: 1px solid #2F3A46; background: #14171C; color: #C6CCD3; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;" style-hover="border-color:#E8B84B;color:#E8B84B;">{{ editorLabel }}</button>
+            </sc-if>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; margin-bottom: 26px;">
+          <sc-for list="{{ cards }}" as="p" hint-placeholder-count="3">
+            <div style="border: 1px solid #23272E; border-top: 3px solid {{ p.color }}; border-radius: 4px; background: linear-gradient(180deg, #14171C 0%, #101317 100%); padding: 18px 20px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                <div>
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 28px; line-height: 1; text-transform: uppercase;">{{ p.name }}</div>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 34px; line-height: 1; color: {{ p.color }};">{{ p.weekPts }}</div>
+                  <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">wk pts</div>
+                  <sc-if value="{{ p.hasLive }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin-top: 5px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #E8B84B; white-space: nowrap;">{{ p.livePts }} live</div>
+                  </sc-if>
+                </div>
+              </div>
+              <div style="height: 1px; background: #23272E; margin: 14px 0;"></div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <sc-for list="{{ p.rows }}" as="r" hint-placeholder-count="5">
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 46px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6E767F;">{{ r.cat }}</div>
+                    <div style="flex: 1; font-size: 15px; font-weight: 500; color: {{ r.textColor }};">{{ r.label }}</div>
+                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; background: {{ r.chipBg }}; color: {{ r.chipFg }};">{{ r.chip }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="height: 1px; background: #23272E; margin: 14px 0;"></div>
+              <div style="display: flex; gap: 18px;">
+                <div>
+                  <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Season</div>
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 19px;">{{ p.seasonPts }} <span style="color:#6E767F;font-size:15px;">pts</span></div>
+                </div>
+                <div>
+                  <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Record</div>
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 19px;">{{ p.record }}</div>
+                </div>
+                <div>
+                  <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Super dogs</div>
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 19px;">{{ p.sdRecord }}</div>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ hasGames }}" hint-placeholder-val="{{ true }}">
+          <div style="border: 1px solid #23272E; border-radius: 4px; overflow: hidden;">
+            <sc-for list="{{ games }}" as="g" hint-placeholder-count="6">
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding: 14px clamp(14px, 2.5vw, 18px); background: {{ g.bg }}; border-bottom: 1px solid #1B1F25;">
+                <div style="flex: 1 1 230px; min-width: 0;">
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(17px, 2.1vw, 21px); text-transform: uppercase; letter-spacing: 0.01em;">{{ g.matchup }}</div>
+                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; background: {{ g.statusBg }}; color: {{ g.statusFg }};">{{ g.statusText }}</div>
+                  </div>
+                  <div style="font-size: 13px; color: #7C858F; margin-top: 3px;">{{ g.sub }}</div>
+                </div>
+                <div style="display: flex; gap: 16px; flex: 0 0 auto;">
+                  <div>
+                    <div style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F;">Line</div>
+                    <div style="display: flex; align-items: center; gap: 5px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; color: #E8B84B; white-space: nowrap;">{{ g.line }}<span style="font-size: 11px; color: #6E767F;">{{ g.lockMark }}</span></div>
+                  </div>
+                  <div>
+                    <div style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F;">O/U</div>
+                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; color: #C6CCD3;">{{ g.total }}</div>
+                  </div>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; flex: 1 1 420px; justify-content: flex-end;">
+                  <sc-for list="{{ g.cells }}" as="c" hint-placeholder-count="4">
+                    <div style="flex: 1 1 94px; min-width: 94px; display: flex; flex-direction: column; align-items: center; gap: 5px; padding-left: 10px; border-left: 1px solid {{ c.divider }};">
+                      <div style="font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">{{ c.label }}</div>
+                      <div style="display: flex; gap: 5px;">
+                        <sc-for list="{{ c.pills }}" as="pl" hint-placeholder-count="3">
+                          <button onClick="{{ pl.click }}" title="{{ pl.title }}" style="width: 34px; height: 32px; border-radius: 4px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; border: 1px solid {{ pl.border }}; background: {{ pl.bg }}; color: {{ pl.fg }};">{{ pl.initial }}</button>
+                        </sc-for>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ noGames }}" hint-placeholder-val="{{ false }}">
+          <div style="border: 1px dashed #2F3A46; border-radius: 4px; padding: 60px 30px; text-align: center; background: #0F1216;">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase; color: #C6CCD3;">No slate posted for week {{ week }}</div>
+            <div style="font-size: 16px; color: #7C858F; margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto;">{{ slateNote }}</div>
+            <div style="display: flex; gap: 10px; justify-content: center; margin-top: 22px;">
+              <button onClick="{{ importWeek }}" style="padding: 11px 20px; border-radius: 4px; border: none; background: #E8B84B; color: #0B0D10; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">Pull games from feed</button>
+              <button onClick="{{ toggleEditor }}" style="padding: 11px 20px; border-radius: 4px; border: 1px solid #2F3A46; background: transparent; color: #C6CCD3; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">Add manually</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- SUPER DOGS -->
+        <sc-if value="{{ showSdogs }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top: 30px; border: 1px solid #23272E; border-radius: 4px; background: #0F1216; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 4px;">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 26px; text-transform: uppercase; letter-spacing: 0.02em;">Super Dog</div>
+            <div style="font-size: 13px; color: #7C858F;">+10 or bigger · must be OFF the slate · cover = 0.5, outright = 2</div>
+            <div style="flex: 1;"></div>
+            <div style="font-size: 12px; color: #6E767F;">{{ retiredNote }}</div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 16px;">
+            <sc-for list="{{ sdSlots }}" as="s" hint-placeholder-count="3">
+              <div style="border: 1px solid #23272E; border-left: 3px solid {{ s.color }}; border-radius: 4px; padding: 14px 16px; background: #14171C;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.08em;">{{ s.name }}</div>
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; background: {{ s.chipBg }}; color: {{ s.chipFg }};">{{ s.chip }}</div>
+                </div>
+                <select value="{{ s.value }}" onChange="{{ s.change }}" disabled="{{ readOnly }}" style="width: 100%; margin-top: 12px; padding: 9px 10px; border-radius: 4px; border: 1px solid #2F3A46; background: #0F1216; color: #F2F4F7; font-size: 14px;">
+                  <sc-for list="{{ s.options }}" as="o" hint-placeholder-count="3">
+                    <option value="{{ o.v }}">{{ o.label }}</option>
+                  </sc-for>
+                </select>
+                <div style="font-size: 13px; color: #7C858F; margin-top: 10px;">{{ s.detail }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- SLATE EDITOR -->
+        <sc-if value="{{ editorOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 30px; border: 1px solid #2F3A46; border-radius: 4px; background: #0F1216; padding: 22px;">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">Slate editor · Week {{ week }}</div>
+            <div style="font-size: 13px; color: #7C858F; margin-bottom: 18px;">Add up to six games. Spread is the favorite's number as a positive value.</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; align-items: end;">
+              <div>
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F; margin-bottom: 5px;">Away</div>
+                <input value="{{ f.away }}" onChange="{{ setF.away }}" placeholder="East Carolina" style="width: 100%; padding: 9px 10px; border-radius: 4px; border: 1px solid #2F3A46; background: #14171C; color: #F2F4F7; font-size: 14px;" />
+              </div>
+              <div>
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F; margin-bottom: 5px;">Home</div>
+                <input value="{{ f.home }}" onChange="{{ setF.home }}" placeholder="NC State" style="width: 100%; padding: 9px 10px; border-radius: 4px; border: 1px solid #2F3A46; background: #14171C; color: #F2F4F7; font-size: 14px;" />
+              </div>
+              <div>
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F; margin-bottom: 5px;">Favorite</div>
+                <select value="{{ f.fav }}" onChange="{{ setF.fav }}" style="width: 100%; padding: 9px 10px; border-radius: 4px; border: 1px solid #2F3A46; background: #14171C; color: #F2F4F7; font-size: 14px;">
+                  <option value="home">Home</option>
+                  <option value="away">Away</option>
+                </select>
+              </div>
+              <div>
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F; margin-bottom: 5px;">Spread</div>
+                <input value="{{ f.spread }}" onChange="{{ setF.spread }}" placeholder="6.5" style="width: 100%; padding: 9px 10px; border-radius: 4px; border: 1px solid #2F3A46; background: #14171C; color: #F2F4F7; font-size: 14px;" />
+              </div>
+              <div>
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F; margin-bottom: 5px;">Total</div>
+                <input value="{{ f.total }}" onChange="{{ setF.total }}" placeholder="52.5" style="width: 100%; padding: 9px 10px; border-radius: 4px; border: 1px solid #2F3A46; background: #14171C; color: #F2F4F7; font-size: 14px;" />
+              </div>
+              <button onClick="{{ addGame }}" style="padding: 10px 14px; border-radius: 4px; border: none; background: #E8B84B; color: #0B0D10; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">Add game</button>
+            </div>
+            <sc-if value="{{ hasGames }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 8px;">
+                <sc-for list="{{ games }}" as="g" hint-placeholder-count="3">
+                  <div style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; border: 1px solid #23272E; border-radius: 4px; background: #14171C;">
+                    <div style="flex: 1; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; text-transform: uppercase;">{{ g.matchup }}</div>
+                    <div style="font-size: 14px; color: #7C858F;">{{ g.line }} · O/U {{ g.total }}</div>
+                    <div style="width: 130px;">
+                      <input value="{{ g.scoreEntry }}" onChange="{{ g.setScore }}" placeholder="Final e.g. 24-31" style="width: 100%; padding: 7px 9px; border-radius: 4px; border: 1px solid #2F3A46; background: #0F1216; color: #F2F4F7; font-size: 13px;" />
+                    </div>
+                    <button onClick="{{ g.remove }}" style="border: 1px solid #3A2226; background: transparent; color: #E0464C; border-radius: 4px; padding: 6px 11px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;">Drop</button>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ hasPool }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top: 24px;">
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #6E767F; margin-bottom: 10px;">From the feed — click to add</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px; max-height: 320px; overflow-y: auto;">
+                  <sc-for list="{{ pool }}" as="pg" hint-placeholder-count="6">
+                    <button onClick="{{ pg.add }}" style="text-align: left; display: flex; align-items: center; gap: 10px; padding: 9px 12px; border: 1px solid #23272E; border-radius: 4px; background: {{ pg.bg }}; color: #F2F4F7; cursor: pointer; opacity: {{ pg.opacity }};" style-hover="border-color:#E8B84B;">
+                      <div style="flex: 1; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 16px; text-transform: uppercase; text-decoration: {{ pg.strike }}; text-decoration-color: #E8B84B; color: {{ pg.fg }};">{{ pg.matchup }}</div>
+                      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #E8B84B;">{{ pg.tag }}</div>
+                      <div style="font-size: 12px; color: #E8B84B;">{{ pg.line }}</div>
+                      <div style="font-size: 12px; color: #7C858F;">{{ pg.total }}</div>
+                    </button>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <!-- ============ LEADERBOARD ============ -->
+    <sc-if value="{{ isBoard }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #E8B84B;">Standings</div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(32px, 7vw, 46px); line-height: 1; text-transform: uppercase; margin-bottom: 24px;">The Board</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <sc-for list="{{ board }}" as="b" hint-placeholder-count="3">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 16px; padding: 20px clamp(14px, 2.5vw, 22px); border: 1px solid #23272E; border-left: 5px solid {{ b.color }}; border-radius: 4px; background: {{ b.bg }};">
+              <div style="flex: 0 0 44px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 40px; line-height: 1; color: {{ b.rankColor }};">{{ b.rank }}</div>
+              <div style="flex: 1 1 150px; min-width: 0;">
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; text-transform: uppercase;">{{ b.name }}</div>
+                <div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6E767F; margin-top: 5px;">{{ b.tag }}</div>
+              </div>
+              <div style="flex: 1 1 104px;">
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Points</div>
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1; color: #E8B84B;">{{ b.pts }}</div>
+                <div style="font-size: 11px; color: #6E767F;">{{ b.liveNote }}</div>
+              </div>
+              <div style="flex: 1 1 104px;">
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Record</div>
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.35;">{{ b.record }}</div>
+              </div>
+              <div style="flex: 1 1 104px;">
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Super dogs</div>
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.35;">{{ b.sd }}</div>
+              </div>
+              <div style="flex: 1 1 104px;">
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Win totals</div>
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.35;">{{ b.wt }}</div>
+              </div>
+              <div style="flex: 1 1 104px;">
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Rings</div>
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.35;">{{ b.rings }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top: 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px;">
+          <sc-for list="{{ notes }}" as="n" hint-placeholder-count="3">
+            <div style="border: 1px solid #23272E; border-radius: 4px; background: #0F1216; padding: 18px 20px;">
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #E8B84B;">{{ n.label }}</div>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 26px; text-transform: uppercase; margin-top: 6px;">{{ n.value }}</div>
+              <div style="font-size: 14px; color: #7C858F; margin-top: 4px;">{{ n.sub }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ============ WIN TOTALS ============ -->
+    <sc-if value="{{ isWT }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <div style="display: flex; align-items: flex-end; gap: 20px; flex-wrap: wrap;">
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #E8B84B;">Preseason Futures</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(32px, 7vw, 46px); line-height: 1; text-transform: uppercase;">Win Totals</div>
+          </div>
+          <div style="flex: 1;"></div>
+          <div style="display: flex; gap: 8px; padding-bottom: 6px;">
+            <sc-for list="{{ wtLegend }}" as="l" hint-placeholder-count="3">
+              <div style="display: flex; align-items: center; gap: 6px; padding: 5px 10px; border: 1px solid #23272E; border-radius: 999px; background: #14171C;">
+                <div style="width: 8px; height: 8px; border-radius: 2px; background: {{ l.color }};"></div>
+                <div style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #C6CCD3;">{{ l.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="font-size: 15px; color: #7C858F; margin: 10px 0 22px; max-width: 820px;">One over and one under per man, per conference. Click a cell to assign — eight picks each, settled when the regular season ends. Numbers marked <span style="color:#C6CCD3;">*</span> are placeholders, not real lines — type over them with the consensus number.</div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+          <sc-for list="{{ confs }}" as="c" hint-placeholder-count="4">
+            <div style="border: 1px solid #23272E; border-radius: 4px; background: #0F1216; overflow: hidden;">
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: #14171C; border-bottom: 1px solid #23272E;">
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 0.06em;">{{ c.name }}</div>
+                <div style="display: flex; gap: 10px;">
+                  <sc-for list="{{ c.status }}" as="st" hint-placeholder-count="3">
+                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ st.color }};">{{ st.text }}</div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display: flex; gap: 8px; padding: 8px clamp(12px, 2vw, 18px); border-bottom: 1px solid #1B1F25;">
+                <div style="flex: 1 1 96px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F;">Team</div>
+                <div style="flex: 0 0 56px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F;">Total</div>
+                <div style="flex: 0 0 100px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F; text-align: center;">Over</div>
+                <div style="flex: 0 0 100px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F; text-align: center;">Under</div>
+                <div style="flex: 0 0 74px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F; text-align: right;">Rec</div>
+              </div>
+              <sc-for list="{{ c.teams }}" as="t" hint-placeholder-count="8">
+                <div style="display: flex; gap: 8px; align-items: center; padding: 9px clamp(12px, 2vw, 18px); border-bottom: 1px solid #14171C;">
+                  <div style="flex: 1 1 96px; min-width: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 17px; text-transform: uppercase;">{{ t.team }}</div>
+                  <div style="flex: 0 0 56px; display: flex; align-items: center; gap: 2px;"><input value="{{ t.total }}" onChange="{{ t.setTotal }}" readOnly="{{ readOnly }}" style="width: 46px; padding: 4px 6px; border-radius: 3px; border: 1px solid #23272E; background: #14171C; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; color: #E8B84B; text-align: center;" /><span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; color: #6E767F;">{{ t.est }}</span></div>
+                  <div style="flex: 0 0 100px; display: flex; gap: 4px; justify-content: center;">
+                    <sc-for list="{{ t.overPills }}" as="pl" hint-placeholder-count="3">
+                      <button onClick="{{ pl.click }}" title="{{ pl.title }}" style="width: 30px; height: 28px; border-radius: 3px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; border: 1px solid {{ pl.border }}; background: {{ pl.bg }}; color: {{ pl.fg }};">{{ pl.initial }}</button>
+                    </sc-for>
+                  </div>
+                  <div style="flex: 0 0 100px; display: flex; gap: 4px; justify-content: center;">
+                    <sc-for list="{{ t.underPills }}" as="pl" hint-placeholder-count="3">
+                      <button onClick="{{ pl.click }}" title="{{ pl.title }}" style="width: 30px; height: 28px; border-radius: 3px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; border: 1px solid {{ pl.border }}; background: {{ pl.bg }}; color: {{ pl.fg }};">{{ pl.initial }}</button>
+                    </sc-for>
+                  </div>
+                  <div style="flex: 0 0 74px; display: flex; align-items: center; justify-content: flex-end; gap: 6px;">
+                    <input value="{{ t.rec }}" onChange="{{ t.setRec }}" readOnly="{{ readOnly }}" style="width: 46px; padding: 4px 4px; border-radius: 3px; border: 1px solid #23272E; background: #14171C; color: #C6CCD3; font-size: 13px; text-align: center;" />
+                    <div style="width: 8px; height: 8px; border-radius: 2px; background: {{ t.dot }};" title="{{ t.dotTitle }}"></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ============ HISTORY ============ -->
+    <sc-if value="{{ isHistory }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #E8B84B;">Week by week</div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(32px, 7vw, 46px); line-height: 1; text-transform: uppercase; margin-bottom: 24px;">The Ledger</div>
+        <sc-if value="{{ hasHistory }}" hint-placeholder-val="{{ true }}">
+          <div style="border: 1px solid #23272E; border-radius: 4px; overflow: hidden;">
+            <div style="display: grid; grid-template-columns: 62px repeat(3, minmax(0, 1fr)); column-gap: 8px; padding: 12px 18px; background: #14171C; border-bottom: 1px solid #23272E;">
+              <div style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #6E767F;">Week</div>
+              <sc-for list="{{ playerHeads }}" as="h" hint-placeholder-count="3">
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: {{ h.color }};">{{ h.name }}</div>
+              </sc-for>
+            </div>
+            <sc-for list="{{ historyRows }}" as="r" hint-placeholder-count="4">
+              <div style="display: grid; grid-template-columns: 62px repeat(3, minmax(0, 1fr)); column-gap: 8px; align-items: center; padding: 14px 18px; background: {{ r.bg }}; border-bottom: 1px solid #1B1F25;">
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; text-transform: uppercase;">{{ r.week }}</div>
+                <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="3">
+                  <div style="display: flex; align-items: baseline; gap: 10px;">
+                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; color: {{ c.color }};">{{ c.pts }}</div>
+                    <div style="font-size: 14px; color: #7C858F;">{{ c.detail }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noHistory }}" hint-placeholder-val="{{ false }}">
+          <div style="border: 1px dashed #2F3A46; border-radius: 4px; padding: 60px 30px; text-align: center; background: #0F1216;">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase; color: #C6CCD3;">Ledger's empty</div>
+            <div style="font-size: 16px; color: #7C858F; margin-top: 8px;">Nobody's won or lost a thing yet. Enjoy the undefeated season while it lasts.</div>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <!-- ============ SUPER DOG HALL ============ -->
+    <sc-if value="{{ isDogs }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #E8B84B;">Every dog, every week</div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(32px, 7vw, 46px); line-height: 1; text-transform: uppercase; margin-bottom: 6px;">Super Dog Hall</div>
+        <div style="font-size: 15px; color: #7C858F; margin-bottom: 24px;">+10 or worse, off the slate. Half a point for the cover, two for killing the giant.</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin-bottom: 24px;">
+          <div style="border: 1px solid #23272E; border-radius: 4px; background: #0F1216; padding: 18px 20px;">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em;">Dogs that won last week</div>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #E8B84B;">{{ lastDogsLabel }}</div>
+            </div>
+            <sc-if value="{{ hasLastDogs }}" hint-placeholder-val="{{ true }}">
+              <div style="display: flex; flex-direction: column; gap: 7px; margin-top: 14px;">
+                <sc-for list="{{ lastDogs }}" as="d" hint-placeholder-count="4">
+                  <div style="display: flex; align-items: baseline; gap: 10px;">
+                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; color: #E8B84B; width: 46px;">{{ d.spread }}</div>
+                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 17px; text-transform: uppercase;">{{ d.dog }}</div>
+                    <div style="font-size: 13px; color: #7C858F;">{{ d.sub }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ noLastDogs }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size: 14px; color: #6E767F; margin-top: 12px;">{{ lastDogsEmpty }}</div>
+            </sc-if>
+          </div>
+          <div style="border: 1px solid #2A2412; border-radius: 4px; background: linear-gradient(180deg, rgba(232,184,75,0.07), #0F1216); padding: 18px 20px;">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em;">Giant killers</div>
+            <div style="font-size: 13px; color: #7C858F; margin-top: 3px;">Picked super dogs that won outright. Permanently honoured, permanently retired from selection.</div>
+            <sc-if value="{{ hasKillers }}" hint-placeholder-val="{{ true }}">
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
+                <sc-for list="{{ killers }}" as="k" hint-placeholder-count="2">
+                  <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid #2A2412; border-radius: 4px; background: #14171C;">
+                    <div style="flex: 1;">
+                      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 21px; text-transform: uppercase; color: #E8B84B;">{{ k.team }}</div>
+                      <div style="font-size: 13px; color: #7C858F;">{{ k.sub }}</div>
+                    </div>
+                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; color: {{ k.color }};">{{ k.by }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ noKillers }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size: 14px; color: #6E767F; margin-top: 14px;">Nobody has killed a giant yet. Two points and a plaque are waiting.</div>
+            </sc-if>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 22px;">
+          <sc-for list="{{ dogStats }}" as="d" hint-placeholder-count="3">
+            <div style="border: 1px solid #23272E; border-top: 3px solid {{ d.color }}; border-radius: 4px; background: #0F1216; padding: 18px 20px;">
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase;">{{ d.name }}</div>
+              <div style="display: flex; gap: 22px; margin-top: 12px;">
+                <div>
+                  <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Record</div>
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px;">{{ d.record }}</div>
+                </div>
+                <div>
+                  <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Points</div>
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; color: #E8B84B;">{{ d.pts }}</div>
+                </div>
+                <div>
+                  <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">Outright</div>
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px;">{{ d.outright }}</div>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasDogs }}" hint-placeholder-val="{{ true }}">
+          <div style="border: 1px solid #23272E; border-radius: 4px; overflow: hidden;">
+            <sc-for list="{{ dogRows }}" as="r" hint-placeholder-count="5">
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 13px clamp(14px, 2.5vw, 18px); background: {{ r.bg }}; border-bottom: 1px solid #1B1F25;">
+                <div style="flex: 0 0 54px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; color: #6E767F;">WK {{ r.week }}</div>
+                <div style="flex: 0 0 74px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; text-transform: uppercase; color: {{ r.color }};">{{ r.name }}</div>
+                <div style="flex: 1 1 160px; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 19px; text-transform: uppercase;">{{ r.label }}</div>
+                <div style="flex: 0 0 60px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; color: #E8B84B;">{{ r.spread }}</div>
+                <div style="flex: 0 0 96px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: {{ r.chipFg }};">{{ r.chip }}</div>
+                <div style="flex: 0 0 40px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-align: right;">{{ r.pts }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noDogs }}" hint-placeholder-val="{{ false }}">
+          <div style="border: 1px dashed #2F3A46; border-radius: 4px; padding: 54px 30px; text-align: center; background: #0F1216;">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 28px; text-transform: uppercase; color: #C6CCD3;">The kennel is quiet</div>
+            <div style="font-size: 16px; color: #7C858F; margin-top: 8px;">Lock in a super dog on the week view and this fills up.</div>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <!-- ============ TROPHY ROOM ============ -->
+    <sc-if value="{{ isTrophy }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #E8B84B;">Hardware</div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(32px, 7vw, 46px); line-height: 1; text-transform: uppercase; margin-bottom: 24px;">Trophy Room</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+          <sc-for list="{{ titles }}" as="t" hint-placeholder-count="3">
+            <div style="border: 1px solid {{ t.border }}; border-radius: 4px; background: {{ t.bg }}; padding: 26px 24px; text-align: center;">
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #7C858F;">{{ t.year }}</div>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 54px; line-height: 1; text-transform: uppercase; margin: 10px 0 6px; color: {{ t.color }};">{{ t.champ }}</div>
+              <div style="font-size: 14px; color: #7C858F;">{{ t.note }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 26px; text-transform: uppercase; letter-spacing: 0.04em; margin: 34px 0 14px;">Season awards</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          <sc-for list="{{ awards }}" as="a" hint-placeholder-count="4">
+            <div style="display: flex; align-items: center; gap: 18px; border: 1px solid #23272E; border-radius: 4px; background: #0F1216; padding: 18px 22px;">
+              <div style="flex: 1;">
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: 0.04em;">{{ a.name }}</div>
+                <div style="font-size: 14px; color: #7C858F; margin-top: 3px;">{{ a.desc }}</div>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 28px; text-transform: uppercase; color: {{ a.color }};">{{ a.holder }}</div>
+                <div style="font-size: 13px; color: #6E767F;">{{ a.value }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top: 34px; border: 1px solid #23272E; border-radius: 4px; background: #0F1216; padding: 22px 24px;">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 12px;">House rules</div>
+          <div style="display: flex; flex-direction: column; gap: 9px;">
+            <sc-for list="{{ rules }}" as="r" hint-placeholder-count="6">
+              <div style="display: flex; gap: 14px; align-items: baseline;">
+                <div style="width: 26px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; color: #E8B84B;">{{ r.n }}</div>
+                <div style="font-size: 15px; color: #C6CCD3;">{{ r.text }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ canEdit }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top: 34px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; border: 1px solid #2F3A46; border-radius: 4px; background: #0F1216; padding: 18px 22px;">
+        <div style="flex: 1; min-width: 280px;">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em;">Publish the board</div>
+          <div style="font-size: 14px; color: #7C858F; margin-top: 4px;">Export <span style="color:#C6CCD3;">league.json</span>, drop it next to this page in the repo and commit. Everyone else loads it read-only.</div>
+          <div style="font-size: 13px; color: #6E767F; margin-top: 6px;">{{ stamp }}</div>
+        </div>
+        <button onClick="{{ exportLeague }}" style="padding: 12px 20px; border-radius: 4px; border: none; background: #E8B84B; color: #0B0D10; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">Export league.json</button>
+      </div>
+      <sc-if value="{{ exported }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: 12px; padding: 12px 18px; border-radius: 4px; background: #12291D; border-left: 4px solid #3FBF7F; font-size: 15px; color: #B9E3CD;">{{ exported }}</div>
+      </sc-if>
+    </sc-if>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+const PLAYERS = [
+  { name: 'Matt', initial: 'M', color: '#8B5CF6', teams: 'East Carolina' },
+  { name: 'Adam', initial: 'A', color: '#E0464C', teams: 'East Carolina · Georgia' },
+  { name: 'Shaq', initial: 'S', color: '#F2C14E', teams: 'East Carolina · LSU' }
+];
+const CATS = [
+  { key: 'fav', label: 'Fav' },
+  { key: 'dog', label: 'Dog' },
+  { key: 'over', label: 'Over' },
+  { key: 'under', label: 'Under' }
+];
+const DEFAULT_TOTALS = {
+  // [team, total, isEstimate] — estimates are my guesses until the real consensus number is entered
+  SEC: [['Texas', 9.5], ['Georgia', 9.5], ['Alabama', 8.5], ['LSU', 8.5], ['Texas A&M', 8.5], ['Oklahoma', 7.5], ['Ole Miss', 7.5], ['Tennessee', 7.5], ['Florida', 7.5], ['Missouri', 6.5], ['Auburn', 6.5], ['South Carolina', 6.5], ['Vanderbilt', 5.5], ['Arkansas', 4.5], ['Mississippi State', 4.5], ['Kentucky', 4.5]],
+  'Big Ten': [['Oregon', 10.5], ['Indiana', 10.5], ['Penn State', 9.5], ['Ohio State', 9.5], ['Michigan', 8.5], ['USC', 8.5], ['Illinois', 7.5], ['Washington', 7.5], ['Iowa', 7.5], ['Wisconsin', 6.5], ['Nebraska', 6.5], ['Minnesota', 6.5], ['UCLA', 5.5], ['Northwestern', 5.5], ['Maryland', 4.5], ['Rutgers', 4.5], ['Michigan State', 3.5], ['Purdue', 3.5]],
+  'Big 12': [['Texas Tech', 11.5], ['Utah', 8.5], ['BYU', 8.5], ['Houston', 7.5], ['Arizona', 7.5], ['Kansas State', 7.5], ['Baylor', 6.5], ['TCU', 6.5], ['Arizona State', 6.5], ['Oklahoma State', 5.5], ['Cincinnati', 5.5], ['UCF', 5.5], ['Kansas', 5.5], ['West Virginia', 5.5], ['Iowa State', 4.5], ['Colorado', 4.5]],
+  ACC: [['Miami', 10.5], ['SMU', 8.5], ['Clemson', 7.5], ['Louisville', 7.5], ['Pittsburgh', 7.5], ['Virginia', 7.5], ['Virginia Tech', 7.5], ['NC State', 7.5], ['Georgia Tech', 6.5], ['Florida State', 6.5], ['California', 6.5], ['Wake Forest', 5.5], ['Duke', 5.5], ['North Carolina', 4.5], ['Syracuse', 4.5], ['Stanford', 3.5], ['Boston College', 3.5]]
+};
+const REG_GAMES = 12;
+const KEY = 'sexy6-2026-v1';
+const WT_VERSION = 8; // bump when DEFAULT_TOTALS changes so saved boards pick up new numbers
+const FEED = 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard';
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const wt = {};
+    Object.keys(DEFAULT_TOTALS).forEach(c => {
+      wt[c] = DEFAULT_TOTALS[c].map(t => ({ team: t[0], total: t[1], est: !!t[2], rec: '' }));
+    });
+    this.state = {
+      tab: 'week', week: 0, editorOpen: false, warn: '', feed: 'idle',
+      pool: [], scores: {}, poolNote: '', commish: false, updatedAt: 0, remoteAt: 0, exported: '', lastDogs: [], lastDogsWeek: null, lastDogsReason: '', lines: {},
+      slates: {}, picks: {}, sdogs: {}, wt: wt, wtVersion: WT_VERSION, wtPicks: {}, locks: {},
+      form: { away: '', home: '', fav: 'home', spread: '', total: '' }
+    };
+  }
+
+  componentDidMount() {
+    let local = null;
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (raw) {
+        local = JSON.parse(raw);
+        this.setState(prev => {
+          const next = Object.assign({}, prev, local, { warn: '', pool: [], feed: 'idle' });
+          if (local.wtVersion !== WT_VERSION) {
+            const prevRecs = {};
+            Object.keys(local.wt || {}).forEach(c => (local.wt[c] || []).forEach(r => { if (r.rec) prevRecs[r.team] = r.rec; }));
+            const fresh = {};
+            Object.keys(DEFAULT_TOTALS).forEach(c => {
+              fresh[c] = DEFAULT_TOTALS[c].map(t => ({ team: t[0], total: t[1], est: !!t[2], rec: prevRecs[t[0]] || '' }));
+            });
+            next.wt = fresh;
+            next.wtVersion = WT_VERSION;
+          }
+          return next;
+        });
+      }
+    } catch (e) {}
+    const q = (location.search + location.hash).toLowerCase();
+    if (q.indexOf('commish') > -1) this.setState({ commish: true });
+    this.loadLeague(local);
+    this.fetchFeed();
+    this.timer = setInterval(() => this.fetchFeed(true), 90000);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+
+  // Published board: league.json committed next to this file wins unless the local copy is newer.
+  async loadLeague(local) {
+    try {
+      const res = await fetch('./league.json', { cache: 'no-store' });
+      if (!res.ok) return;
+      const remote = await res.json();
+      const localAt = (local && local.updatedAt) || 0;
+      this.setState({ remoteAt: remote.updatedAt || 0 });
+      if ((remote.updatedAt || 0) > localAt) {
+        this.setState({
+          slates: remote.slates || {}, picks: remote.picks || {}, sdogs: remote.sdogs || {},
+          wt: remote.wt || this.state.wt, wtPicks: remote.wtPicks || {},
+          locks: remote.locks || {}, scores: remote.scores || {}, lines: remote.lines || {},
+          updatedAt: remote.updatedAt || 0
+        });
+      }
+    } catch (e) {}
+  }
+  payload() {
+    const s = this.state;
+    return {
+      league: 'Sexy 6', season: 2026, updatedAt: Date.now(),
+      slates: s.slates, picks: s.picks, sdogs: s.sdogs,
+      wt: s.wt, wtPicks: s.wtPicks, locks: s.locks, scores: s.scores, lines: s.lines
+    };
+  }
+  exportLeague() {
+    const json = JSON.stringify(this.payload(), null, 2);
+    try {
+      const blob = new Blob([json], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'league.json';
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    } catch (e) {}
+    if (navigator.clipboard) { navigator.clipboard.writeText(json).catch(() => {}); }
+    this.setState({ exported: 'league.json downloaded and copied to your clipboard — commit it to the repo.' });
+    setTimeout(() => this.setState({ exported: '' }), 6000);
+  }
+  canEdit() { return !!this.state.commish; }
+  guard() { this.warn('Read-only board. The commissioner runs the slate — hit him up in the group chat.'); }
+
+  save(patch) {
+    this.setState(Object.assign({ updatedAt: Date.now() }, patch), () => {
+      const s = this.state;
+      try {
+        localStorage.setItem(KEY, JSON.stringify({
+          updatedAt: s.updatedAt, lines: s.lines, wtVersion: s.wtVersion,
+          tab: s.tab, week: s.week, slates: s.slates, picks: s.picks,
+          sdogs: s.sdogs, wt: s.wt, wtPicks: s.wtPicks, scores: s.scores, locks: s.locks
+        }));
+      } catch (e) {}
+    });
+  }
+
+  weekUrl(w) {
+    return w === 0
+      ? FEED + '?limit=300&groups=80&dates=20260829'
+      : FEED + '?limit=300&groups=80&dates=2026&seasontype=2&week=' + w;
+  }
+  // Every double-digit dog that won outright last week — scouting, whether anyone had them or not.
+  async fetchPrevDogs(w) {
+    const pw = w - 1;
+    if (pw < 0) { this.setState({ lastDogs: [], lastDogsWeek: null }); return; }
+    try {
+      const res = await fetch(this.weekUrl(pw));
+      if (!res.ok) return;
+      const data = await res.json();
+      let events = data.events || [];
+      if (pw === 1) events = events.filter(ev => (ev.date || '').slice(0, 10) !== '2026-08-29');
+      const out = [];
+      let finals = 0, known = 0;
+      events.forEach(ev => {
+        const comp = (ev.competitions || [])[0] || {};
+        const cs = comp.competitors || [];
+        const st = (ev.status || {}).type || {};
+        if (!st.completed) return;
+        finals++;
+        // Odds are gone from finished games — use the line snapshotted while the game was live.
+        const line = this.state.lines[ev.id];
+        if (!line || line.spread == null || line.spread < 10) return;
+        known++;
+        const home = cs.find(c => c.homeAway === 'home') || cs[0] || {};
+        const away = cs.find(c => c.homeAway === 'away') || cs[1] || {};
+        const favIsHome = line.favAbbr ? line.favAbbr === (line.homeAbbr || line.home) : true;
+        const fav = favIsHome ? home : away;
+        const dog = favIsHome ? away : home;
+        const ds = parseInt(dog.score, 10), fs = parseInt(fav.score, 10);
+        if (isNaN(ds) || isNaN(fs) || ds <= fs) return;
+        out.push({
+          dog: (dog.team || {}).location || (dog.team || {}).shortDisplayName,
+          fav: (fav.team || {}).location || (fav.team || {}).shortDisplayName,
+          spread: line.spread, score: ds + '-' + fs
+        });
+      });
+      out.sort((a, b) => b.spread - a.spread);
+      const reason = !finals ? 'nogames' : !known ? 'nolines' : 'chalk';
+      this.setState({ lastDogs: out.slice(0, 10), lastDogsWeek: pw, lastDogsReason: reason });
+    } catch (e) {}
+  }
+
+  async fetchFeed(quiet) {
+    if (!quiet) this.setState({ feed: 'loading' });
+    try {
+      const w = this.state.week;
+      // League convention: week 0 is the Aug 29 opening Saturday; week 1 starts after it.
+      const url = this.weekUrl(w);
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('bad');
+      const data = await res.json();
+      let events = data.events || [];
+      if (w === 1) events = events.filter(ev => (ev.date || '').slice(0, 10) !== '2026-08-29');
+      const note = '';
+      const games = events.map(ev => {
+        const comp = (ev.competitions || [])[0] || {};
+        const cs = comp.competitors || [];
+        const home = cs.find(c => c.homeAway === 'home') || cs[0] || {};
+        const away = cs.find(c => c.homeAway === 'away') || cs[1] || {};
+        const odds = (comp.odds || [])[0] || {};
+        const st = (ev.status || {}).type || {};
+        let favAbbr = null, spread = null;
+        if (odds.details && odds.details.indexOf(' ') > -1) {
+          const parts = odds.details.split(' ');
+          favAbbr = parts[0];
+          spread = Math.abs(parseFloat(parts[1]));
+        } else if (odds.details === 'EVEN') { spread = 0; }
+        return {
+          id: ev.id, date: ev.date,
+          away: (away.team || {}).location || (away.team || {}).shortDisplayName || '',
+          awayName: (away.team || {}).location || (away.team || {}).shortDisplayName || '',
+          awayAbbr: (away.team || {}).abbreviation || '',
+          home: (home.team || {}).location || (home.team || {}).shortDisplayName || '',
+          homeName: (home.team || {}).location || (home.team || {}).shortDisplayName || '',
+          homeAbbr: (home.team || {}).abbreviation || '',
+          awayScore: parseInt(away.score, 10), homeScore: parseInt(home.score, 10),
+          favAbbr: favAbbr, spread: spread,
+          totalLine: odds.overUnder != null ? Number(odds.overUnder) : null,
+          state: st.state || 'pre', completed: !!st.completed, detail: st.shortDetail || ''
+        };
+      });
+      const scores = Object.assign({}, this.state.scores);
+      games.forEach(g => {
+        if (g.state !== 'pre' && !isNaN(g.awayScore) && !isNaN(g.homeScore)) {
+          scores[g.id] = { a: g.awayScore, h: g.homeScore, done: g.completed, detail: g.detail, state: g.state };
+        }
+      });
+      // ESPN drops the odds array once a game is final, so snapshot every line while it is still available.
+      const lines = Object.assign({}, this.state.lines);
+      games.forEach(g => {
+        if (g.spread == null) return;
+        const existing = lines[g.id];
+        const done = (scores[g.id] || {}).done;
+        if (existing && done) return;
+        lines[g.id] = { spread: g.spread, favAbbr: g.favAbbr, away: g.away, home: g.home, awayAbbr: g.awayAbbr, homeAbbr: g.homeAbbr, week: w };
+      });
+      const patch = { pool: games, scores: scores, feed: games.length ? 'live' : 'empty', poolNote: note, lines: lines };
+      // Lines float with the feed until the Thursday 7:00 AM ET lock, then freeze at whatever they are.
+      if (!this.lockInfo(w).locked && (this.state.slates[w] || []).length) {
+        const slates = JSON.parse(JSON.stringify(this.state.slates));
+        slates[w] = slates[w].map(g => {
+          const live = games.find(x => x.id === g.id);
+          if (!live) return g;
+          return Object.assign({}, g, {
+            spread: live.spread != null ? live.spread : g.spread,
+            totalLine: live.totalLine != null ? live.totalLine : g.totalLine,
+            favSide: live.favAbbr ? (live.favAbbr === (live.homeAbbr || live.home) ? 'home' : 'away') : g.favSide,
+            date: live.date || g.date
+          });
+        });
+        patch.slates = slates;
+      }
+      if (this.canEdit()) this.save(patch); else this.setState(patch);
+      this.fetchPrevDogs(w);
+    } catch (e) {
+      this.setState({ feed: 'off' });
+    }
+  }
+
+  // ---------- data helpers ----------
+  slate(w) { return (this.state.slates[w] || []); }
+  etParts(d) {
+    const f = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', hour12: false });
+    const o = {};
+    f.formatToParts(d).forEach(p => { o[p.type] = p.value; });
+    return o;
+  }
+  // Thursday 7:00 AM ET of the slate's game week
+  lockInfo(w) {
+    const games = this.slate(w);
+    const dates = games.map(g => g.date).filter(Boolean).sort();
+    const manual = !!(this.state.locks || {})[w];
+    if (!dates.length) {
+      return { locked: manual, ms: null, label: manual ? 'Lines locked by hand' : 'Lines lock Thursday 7:00 AM ET' };
+    }
+    let d = new Date(dates[0]);
+    let p = this.etParts(d), guard = 0;
+    while (p.weekday !== 'Thu' && guard < 9) { d = new Date(d.getTime() - 86400000); p = this.etParts(d); guard++; }
+    let ms = Date.UTC(+p.year, +p.month - 1, +p.day, 11, 0, 0);
+    const hr = +this.etParts(new Date(ms)).hour;
+    if (hr !== 7) ms += (7 - hr) * 3600000;
+    const locked = manual || Date.now() >= ms;
+    const label = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric' }).format(new Date(ms)) + ', 7:00 AM ET';
+    return { locked: locked, ms: ms, label: (locked ? 'Lines locked · ' : 'Lines lock ') + label, manual: manual };
+  }
+  toggleLock() {
+    if (!this.canEdit()) return this.guard();
+    const w = this.state.week;
+    const locks = Object.assign({}, this.state.locks || {});
+    const info = this.lockInfo(w);
+    if (info.manual) { delete locks[w]; this.save({ locks: locks, warn: '' }); return; }
+    if (info.locked) { this.warn('Thursday 7:00 AM has already passed — these lines are locked for good.'); return; }
+    locks[w] = true;
+    this.save({ locks: locks, warn: '' });
+  }
+  weeks() {
+    const set = {};
+    Object.keys(this.state.slates).forEach(w => { if (this.slate(w).length) set[w] = 1; });
+    Object.keys(this.state.sdogs).forEach(w => { set[w] = 1; });
+    const list = Object.keys(set).map(Number).sort((a, b) => a - b);
+    return list;
+  }
+  score(g) {
+    const s = this.state.scores[g.id];
+    if (s) return s;
+    if (g.manualScore) return Object.assign({ done: true }, g.manualScore);
+    return null;
+  }
+  favIsHome(g) {
+    if (g.favSide) return g.favSide === 'home';
+    if (g.favAbbr) return g.favAbbr === (g.homeAbbr || g.home);
+    return true;
+  }
+  gameLine(g) {
+    if (g.spread == null) return 'TBD';
+    const fh = this.favIsHome(g);
+    const t = fh ? (g.homeAbbr || g.home) : (g.awayAbbr || g.away);
+    return t + ' -' + g.spread;
+  }
+  matchup(g) {
+    return (g.away || g.awayName) + ' @ ' + (g.home || g.homeName);
+  }
+  // result: 1 win, 0.5 push, 0 loss, null pending
+  resultFor(g, cat) {
+    const s = this.score(g);
+    if (!s) return null;
+    const pending = !s.done;
+    const fh = this.favIsHome(g);
+    const favS = fh ? s.h : s.a, dogS = fh ? s.a : s.h;
+    const margin = favS - dogS;
+    if (cat === 'fav' || cat === 'dog') {
+      if (g.spread == null) return null;
+      let r;
+      if (margin > g.spread) r = 1; else if (margin === g.spread) r = 0.5; else r = 0;
+      if (cat === 'dog') r = r === 0.5 ? 0.5 : 1 - r;
+      return pending ? { r: r, live: true } : { r: r };
+    }
+    if (g.totalLine == null) return null;
+    const tot = s.a + s.h;
+    let r;
+    if (tot > g.totalLine) r = 1; else if (tot === g.totalLine) r = 0.5; else r = 0;
+    if (cat === 'under') r = r === 0.5 ? 0.5 : 1 - r;
+    return pending ? { r: r, live: true } : { r: r };
+  }
+  sdResult(sd) {
+    if (!sd || !sd.label) return null;
+    let s = null, own = null;
+    if (sd.gameId && this.state.scores[sd.gameId]) {
+      const sc = this.state.scores[sd.gameId];
+      const g = this.state.pool.find(p => p.id === sd.gameId) || sd;
+      own = sd.side === 'home' ? sc.h : sc.a;
+      const opp = sd.side === 'home' ? sc.a : sc.h;
+      s = { own: own, opp: opp, done: sc.done };
+    } else if (sd.manual && sd.manual.own != null) {
+      s = { own: sd.manual.own, opp: sd.manual.opp, done: true };
+    }
+    if (!s) return null;
+    const m = s.own - s.opp;
+    if (m > 0) return { r: 1, pts: 2, outright: true, live: !s.done };
+    if (m === 0) return { r: 0.5, pts: 0.25, live: !s.done };
+    if (-m < sd.spread) return { r: 1, pts: 0.5, live: !s.done };
+    if (-m === sd.spread) return { r: 0.5, pts: 0.25, live: !s.done };
+    return { r: 0, pts: 0, live: !s.done };
+  }
+  // Any super dog that was PICKED and won outright — permanent honours, and retired from the kennel.
+  killers() {
+    const out = [];
+    this.weeks().forEach(wk => {
+      PLAYERS.forEach(p => {
+        const sd = ((this.state.sdogs[wk] || {})[p.name]) || null;
+        if (!sd) return;
+        const sr = this.sdResult(sd);
+        if (!sr || sr.live || !sr.outright) return;
+        const sc = sd.gameId ? this.state.scores[sd.gameId] : null;
+        const own = sc ? (sd.side === 'home' ? sc.h : sc.a) : null;
+        const opp = sc ? (sd.side === 'home' ? sc.a : sc.h) : null;
+        out.push({
+          week: wk, team: sd.team, opp: sd.opp, spread: sd.spread, by: p.name, color: p.color,
+          score: own != null ? own + '-' + opp : ''
+        });
+      });
+    });
+    return out;
+  }
+  retiredDogs(exceptWeek) {
+    const set = {};
+    this.killers().forEach(k => { if (k.week !== exceptWeek) set[k.team] = k; });
+    return set;
+  }
+
+  weekTally(w, name, includeLive) {
+    const games = this.slate(w);
+    const pk = ((this.state.picks[w] || {})[name]) || {};
+    let pts = 0, wn = 0, l = 0, p = 0, settled = 0, wins = 0;
+    CATS.forEach(c => {
+      const gid = pk[c.key];
+      if (!gid) return;
+      const g = games.find(x => x.id === gid);
+      if (!g) return;
+      const res = this.resultFor(g, c.key);
+      if (!res || (res.live && !includeLive)) return;
+      settled++;
+      if (res.r === 1) { pts += 1; wn++; wins++; }
+      else if (res.r === 0.5) { pts += 0.5; p++; }
+      else l++;
+    });
+    let bonus = 0;
+    if (settled === 4 && wins === 4) { bonus = 1; pts += 1; }
+    const sd = ((this.state.sdogs[w] || {})[name]) || null;
+    const sr = this.sdResult(sd);
+    let sdW = 0, sdL = 0, sdP = 0, sdPts = 0, outright = 0;
+    if (sr && (!sr.live || includeLive)) {
+      sdPts = sr.pts; pts += sr.pts;
+      if (sr.r === 1) { sdW++; if (sr.outright) outright++; } else if (sr.r === 0.5) sdP++; else sdL++;
+    }
+    return { pts: pts, w: wn + sdW, l: l + sdL, p: p + sdP, bonus: bonus, sdW: sdW, sdL: sdL, sdP: sdP, sdPts: sdPts, outright: outright };
+  }
+  seasonTally(name) {
+    const acc = { pts: 0, w: 0, l: 0, p: 0, sdW: 0, sdL: 0, sdP: 0, sdPts: 0, outright: 0, bonus: 0 };
+    this.weeks().forEach(w => {
+      const t = this.weekTally(w, name);
+      Object.keys(acc).forEach(k => { acc[k] += t[k] || 0; });
+    });
+    return acc;
+  }
+  recStr(t) { return t.p ? (t.w + '-' + t.l + '-' + t.p) : (t.w + '-' + t.l); }
+
+  wtTally(name) {
+    const picks = this.state.wtPicks[name] || {};
+    let hit = 0, miss = 0, alive = 0;
+    Object.keys(DEFAULT_TOTALS).forEach(conf => {
+      ['over', 'under'].forEach(side => {
+        const team = (picks[conf] || {})[side];
+        if (!team) return;
+        const row = (this.state.wt[conf] || []).find(r => r.team === team);
+        const st = this.wtStatus(row, side);
+        if (st.key === 'hit') hit++; else if (st.key === 'miss') miss++; else alive++;
+      });
+    });
+    return { hit: hit, miss: miss, alive: alive };
+  }
+  wtStatus(row, side) {
+    if (!row) return { key: 'none', label: '—', color: '#3A414A' };
+    const m = /^(\d+)\s*-\s*(\d+)$/.exec((row.rec || '').trim());
+    if (!m) return { key: 'alive', label: 'Alive', color: '#3A414A' };
+    const w = parseInt(m[1], 10), l = parseInt(m[2], 10);
+    const need = Math.ceil(row.total);
+    const remaining = Math.max(0, REG_GAMES - w - l);
+    if (side === 'over') {
+      if (w >= need) return { key: 'hit', label: 'Clinched', color: '#3FBF7F' };
+      if (w + remaining < need) return { key: 'miss', label: 'Dead', color: '#E0464C' };
+    } else {
+      if (l > REG_GAMES - need) return { key: 'hit', label: 'Clinched', color: '#3FBF7F' };
+      if (w >= need) return { key: 'miss', label: 'Dead', color: '#E0464C' };
+    }
+    return { key: 'alive', label: 'Alive', color: '#E8B84B' };
+  }
+
+  // ---------- mutations ----------
+  warn(msg) { this.setState({ warn: msg }); }
+  togglePick(gameId, cat, name) {
+    if (!this.canEdit()) return this.guard();
+    const w = this.state.week;
+    const picks = JSON.parse(JSON.stringify(this.state.picks));
+    if (!picks[w]) picks[w] = {};
+    if (!picks[w][name]) picks[w][name] = {};
+    const mine = picks[w][name];
+    if (mine[cat] === gameId) { delete mine[cat]; this.save({ picks: picks, warn: '' }); return; }
+    const taker = PLAYERS.find(p => p.name !== name && ((picks[w][p.name] || {})[cat] === gameId));
+    if (taker) {
+      const g = this.slate(w).find(x => x.id === gameId);
+      this.warn(taker.name + ' already owns the ' + cat.toUpperCase() + ' on ' + this.matchup(g) + '. No duplicate selections — pick another game.');
+      return;
+    }
+    mine[cat] = gameId;
+    this.save({ picks: picks, warn: '' });
+  }
+  setSdog(name, value) {
+    if (!this.canEdit()) return this.guard();
+    const w = this.state.week;
+    const sdogs = JSON.parse(JSON.stringify(this.state.sdogs));
+    if (!sdogs[w]) sdogs[w] = {};
+    if (!value) { delete sdogs[w][name]; this.save({ sdogs: sdogs, warn: '' }); return; }
+    const parts = value.split('|');
+    const gameId = parts[0], side = parts[1];
+    const g = this.state.pool.find(p => p.id === gameId);
+    if (!g) return;
+    if (this.slate(w).some(x => x.id === gameId)) {
+      this.warn('That game is on this week\u2019s slate. Super dogs have to come from outside the six.');
+      return;
+    }
+    if (g.spread == null || g.spread < 10) {
+      this.warn('Super dogs must be double-digit underdogs. That line is not +10 or worse.');
+      return;
+    }
+    const dogTeam = side === 'home' ? g.home : g.away;
+    const retired = this.retiredDogs(w);
+    if (retired[dogTeam]) {
+      this.warn(dogTeam + ' already won outright as a super dog in week ' + retired[dogTeam].week + '. They are retired from the kennel.');
+      return;
+    }
+    sdogs[w][name] = {
+      gameId: gameId, side: side, spread: g.spread,
+      label: (side === 'home' ? (g.home || g.homeName) : (g.away || g.awayName)) + ' +' + g.spread,
+      team: side === 'home' ? g.home : g.away,
+      opp: side === 'home' ? g.away : g.home
+    };
+    this.save({ sdogs: sdogs, warn: '' });
+  }
+  addGame() {
+    const f = this.state.form, w = this.state.week;
+    if (!f.away || !f.home) { this.warn('Need both teams before that game goes on the board.'); return; }
+    const slates = JSON.parse(JSON.stringify(this.state.slates));
+    if (!slates[w]) slates[w] = [];
+    if (slates[w].length >= 6) { this.warn('Six is the number. Drop a game before adding another.'); return; }
+    slates[w].push({
+      id: 'm' + Date.now(), away: f.away, home: f.home, awayName: f.away, homeName: f.home,
+      favSide: f.fav, spread: f.spread === '' ? null : Math.abs(parseFloat(f.spread)),
+      totalLine: f.total === '' ? null : parseFloat(f.total)
+    });
+    this.save({ slates: slates, form: { away: '', home: '', fav: 'home', spread: '', total: '' }, warn: '' });
+  }
+  addFromPool(pg) {
+    const w = this.state.week;
+    const slates = JSON.parse(JSON.stringify(this.state.slates));
+    if (!slates[w]) slates[w] = [];
+    if (slates[w].length >= 6) { this.warn('Six is the number. Drop a game before adding another.'); return; }
+    if (slates[w].some(g => g.id === pg.id)) return;
+    slates[w].push({
+      id: pg.id, away: pg.away, home: pg.home, awayName: pg.awayName, homeName: pg.homeName,
+      awayAbbr: pg.awayAbbr, homeAbbr: pg.homeAbbr,
+      favSide: pg.favAbbr ? (pg.favAbbr === (pg.homeAbbr || pg.home) ? 'home' : 'away') : 'home',
+      spread: pg.spread, totalLine: pg.totalLine, detail: pg.detail
+    });
+    this.save({ slates: slates, warn: '' });
+  }
+  removeGame(id) {
+    const w = this.state.week;
+    const slates = JSON.parse(JSON.stringify(this.state.slates));
+    slates[w] = (slates[w] || []).filter(g => g.id !== id);
+    const picks = JSON.parse(JSON.stringify(this.state.picks));
+    Object.keys(picks[w] || {}).forEach(n => {
+      CATS.forEach(c => { if (picks[w][n][c.key] === id) delete picks[w][n][c.key]; });
+    });
+    this.save({ slates: slates, picks: picks });
+  }
+  setManualScore(id, text) {
+    const w = this.state.week;
+    const slates = JSON.parse(JSON.stringify(this.state.slates));
+    const g = (slates[w] || []).find(x => x.id === id);
+    if (!g) return;
+    const m = /^\s*(\d+)\s*-\s*(\d+)\s*$/.exec(text || '');
+    g.scoreEntry = text;
+    g.manualScore = m ? { a: parseInt(m[1], 10), h: parseInt(m[2], 10) } : null;
+    this.save({ slates: slates });
+  }
+  toggleWT(conf, side, team, name) {
+    if (!this.canEdit()) return this.guard();
+    const wtPicks = JSON.parse(JSON.stringify(this.state.wtPicks));
+    if (!wtPicks[name]) wtPicks[name] = {};
+    if (!wtPicks[name][conf]) wtPicks[name][conf] = {};
+    const cur = wtPicks[name][conf][side];
+    if (cur === team) { delete wtPicks[name][conf][side]; this.save({ wtPicks: wtPicks, warn: '' }); return; }
+    const taker = PLAYERS.find(p => p.name !== name && (((wtPicks[p.name] || {})[conf] || {})[side] === team));
+    if (taker) { this.warn(taker.name + ' already has the ' + team + ' ' + side + '. Find your own number.'); return; }
+    const other = side === 'over' ? 'under' : 'over';
+    if (wtPicks[name][conf][other] === team) { this.warn('You can\u2019t take the over AND the under on ' + team + '.'); return; }
+    wtPicks[name][conf][side] = team;
+    this.save({ wtPicks: wtPicks, warn: '' });
+  }
+  setWTTotal(conf, team, val) {
+    if (!this.canEdit()) return this.guard();
+    const wt = JSON.parse(JSON.stringify(this.state.wt));
+    const row = (wt[conf] || []).find(r => r.team === team);
+    if (!row) return;
+    const n = parseFloat(val);
+    if (!isNaN(n)) { row.total = n; row.est = false; }
+    this.save({ wt: wt });
+  }
+  setWTRec(conf, team, val) {
+    if (!this.canEdit()) return this.guard();
+    const wt = JSON.parse(JSON.stringify(this.state.wt));
+    const row = (wt[conf] || []).find(r => r.team === team);
+    if (row) row.rec = val;
+    this.save({ wt: wt });
+  }
+
+  // ---------- render ----------
+  renderVals() {
+    const st = this.state, w = st.week;
+    const games = this.slate(w);
+    const lock = this.lockInfo(w);
+    const tabDefs = [
+      ['week', 'This Week'], ['board', 'Leaderboard'], ['wt', 'Win Totals'],
+      ['history', 'Ledger'], ['dogs', 'Super Dogs'], ['trophy', 'Trophy Room']
+    ];
+    const chip = (res, catLabel) => {
+      if (!res) return { chip: catLabel ? '—' : 'PEND', chipBg: '#1B1F25', chipFg: '#6E767F' };
+      if (res.live) return { chip: res.r === 1 ? 'LIVE ✓' : res.r === 0.5 ? 'LIVE =' : 'LIVE ✕', chipBg: '#2A2412', chipFg: '#E8B84B' };
+      if (res.r === 1) return { chip: 'WIN', chipBg: '#12291D', chipFg: '#3FBF7F' };
+      if (res.r === 0.5) return { chip: 'PUSH', chipBg: '#1E2430', chipFg: '#7FA6D9' };
+      return { chip: 'LOSS', chipBg: '#2A1416', chipFg: '#E0464C' };
+    };
+
+    // player cards
+    const cards = PLAYERS.map(p => {
+      const pk = ((st.picks[w] || {})[p.name]) || {};
+      const t = this.weekTally(w, p.name);
+      const tl = this.weekTally(w, p.name, true);
+      const season = this.seasonTally(p.name);
+      const rows = CATS.map(c => {
+        const g = games.find(x => x.id === pk[c.key]);
+        if (!g) return Object.assign({ cat: c.label, label: 'open', textColor: '#4E565F' }, { chip: '—', chipBg: '#14171C', chipFg: '#4E565F' });
+        const res = this.resultFor(g, c.key);
+        let label;
+        const fh = this.favIsHome(g);
+        const favT = fh ? (g.home || g.homeName) : (g.away || g.awayName);
+        const dogT = fh ? (g.away || g.awayName) : (g.home || g.homeName);
+        if (c.key === 'fav') label = favT + ' -' + (g.spread != null ? g.spread : '?');
+        else if (c.key === 'dog') label = dogT + ' +' + (g.spread != null ? g.spread : '?');
+        else label = (c.key === 'over' ? 'o' : 'u') + (g.totalLine != null ? g.totalLine : '?') + ' · ' + this.matchup(g);
+        return Object.assign({ cat: c.label, label: label, textColor: '#F2F4F7' }, chip(res));
+      });
+      const sd = ((st.sdogs[w] || {})[p.name]) || null;
+      const sr = this.sdResult(sd);
+      if (w !== 0) rows.push(Object.assign({ cat: 'S-Dog', label: sd ? sd.label : 'open', textColor: sd ? '#F2F4F7' : '#4E565F' },
+        sd ? chip(sr) : { chip: '—', chipBg: '#14171C', chipFg: '#4E565F' }));
+      return {
+        name: p.name, color: p.color, teams: p.teams, rows: rows,
+        weekPts: t.pts, seasonPts: season.pts, record: this.recStr(season),
+        livePts: tl.pts, hasLive: tl.pts !== t.pts || tl.w + tl.l + tl.p !== t.w + t.l + t.p,
+        liveNote: 'if it ends now: ' + tl.pts + ' pts · ' + this.recStr(tl),
+        sdRecord: season.sdW + '-' + season.sdL
+      };
+    });
+
+    // slate rows
+    const gameRows = games.map((g, i) => {
+      const s = this.score(g);
+      let statusText = 'PRE', statusBg = '#1B1F25', statusFg = '#6E767F', sub = g.detail || 'Kickoff TBD';
+      if (s) {
+        if (s.done) { statusText = 'FINAL'; statusBg = '#1B1F25'; statusFg = '#C6CCD3'; }
+        else { statusText = s.detail || 'LIVE'; statusBg = '#2A1416'; statusFg = '#E0464C'; }
+        sub = (g.away || g.awayName) + ' ' + s.a + '  ·  ' + (g.home || g.homeName) + ' ' + s.h + '  ·  total ' + (s.a + s.h);
+      }
+      const cells = CATS.map((c, ci) => ({
+        label: c.label,
+        divider: ci === 0 ? 'transparent' : '#23272E',
+        pills: PLAYERS.map(p => {
+          const owner = PLAYERS.find(q => (((st.picks[w] || {})[q.name]) || {})[c.key] === g.id);
+          const mine = owner && owner.name === p.name;
+          const takenByOther = owner && owner.name !== p.name;
+          return {
+            initial: p.initial,
+            click: () => this.togglePick(g.id, c.key, p.name),
+            title: p.name + ' — ' + c.label,
+            bg: mine ? p.color : '#14171C',
+            fg: mine ? '#0B0D10' : takenByOther ? '#3A414A' : '#7C858F',
+            border: mine ? p.color : '#23272E'
+          };
+        })
+      }));
+      return {
+        matchup: this.matchup(g), sub: sub, line: this.gameLine(g),
+        total: g.totalLine != null ? g.totalLine : '—',
+        statusText: statusText, statusBg: statusBg, statusFg: statusFg,
+        bg: i % 2 ? '#0F1216' : '#12151A', cells: cells,
+        lockMark: lock.locked ? '\u25AA' : '',
+        scoreEntry: g.scoreEntry || '',
+        setScore: e => this.setManualScore(g.id, e.target.value),
+        remove: () => this.removeGame(g.id)
+      };
+    });
+
+    // super dog slots
+    const retired = this.retiredDogs(w);
+    const dogCandidates = st.pool
+      .filter(g => g.spread != null && g.spread >= 10 && !games.some(x => x.id === g.id))
+      .filter(g => !retired[g.away] && !retired[g.home])
+      .sort((a, b) => b.spread - a.spread)
+      .slice(0, 60);
+    const sdSlots = PLAYERS.map(p => {
+      const sd = ((st.sdogs[w] || {})[p.name]) || null;
+      const sr = this.sdResult(sd);
+      const options = [{ v: '', label: sd ? '— clear pick —' : '— select a double-digit dog —' }];
+      dogCandidates.forEach(g => {
+        const fh = g.favAbbr === (g.homeAbbr || g.home);
+        const dogSide = fh ? 'away' : 'home';
+        const dogT = dogSide === 'home' ? (g.home || g.homeName) : (g.away || g.awayName);
+        const favT = dogSide === 'home' ? (g.away || g.awayName) : (g.home || g.homeName);
+        options.push({ v: g.id + '|' + dogSide, label: dogT + ' +' + g.spread + ' vs ' + favT });
+      });
+      let detail = 'Nothing locked in yet.';
+      if (sd) {
+        const sc = sd.gameId ? st.scores[sd.gameId] : null;
+        detail = sd.team + ' vs ' + sd.opp + (sc ? ('  ·  ' + sc.a + '-' + sc.h) : '  ·  awaiting kickoff');
+        if (sr && !sr.live) detail += '  ·  ' + sr.pts + ' pt' + (sr.pts === 1 ? '' : 's');
+      } else if (!dogCandidates.length) {
+        detail = 'No double-digit lines in the feed for this week yet.';
+      }
+      return Object.assign({
+        name: p.name, color: p.color, value: sd ? (sd.gameId + '|' + sd.side) : '',
+        options: options, detail: detail,
+        change: e => this.setSdog(p.name, e.target.value)
+      }, sd ? chip(sr) : { chip: 'OPEN', chipBg: '#14171C', chipFg: '#4E565F' });
+    });
+
+    // leaderboard
+    const rings = { Shaq: 1, Adam: 1, Matt: 0 };
+    const ranked = PLAYERS.map(p => {
+      const s = this.seasonTally(p.name);
+      const wt = this.wtTally(p.name);
+      const live = this.weekTally(st.week, p.name, true);
+      return { p: p, s: s, wt: wt, live: live };
+    }).sort((a, b) => b.s.pts - a.s.pts || b.s.w - a.s.w);
+    const tags = ['Sitting on the throne', 'Within striking distance', 'Talking a big game'];
+    const board = ranked.map((r, i) => ({
+      rank: i + 1, name: r.p.name, color: r.p.color,
+      rankColor: i === 0 ? '#E8B84B' : '#3A414A',
+      bg: i === 0 ? 'linear-gradient(90deg, rgba(232,184,75,0.07) 0%, #0F1216 45%)' : '#0F1216',
+      tag: ranked[0].s.pts === 0 ? (rings[r.p.name] ? rings[r.p.name] + '× champ' : 'Still ringless') : tags[i],
+      pts: r.s.pts, record: this.recStr(r.s),
+      liveNote: r.live.pts ? 'in play this week: ' + r.live.pts + ' pts' : '',
+      sd: r.s.sdW + '-' + r.s.sdL + ' · ' + r.s.sdPts + ' pts',
+      wt: r.wt.hit + '/' + (r.wt.hit + r.wt.miss + r.wt.alive) + ' hit',
+      rings: rings[r.p.name] || 0
+    }));
+    const wtPicked = PLAYERS.map(p => {
+      const pk = st.wtPicks[p.name] || {};
+      let n = 0;
+      Object.keys(DEFAULT_TOTALS).forEach(c => { ['over', 'under'].forEach(s => { if ((pk[c] || {})[s]) n++; }); });
+      return { name: p.name, n: n };
+    });
+    const missing = wtPicked.filter(x => x.n < 8);
+    const notes = [
+      { label: 'Season status', value: 'Preseason', sub: 'Slate posts when week 1 lines drop.' },
+      { label: 'Win totals locked', value: missing.length ? missing.map(m => m.name + ' ' + m.n + '/8').join(' · ') : 'All 24 in', sub: missing.length ? 'Eight picks each. Get them in before kickoff.' : 'Futures are locked. No takebacks.' },
+      { label: 'Defending champ', value: 'Adam', sub: 'Shaq took year one. Matt is still ringless.' }
+    ];
+
+    // win totals
+    const confs = Object.keys(DEFAULT_TOTALS).map(conf => {
+      const rows = (st.wt[conf] || []).map(row => {
+        const mk = side => PLAYERS.map(p => {
+          const owner = PLAYERS.find(q => (((st.wtPicks[q.name] || {})[conf]) || {})[side] === row.team);
+          const mine = owner && owner.name === p.name;
+          const other = owner && owner.name !== p.name;
+          return {
+            initial: p.initial, title: p.name + ' ' + side + ' ' + row.team,
+            click: () => this.toggleWT(conf, side, row.team, p.name),
+            bg: mine ? p.color : '#14171C',
+            fg: mine ? '#0B0D10' : other ? '#3A414A' : '#7C858F',
+            border: mine ? p.color : '#23272E'
+          };
+        });
+        const owners = ['over', 'under'].map(side => PLAYERS.find(q => (((st.wtPicks[q.name] || {})[conf]) || {})[side] === row.team));
+        const side = owners[0] ? 'over' : owners[1] ? 'under' : null;
+        const stt = side ? this.wtStatus(row, side) : { color: '#1B1F25', label: 'Unpicked' };
+        return {
+          team: row.team, total: row.total, est: row.est ? '*' : '', rec: row.rec || '',
+          setRec: e => this.setWTRec(conf, row.team, e.target.value),
+          setTotal: e => this.setWTTotal(conf, row.team, e.target.value),
+          overPills: mk('over'), underPills: mk('under'),
+          dot: stt.color, dotTitle: stt.label
+        };
+      });
+      const status = PLAYERS.map(p => {
+        const pk = (st.wtPicks[p.name] || {})[conf] || {};
+        const n = (pk.over ? 1 : 0) + (pk.under ? 1 : 0);
+        return { text: p.initial + ' ' + n + '/2', color: n === 2 ? p.color : '#4E565F' };
+      });
+      return { name: conf, teams: rows, status: status };
+    });
+
+    // history
+    const weeks = this.weeks();
+    const historyRows = weeks.map((wk, i) => ({
+      week: 'WK ' + wk, bg: i % 2 ? '#0F1216' : '#12151A',
+      cells: PLAYERS.map(p => {
+        const t = this.weekTally(wk, p.name);
+        return {
+          pts: t.pts, color: p.color,
+          detail: this.recStr(t) + (t.bonus ? ' · perfect 4' : '') + (t.sdPts ? ' · dog ' + t.sdPts : '')
+        };
+      })
+    }));
+
+    // super dog hall
+    const dogRows = [];
+    weeks.forEach(wk => {
+      PLAYERS.forEach(p => {
+        const sd = ((st.sdogs[wk] || {})[p.name]) || null;
+        if (!sd) return;
+        const sr = this.sdResult(sd);
+        const c = sd ? chip(sr) : {};
+        dogRows.push({
+          week: wk, name: p.name, color: p.color, label: sd.team + ' vs ' + sd.opp,
+          spread: '+' + sd.spread, chip: c.chip || 'PEND', chipFg: c.chipFg || '#6E767F',
+          pts: sr && !sr.live ? sr.pts : '—', bg: dogRows.length % 2 ? '#0F1216' : '#12151A'
+        });
+      });
+    });
+    const dogStats = PLAYERS.map(p => {
+      const s = this.seasonTally(p.name);
+      return { name: p.name, color: p.color, record: s.sdW + '-' + s.sdL + (s.sdP ? '-' + s.sdP : ''), pts: s.sdPts, outright: s.outright };
+    });
+
+    // trophies + awards
+    const titles = [
+      { year: 'Season I', champ: 'Shaq', note: 'The original. Never lets anyone forget it.', color: '#F2C14E', border: '#2A2412', bg: 'linear-gradient(180deg, rgba(242,193,78,0.08), #0F1216)' },
+      { year: 'Season II', champ: 'Adam', note: 'Defending champion. Insufferable about it.', color: '#E0464C', border: '#2A1416', bg: 'linear-gradient(180deg, rgba(224,70,76,0.08), #0F1216)' },
+      { year: 'Season III', champ: 'TBD', note: 'Wide open. Matt says this is the year.', color: '#4E565F', border: '#23272E', bg: '#0F1216' }
+    ];
+    const bestWeek = { holder: '—', value: 'no weeks scored', color: '#4E565F' };
+    let bw = -1;
+    weeks.forEach(wk => PLAYERS.forEach(p => {
+      const t = this.weekTally(wk, p.name);
+      if (t.pts > bw) { bw = t.pts; bestWeek.holder = p.name; bestWeek.value = t.pts + ' pts in week ' + wk; bestWeek.color = p.color; }
+    }));
+    const topDog = dogStats.slice().sort((a, b) => b.pts - a.pts)[0];
+    const topWT = PLAYERS.map(p => ({ p: p, t: this.wtTally(p.name) })).sort((a, b) => b.t.hit - a.t.hit)[0];
+    const awards = [
+      { name: 'Best week', desc: 'Most points in a single week', holder: bestWeek.holder, value: bestWeek.value, color: bestWeek.color },
+      { name: 'Kennel king', desc: 'Most super dog points', holder: topDog && topDog.pts ? topDog.name : '—', value: topDog && topDog.pts ? topDog.pts + ' pts' : 'kennel is empty', color: topDog && topDog.pts ? topDog.color : '#4E565F' },
+      { name: 'Futures shark', desc: 'Most win totals cashed', holder: topWT && topWT.t.hit ? topWT.p.name : '—', value: topWT && topWT.t.hit ? topWT.t.hit + '/8 clinched' : 'nothing settled yet', color: topWT && topWT.t.hit ? topWT.p.color : '#4E565F' },
+      { name: 'Perfect slate club', desc: 'Weeks going 4-for-4 on the spread', holder: (() => { const c = PLAYERS.map(p => ({ n: p.name, b: this.seasonTally(p.name).bonus })).sort((a, b) => b.b - a.b)[0]; return c && c.b ? c.n : '—'; })(), value: (() => { const c = PLAYERS.map(p => ({ n: p.name, b: this.seasonTally(p.name).bonus })).sort((a, b) => b.b - a.b)[0]; return c && c.b ? c.b + '×' : 'nobody yet'; })(), color: '#4E565F' }
+    ];
+    const rules = [
+      { n: '01', text: 'Six games a week, fewer on light weeks. Commissioner posts the slate.' },
+      { n: '02', text: 'Everybody takes one favorite, one underdog, one over and one under — all four from the slate.' },
+      { n: '03', text: 'No duplicate selections. If Adam has the Georgia favorite, that side is gone.' },
+      { n: '04', text: 'One point per correct pick. Push is worth a half. Sweep all four and it is a five-point week.' },
+      { n: '05', text: 'Super dog must be +10 or worse and must come from a game NOT on the slate. Half a point for a cover, two full points for an outright win.' },
+      { n: '06', text: 'Preseason win totals: one over and one under from the SEC, Big Ten, Big 12 and ACC. One point each, settled after the regular season.' },
+      { n: '07', text: 'Records are tracked all the way through — wins, losses and pushes, not just points.' },
+      { n: '08', text: 'Bowl season rules to be negotiated in December, as always.' }
+    ];
+
+    const feedMap = {
+      idle: ['#4E565F', 'standby'], loading: ['#E8B84B', 'syncing'],
+      live: ['#3FBF7F', 'connected'], empty: ['#E8B84B', 'no games'], off: ['#E0464C', 'offline']
+    };
+    const fm = feedMap[st.feed] || feedMap.idle;
+
+    const weekOpts = [];
+    for (let i = 0; i <= 16; i++) weekOpts.push({ v: i, label: i === 0 ? 'Week 0' : 'Week ' + i });
+
+    return {
+      tabs: tabDefs.map(t => ({
+        label: t[1], go: () => this.save({ tab: t[0] }),
+        color: st.tab === t[0] ? '#F2F4F7' : '#6E767F',
+        line: st.tab === t[0] ? '#E8B84B' : 'transparent'
+      })),
+      isWeek: st.tab === 'week', isBoard: st.tab === 'board', isWT: st.tab === 'wt',
+      isHistory: st.tab === 'history', isDogs: st.tab === 'dogs', isTrophy: st.tab === 'trophy',
+      canEdit: this.canEdit(), readOnly: !this.canEdit(),
+      modeLabel: this.canEdit() ? 'Commissioner' : 'Read only',
+      modeColor: this.canEdit() ? '#E8B84B' : '#6E767F',
+      toggleMode: () => this.setState({ commish: !st.commish, warn: '' }),
+      modeAction: this.canEdit() ? 'exit' : 'commish mode',
+      exportLeague: () => this.exportLeague(),
+      exported: st.exported || false,
+      stamp: st.updatedAt ? 'Board updated ' + new Date(st.updatedAt).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : 'No picks saved yet',
+      week: w, weekOpts: weekOpts,
+      lockLabel: lock.label,
+      lockGlyph: lock.locked ? '\u25AA' : '\u25AB',
+      lockColor: lock.locked ? '#C6CCD3' : '#7C858F',
+      lockBorder: lock.locked ? '#2F3A46' : '#23272E',
+      lockAction: lock.manual ? 'unlock' : lock.locked ? '' : 'lock now',
+      toggleLock: () => this.toggleLock(),
+      setWeek: e => this.save({ week: Number(e.target.value) }, this.fetchFeed()),
+      prevWeek: () => { this.save({ week: Math.max(0, w - 1) }); setTimeout(() => this.fetchFeed(), 0); },
+      nextWeek: () => { this.save({ week: Math.min(16, w + 1) }); setTimeout(() => this.fetchFeed(), 0); },
+      refresh: () => this.fetchFeed(),
+      importWeek: () => { this.setState({ editorOpen: true }); this.fetchFeed(); },
+      toggleEditor: () => this.setState({ editorOpen: !st.editorOpen }),
+      editorLabel: st.editorOpen ? 'Close editor' : 'Edit slate',
+      editorOpen: st.editorOpen,
+      feedDot: fm[0], feedLabel: fm[1],
+      warn: st.warn || false, clearWarn: () => this.setState({ warn: '' }),
+      cards: cards, games: gameRows, hasGames: games.length > 0, noGames: games.length === 0,
+      sdSlots: sdSlots, showSdogs: w !== 0,
+      slateNote: st.poolNote
+        ? st.poolNote + ' Pull them in and pick your six, or punch them in by hand.'
+        : "Commissioner's move. Pull the week's games from the live feed and pick your six, or punch them in by hand.",
+      pool: st.pool.map(g => {
+        const on = games.some(x => x.id === g.id);
+        return {
+          matchup: this.matchup(g), line: g.spread != null ? this.gameLine(g) : 'no line',
+          total: g.totalLine != null ? 'o/u ' + g.totalLine : '',
+          strike: on ? 'line-through' : 'none',
+          fg: on ? '#6E767F' : '#F2F4F7',
+          bg: on ? '#101317' : '#14171C',
+          opacity: on ? 0.62 : 1,
+          tag: on ? 'on slate' : '',
+          add: () => (on ? this.removeGame(g.id) : this.addFromPool(g))
+        };
+      }),
+      hasPool: st.pool.length > 0,
+      f: st.form,
+      setF: {
+        away: e => this.setState({ form: Object.assign({}, st.form, { away: e.target.value }) }),
+        home: e => this.setState({ form: Object.assign({}, st.form, { home: e.target.value }) }),
+        fav: e => this.setState({ form: Object.assign({}, st.form, { fav: e.target.value }) }),
+        spread: e => this.setState({ form: Object.assign({}, st.form, { spread: e.target.value }) }),
+        total: e => this.setState({ form: Object.assign({}, st.form, { total: e.target.value }) })
+      },
+      addGame: () => this.addGame(),
+      board: board, notes: notes,
+      confs: confs,
+      wtLegend: [{ color: '#3FBF7F', label: 'Clinched' }, { color: '#E8B84B', label: 'Alive' }, { color: '#E0464C', label: 'Dead' }],
+      playerHeads: PLAYERS.map(p => ({ name: p.name, color: p.color })),
+      historyRows: historyRows, hasHistory: historyRows.length > 0, noHistory: historyRows.length === 0,
+      dogRows: dogRows, hasDogs: dogRows.length > 0, noDogs: dogRows.length === 0, dogStats: dogStats,
+      killers: this.killers().map(k => Object.assign({}, k, { sub: 'Week ' + k.week + ' · +' + k.spread + ' at ' + k.opp + (k.score ? ' · ' + k.score : '') })),
+      hasKillers: this.killers().length > 0,
+      noKillers: this.killers().length === 0,
+      retiredNote: Object.keys(retired).length ? 'Retired from selection: ' + Object.keys(retired).join(', ') : '',
+      lastDogs: st.lastDogs.map(d => ({ dog: d.dog, sub: 'beat ' + d.fav + ' ' + d.score, spread: '+' + d.spread })),
+      hasLastDogs: st.lastDogs.length > 0,
+      noLastDogs: st.lastDogs.length === 0,
+      lastDogsLabel: st.lastDogsWeek != null ? 'Week ' + st.lastDogsWeek : 'Last week',
+      lastDogsEmpty: st.lastDogsWeek == null
+        ? 'Nothing in the books yet — this fills in once week 1 is behind us.'
+        : st.lastDogsReason === 'nogames' ? 'Week ' + st.lastDogsWeek + ' has no finals yet.'
+        : st.lastDogsReason === 'nolines' ? 'No lines were recorded for week ' + st.lastDogsWeek + '. Lines get captured while games are live, so keep the board open on Saturdays.'
+        : 'No double-digit dog won outright in week ' + st.lastDogsWeek + '. Chalk city.',
+      titles: titles, awards: awards, rules: rules
+    };
+  }
+}
+
+</script>
+</body>
+</html>
