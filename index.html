@@ -43,6 +43,19 @@
         <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(30px, 7vw, 40px); letter-spacing: 0.02em; line-height: 0.9; text-transform: uppercase; color: #F2F4F7;">SEXY <span style="color: #E8B84B;">6</span></div>
         <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #7C858F; padding-bottom: 4px;">SEASON III · 2026</div>
       </div>
+      <sc-if value="{{ kickShow }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 7px 16px; border: 1px solid #3A3423; border-radius: 4px; background: linear-gradient(180deg, #1A1712 0%, #14120D 100%);">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #E8B84B; line-height: 1.2; max-width: 84px;">{{ kickLabel }}</div>
+          <div style="display: flex; align-items: baseline; gap: 8px;">
+            <sc-for list="{{ kickSegs }}" as="seg" hint-placeholder-count="4">
+              <div style="display: flex; flex-direction: column; align-items: center; min-width: 30px;">
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1; color: #F2F4F7; font-variant-numeric: tabular-nums;">{{ seg.v }}</div>
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #7C858F;">{{ seg.u }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
       <div style="flex: 1;"></div>
       <div style="display: flex; align-items: center; gap: 10px;">
         <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #7C858F;">Feed</div>
@@ -365,7 +378,7 @@
         </div>
         <div style="font-size: 15px; color: #7C858F; margin: 10px 0 22px; max-width: 820px;">One over and one under per man, per conference. Click a cell to assign — eight picks each, settled when the regular season ends. Numbers marked <span style="color:#C6CCD3;">*</span> are placeholders, not real lines — type over them with the consensus number.</div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 16px;">
           <sc-for list="{{ confs }}" as="c" hint-placeholder-count="4">
             <div style="border: 1px solid #23272E; border-radius: 4px; background: #0F1216; overflow: hidden;">
               <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: #14171C; border-bottom: 1px solid #23272E;">
@@ -376,16 +389,16 @@
                   </sc-for>
                 </div>
               </div>
-              <div style="display: flex; gap: 8px; padding: 8px clamp(12px, 2vw, 18px); border-bottom: 1px solid #1B1F25;">
-                <div style="flex: 1 1 96px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F;">Team</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 4px 8px; padding: 8px clamp(12px, 2vw, 18px); border-bottom: 1px solid #1B1F25;">
+                <div style="flex: 1 1 120px; min-width: 110px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F;">Team</div>
                 <div style="flex: 0 0 56px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F;">Total</div>
                 <div style="flex: 0 0 100px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F; text-align: center;">Over</div>
                 <div style="flex: 0 0 100px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F; text-align: center;">Under</div>
                 <div style="flex: 0 0 74px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F; text-align: right;">Rec</div>
               </div>
               <sc-for list="{{ c.teams }}" as="t" hint-placeholder-count="8">
-                <div style="display: flex; gap: 8px; align-items: center; padding: 9px clamp(12px, 2vw, 18px); border-bottom: 1px solid #14171C;">
-                  <div style="flex: 1 1 96px; min-width: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 17px; text-transform: uppercase;">{{ t.team }}</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; padding: 9px clamp(12px, 2vw, 18px); border-bottom: 1px solid #14171C;">
+                  <div style="flex: 1 1 120px; min-width: 110px; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 17px; text-transform: uppercase;">{{ t.team }}</div>
                   <div style="flex: 0 0 56px; display: flex; align-items: center; gap: 2px;"><input value="{{ t.total }}" onChange="{{ t.setTotal }}" readOnly="{{ readOnly }}" style="width: 46px; padding: 4px 6px; border-radius: 3px; border: 1px solid #23272E; background: #14171C; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; color: #E8B84B; text-align: center;" /><span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; color: #6E767F;">{{ t.est }}</span></div>
                   <div style="flex: 0 0 100px; display: flex; gap: 4px; justify-content: center;">
                     <sc-for list="{{ t.overPills }}" as="pl" hint-placeholder-count="3">
@@ -662,8 +675,21 @@ class Component extends DCLogic {
     this.loadLeague(local);
     this.fetchFeed();
     this.timer = setInterval(() => this.fetchFeed(true), 90000);
+    this.tick = setInterval(() => this.forceUpdate(), 1000);
   }
-  componentWillUnmount() { clearInterval(this.timer); }
+  componentWillUnmount() { clearInterval(this.timer); clearInterval(this.tick); }
+
+  nextKickoff() {
+    const now = Date.now();
+    let best = null;
+    const slates = this.state.slates || {};
+    Object.keys(slates).forEach(w => (slates[w] || []).forEach(g => {
+      if (!g.date) return;
+      const t = new Date(g.date).getTime();
+      if (!isNaN(t) && t > now && (best === null || t < best)) best = t;
+    }));
+    return best;
+  }
 
   // Published board: league.json committed next to this file wins unless the local copy is newer.
   async loadLeague(local) {
@@ -1429,6 +1455,24 @@ class Component extends DCLogic {
     };
     const fm = feedMap[st.feed] || feedMap.idle;
 
+    const kickMs = this.nextKickoff();
+    const kickShow = kickMs !== null;
+    let kickSegs = [];
+    if (kickShow) {
+      let rem = Math.max(0, Math.floor((kickMs - Date.now()) / 1000));
+      const d = Math.floor(rem / 86400); rem -= d * 86400;
+      const h = Math.floor(rem / 3600); rem -= h * 3600;
+      const m = Math.floor(rem / 60);
+      const s = rem - m * 60;
+      const pad = n => (n < 10 ? '0' : '') + n;
+      kickSegs = [
+        { v: String(d), u: 'days' },
+        { v: pad(h), u: 'hrs' },
+        { v: pad(m), u: 'min' },
+        { v: pad(s), u: 'sec' }
+      ];
+    }
+
     const weekOpts = [];
     for (let i = 0; i <= 16; i++) weekOpts.push({ v: i, label: i === 0 ? 'Week 0' : 'Week ' + i });
 
@@ -1464,6 +1508,7 @@ class Component extends DCLogic {
       editorLabel: st.editorOpen ? 'Close editor' : 'Edit slate',
       editorOpen: st.editorOpen,
       feedDot: fm[0], feedLabel: fm[1],
+      kickShow: kickShow, kickLabel: 'First kickoff', kickSegs: kickSegs,
       warn: st.warn || false, clearWarn: () => this.setState({ warn: '' }),
       cards: cards, games: gameRows, hasGames: games.length > 0, noGames: games.length === 0,
       sdSlots: sdSlots, showSdogs: w !== 0,
