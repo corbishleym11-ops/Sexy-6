@@ -63,10 +63,6 @@
           <div style="width: 8px; height: 8px; border-radius: 50%; background: {{ feedDot }};"></div>
           <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #C6CCD3;">{{ feedLabel }}</div>
         </div>
-        <div style="display: flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid #23272E; border-radius: 999px; background: #14171C;">
-          <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ modeColor }};">{{ modeLabel }}</div>
-          <button onClick="{{ toggleMode }}" style="border: none; background: transparent; color: #6E767F; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 0;" style-hover="color:#E8B84B;">{{ modeAction }}</button>
-        </div>
         <button onClick="{{ refresh }}" style="padding: 7px 14px; border-radius: 999px; border: 1px solid #E8B84B; background: transparent; color: #E8B84B; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;" style-hover="background:#E8B84B;color:#0B0D10;">Sync</button>
       </div>
     </div>
@@ -171,32 +167,37 @@
           <div style="border: 1px solid #23272E; border-radius: 4px; overflow: hidden;">
             <sc-for list="{{ games }}" as="g" hint-placeholder-count="6">
               <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding: 14px clamp(14px, 2.5vw, 18px); background: {{ g.bg }}; border-bottom: 1px solid #1B1F25;">
-                <div style="flex: 1 1 230px; min-width: 0;">
-                  <div style="display: flex; align-items: center; gap: 10px;">
-                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(17px, 2.1vw, 21px); text-transform: uppercase; letter-spacing: 0.01em;">{{ g.matchup }}</div>
+                <div style="flex: 1 1 200px; min-width: 0;">
+                  <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
+                    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(17px, 2.1vw, 21px); text-transform: uppercase; letter-spacing: 0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;">{{ g.matchup }}</div>
                     <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; background: {{ g.statusBg }}; color: {{ g.statusFg }};">{{ g.statusText }}</div>
                   </div>
                   <div style="font-size: 13px; color: #7C858F; margin-top: 3px;">{{ g.sub }}</div>
                 </div>
-                <div style="display: flex; gap: 16px; flex: 0 0 auto;">
-                  <div>
+                <div style="display: flex; gap: 14px; flex: 0 0 160px; width: 160px;">
+                  <div style="width: 100px; flex: 0 0 100px;">
                     <div style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F;">Line</div>
                     <div style="display: flex; align-items: center; gap: 5px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; color: #E8B84B; white-space: nowrap;">{{ g.line }}<span style="font-size: 11px; color: #6E767F;">{{ g.lockMark }}</span></div>
                   </div>
-                  <div>
+                  <div style="width: 46px; flex: 0 0 46px;">
                     <div style="font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E767F;">O/U</div>
                     <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; color: #C6CCD3;">{{ g.total }}</div>
                   </div>
                 </div>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px; flex: 1 1 420px; justify-content: flex-end;">
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; flex: 0 0 auto; justify-content: flex-end;">
                   <sc-for list="{{ g.cells }}" as="c" hint-placeholder-count="4">
-                    <div style="flex: 1 1 94px; min-width: 94px; display: flex; flex-direction: column; align-items: center; gap: 5px; padding-left: 10px; border-left: 1px solid {{ c.divider }};">
+                    <div style="flex: 0 0 106px; width: 106px; display: flex; flex-direction: column; align-items: center; gap: 5px; padding-left: 10px; border-left: 1px solid {{ c.divider }};">
                       <div style="font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: #6E767F;">{{ c.label }}</div>
-                      <div style="display: flex; gap: 5px;">
-                        <sc-for list="{{ c.pills }}" as="pl" hint-placeholder-count="3">
-                          <button onClick="{{ pl.click }}" title="{{ pl.title }}" style="width: 34px; height: 32px; border-radius: 4px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; border: 1px solid {{ pl.border }}; background: {{ pl.bg }}; color: {{ pl.fg }};">{{ pl.initial }}</button>
-                        </sc-for>
-                      </div>
+                      <sc-if value="{{ canEdit }}" hint-placeholder-val="{{ true }}">
+                        <select value="{{ c.value }}" onChange="{{ c.change }}" style="width: 96px; padding: 6px 6px; border-radius: 4px; border: 1px solid {{ c.selBorder }}; background: #14171C; color: {{ c.selColor }}; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;">
+                          <sc-for list="{{ playerOpts }}" as="o" hint-placeholder-count="4">
+                            <option value="{{ o.v }}">{{ o.label }}</option>
+                          </sc-for>
+                        </select>
+                      </sc-if>
+                      <sc-if value="{{ readOnly }}" hint-placeholder-val="{{ false }}">
+                        <div style="height: 32px; display: flex; align-items: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase; color: {{ c.ownerColor }};">{{ c.ownerName }}</div>
+                      </sc-if>
                     </div>
                   </sc-for>
                 </div>
@@ -367,7 +368,10 @@
             <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(32px, 7vw, 46px); line-height: 1; text-transform: uppercase;">Win Totals</div>
           </div>
           <div style="flex: 1;"></div>
-          <div style="display: flex; gap: 8px; padding-bottom: 6px;">
+          <div style="display: flex; gap: 8px; padding-bottom: 6px; align-items: center;">
+            <sc-if value="{{ canEdit }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ wtToggle }}" style="padding: 6px 14px; border: 1px solid #3A3423; border-radius: 999px; background: #14171C; color: #E8B84B; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;" style-hover="border-color:#E8B84B;">{{ wtToggleLabel }}</button>
+            </sc-if>
             <sc-for list="{{ wtLegend }}" as="l" hint-placeholder-count="3">
               <div style="display: flex; align-items: center; gap: 6px; padding: 5px 10px; border: 1px solid #23272E; border-radius: 999px; background: #14171C;">
                 <div style="width: 8px; height: 8px; border-radius: 2px; background: {{ l.color }};"></div>
@@ -376,8 +380,47 @@
             </sc-for>
           </div>
         </div>
-        <div style="font-size: 15px; color: #7C858F; margin: 10px 0 22px; max-width: 820px;">One over and one under per man, per conference. Click a cell to assign — eight picks each, settled when the regular season ends. Numbers marked <span style="color:#C6CCD3;">*</span> are placeholders, not real lines — type over them with the consensus number.</div>
+        <div style="font-size: 15px; color: #7C858F; margin: 10px 0 22px; max-width: 820px;">{{ wtSubhead }}</div>
 
+        <sc-if value="{{ wtShowCards }}" hint-placeholder-val="{{ true }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(430px, 1fr)); gap: 16px;">
+            <sc-for list="{{ wtCards }}" as="cc" hint-placeholder-count="3">
+              <div style="border: 1px solid #23272E; border-radius: 4px; background: #0F1216; overflow: hidden;">
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: #14171C; border-bottom: 1px solid #23272E;">
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 0.06em; color: {{ cc.nameColor }};">{{ cc.name }}</div>
+                  <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6E767F;">{{ cc.count }}</div>
+                </div>
+                <sc-for list="{{ cc.picks }}" as="k" hint-placeholder-count="6">
+                  <div style="padding: 12px clamp(12px, 2vw, 18px); border-bottom: 1px solid #14171C; display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: nowrap;">
+                      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; color: {{ k.ownerColor }}; flex: 0 0 52px;">{{ k.owner }}</div>
+                      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1 1 0;">{{ k.team }}</div>
+                      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; color: #E8B84B; white-space: nowrap;">{{ k.sideLabel }}</div>
+                      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; color: #C6CCD3; white-space: nowrap;">{{ k.rec }}</div>
+                    </div>
+                    <div style="position: relative; height: 12px;">
+                      <div style="display: flex; gap: 2px; height: 12px;">
+                        <sc-for list="{{ k.segs }}" as="sg" hint-placeholder-count="12">
+                          <div style="flex: 1; border-radius: 2px; background: {{ sg.bg }};"></div>
+                        </sc-for>
+                      </div>
+                      <div style="position: absolute; top: -3px; bottom: -3px; width: 2px; background: #E8B84B; left: {{ k.markPct }};" title="{{ k.markTitle }}"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+                      <div style="font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: {{ k.noteColor }}; font-family: 'Barlow Condensed', sans-serif; font-weight: 600;">{{ k.note }}</div>
+                      <div style="font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #6E767F; font-family: 'Barlow Condensed', sans-serif; font-weight: 600;">{{ k.sub }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+                <sc-if value="{{ cc.empty }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding: 18px; font-size: 13px; color: #4E565F;">No picks in this conference yet.</div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ wtShowTable }}" hint-placeholder-val="{{ false }}">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 16px;">
           <sc-for list="{{ confs }}" as="c" hint-placeholder-count="4">
             <div style="border: 1px solid #23272E; border-radius: 4px; background: #0F1216; overflow: hidden;">
@@ -400,15 +443,29 @@
                 <div style="display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; padding: 9px clamp(12px, 2vw, 18px); border-bottom: 1px solid #14171C;">
                   <div style="flex: 1 1 120px; min-width: 110px; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 17px; text-transform: uppercase;">{{ t.team }}</div>
                   <div style="flex: 0 0 56px; display: flex; align-items: center; gap: 2px;"><input value="{{ t.total }}" onChange="{{ t.setTotal }}" readOnly="{{ readOnly }}" style="width: 46px; padding: 4px 6px; border-radius: 3px; border: 1px solid #23272E; background: #14171C; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; color: #E8B84B; text-align: center;" /><span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; color: #6E767F;">{{ t.est }}</span></div>
-                  <div style="flex: 0 0 100px; display: flex; gap: 4px; justify-content: center;">
-                    <sc-for list="{{ t.overPills }}" as="pl" hint-placeholder-count="3">
-                      <button onClick="{{ pl.click }}" title="{{ pl.title }}" style="width: 30px; height: 28px; border-radius: 3px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; border: 1px solid {{ pl.border }}; background: {{ pl.bg }}; color: {{ pl.fg }};">{{ pl.initial }}</button>
-                    </sc-for>
+                  <div style="flex: 0 0 100px; display: flex; justify-content: center;">
+                    <sc-if value="{{ canEdit }}" hint-placeholder-val="{{ true }}">
+                      <select value="{{ t.overVal }}" onChange="{{ t.setOver }}" style="width: 92px; padding: 5px 5px; border-radius: 3px; border: 1px solid {{ t.overBorder }}; background: #14171C; color: {{ t.overColor }}; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;">
+                        <sc-for list="{{ playerOpts }}" as="o" hint-placeholder-count="4">
+                          <option value="{{ o.v }}">{{ o.label }}</option>
+                        </sc-for>
+                      </select>
+                    </sc-if>
+                    <sc-if value="{{ readOnly }}" hint-placeholder-val="{{ false }}">
+                      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase; color: {{ t.overColor }};">{{ t.overName }}</div>
+                    </sc-if>
                   </div>
-                  <div style="flex: 0 0 100px; display: flex; gap: 4px; justify-content: center;">
-                    <sc-for list="{{ t.underPills }}" as="pl" hint-placeholder-count="3">
-                      <button onClick="{{ pl.click }}" title="{{ pl.title }}" style="width: 30px; height: 28px; border-radius: 3px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; border: 1px solid {{ pl.border }}; background: {{ pl.bg }}; color: {{ pl.fg }};">{{ pl.initial }}</button>
-                    </sc-for>
+                  <div style="flex: 0 0 100px; display: flex; justify-content: center;">
+                    <sc-if value="{{ canEdit }}" hint-placeholder-val="{{ true }}">
+                      <select value="{{ t.underVal }}" onChange="{{ t.setUnder }}" style="width: 92px; padding: 5px 5px; border-radius: 3px; border: 1px solid {{ t.underBorder }}; background: #14171C; color: {{ t.underColor }}; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;">
+                        <sc-for list="{{ playerOpts }}" as="o" hint-placeholder-count="4">
+                          <option value="{{ o.v }}">{{ o.label }}</option>
+                        </sc-for>
+                      </select>
+                    </sc-if>
+                    <sc-if value="{{ readOnly }}" hint-placeholder-val="{{ false }}">
+                      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase; color: {{ t.underColor }};">{{ t.underName }}</div>
+                    </sc-if>
                   </div>
                   <div style="flex: 0 0 74px; display: flex; align-items: center; justify-content: flex-end; gap: 6px;">
                     <input value="{{ t.rec }}" onChange="{{ t.setRec }}" readOnly="{{ readOnly }}" style="width: 46px; padding: 4px 4px; border-radius: 3px; border: 1px solid #23272E; background: #14171C; color: #C6CCD3; font-size: 13px; text-align: center;" />
@@ -419,6 +476,7 @@
             </div>
           </sc-for>
         </div>
+        </sc-if>
       </div>
     </sc-if>
 
@@ -642,7 +700,7 @@ class Component extends DCLogic {
     });
     this.state = {
       tab: 'week', week: 0, editorOpen: false, warn: '', feed: 'idle',
-      pool: [], scores: {}, poolNote: '', commish: false, updatedAt: 0, remoteAt: 0, exported: '', lastDogs: [], lastDogsWeek: null, lastDogsReason: '', lines: {},
+      pool: [], scores: {}, poolNote: '', updatedAt: 0, remoteAt: 0, exported: '', lastDogs: [], lastDogsWeek: null, lastDogsReason: '', lines: {},
       slates: {}, picks: {}, sdogs: {}, wt: wt, wtVersion: WT_VERSION, wtPicks: {}, locks: {},
       form: { away: '', home: '', fav: 'home', spread: '', total: '' }
     };
@@ -670,8 +728,6 @@ class Component extends DCLogic {
         });
       }
     } catch (e) {}
-    const q = (location.search + location.hash).toLowerCase();
-    if (q.indexOf('commish') > -1) this.setState({ commish: true });
     this.loadLeague(local);
     this.fetchFeed();
     this.timer = setInterval(() => this.fetchFeed(true), 90000);
@@ -731,8 +787,8 @@ class Component extends DCLogic {
     this.setState({ exported: 'league.json downloaded and copied to your clipboard — commit it to the repo.' });
     setTimeout(() => this.setState({ exported: '' }), 6000);
   }
-  canEdit() { return !!this.state.commish; }
-  guard() { this.warn('Read-only board. The commissioner runs the slate — hit him up in the group chat.'); }
+  canEdit() { return location.hostname.indexOf('github.io') === -1; }
+  guard() { this.warn('Read-only board. Matt enters the picks and publishes updates.'); }
 
   save(patch) {
     this.setState(Object.assign({ updatedAt: Date.now() }, patch), () => {
@@ -1088,6 +1144,29 @@ class Component extends DCLogic {
     mine[cat] = gameId;
     this.save({ picks: picks, warn: '' });
   }
+  setPickOwner(gameId, cat, name) {
+    if (!this.canEdit()) return this.guard();
+    const w = this.state.week;
+    const picks = JSON.parse(JSON.stringify(this.state.picks));
+    if (!picks[w]) picks[w] = {};
+    PLAYERS.forEach(p => { const m = picks[w][p.name]; if (m && m[cat] === gameId) delete m[cat]; });
+    if (name) {
+      if (!picks[w][name]) picks[w][name] = {};
+      picks[w][name][cat] = gameId;
+    }
+    this.save({ picks: picks, warn: '' });
+  }
+  setWTOwner(conf, side, team, name) {
+    if (!this.canEdit()) return this.guard();
+    const wtPicks = JSON.parse(JSON.stringify(this.state.wtPicks));
+    PLAYERS.forEach(p => { const c = (wtPicks[p.name] || {})[conf]; if (c && c[side] === team) delete c[side]; });
+    if (name) {
+      if (!wtPicks[name]) wtPicks[name] = {};
+      if (!wtPicks[name][conf]) wtPicks[name][conf] = {};
+      wtPicks[name][conf][side] = team;
+    }
+    this.save({ wtPicks: wtPicks, warn: '' });
+  }
   setSdog(name, value) {
     if (!this.canEdit()) return this.guard();
     const w = this.state.week;
@@ -1256,23 +1335,19 @@ class Component extends DCLogic {
         else { statusText = s.detail || 'LIVE'; statusBg = '#2A1416'; statusFg = '#E0464C'; }
         sub = (g.away || g.awayName) + ' ' + s.a + '  ·  ' + (g.home || g.homeName) + ' ' + s.h + '  ·  total ' + (s.a + s.h);
       }
-      const cells = CATS.map((c, ci) => ({
-        label: c.label,
-        divider: ci === 0 ? 'transparent' : '#23272E',
-        pills: PLAYERS.map(p => {
-          const owner = PLAYERS.find(q => (((st.picks[w] || {})[q.name]) || {})[c.key] === g.id);
-          const mine = owner && owner.name === p.name;
-          const takenByOther = owner && owner.name !== p.name;
-          return {
-            initial: p.initial,
-            click: () => this.togglePick(g.id, c.key, p.name),
-            title: p.name + ' — ' + c.label,
-            bg: mine ? p.color : '#14171C',
-            fg: mine ? '#0B0D10' : takenByOther ? '#3A414A' : '#7C858F',
-            border: mine ? p.color : '#23272E'
-          };
-        })
-      }));
+      const cells = CATS.map((c, ci) => {
+        const owner = PLAYERS.find(q => (((st.picks[w] || {})[q.name]) || {})[c.key] === g.id);
+        return {
+          label: c.label,
+          divider: ci === 0 ? 'transparent' : '#23272E',
+          value: owner ? owner.name : '',
+          change: e => this.setPickOwner(g.id, c.key, e.target.value),
+          selBorder: owner ? owner.color : '#23272E',
+          selColor: owner ? owner.color : '#7C858F',
+          ownerName: owner ? owner.name : '—',
+          ownerColor: owner ? owner.color : '#3A414A'
+        };
+      });
       return {
         matchup: this.matchup(g), sub: sub, line: this.gameLine(g),
         total: g.totalLine != null ? g.totalLine : '—',
@@ -1354,18 +1429,17 @@ class Component extends DCLogic {
     // win totals
     const confs = Object.keys(DEFAULT_TOTALS).map(conf => {
       const rows = (st.wt[conf] || []).map(row => {
-        const mk = side => PLAYERS.map(p => {
+        const mkSel = side => {
           const owner = PLAYERS.find(q => (((st.wtPicks[q.name] || {})[conf]) || {})[side] === row.team);
-          const mine = owner && owner.name === p.name;
-          const other = owner && owner.name !== p.name;
           return {
-            initial: p.initial, title: p.name + ' ' + side + ' ' + row.team,
-            click: () => this.toggleWT(conf, side, row.team, p.name),
-            bg: mine ? p.color : '#14171C',
-            fg: mine ? '#0B0D10' : other ? '#3A414A' : '#7C858F',
-            border: mine ? p.color : '#23272E'
+            val: owner ? owner.name : '',
+            set: e => this.setWTOwner(conf, side, row.team, e.target.value),
+            border: owner ? owner.color : '#23272E',
+            color: owner ? owner.color : (this.canEdit() ? '#7C858F' : '#3A414A'),
+            name: owner ? owner.name : '—'
           };
-        });
+        };
+        const ov = mkSel('over'), un = mkSel('under');
         const owners = ['over', 'under'].map(side => PLAYERS.find(q => (((st.wtPicks[q.name] || {})[conf]) || {})[side] === row.team));
         const side = owners[0] ? 'over' : owners[1] ? 'under' : null;
         const stt = side ? this.wtStatus(row, side) : { color: '#1B1F25', label: 'Unpicked' };
@@ -1373,7 +1447,8 @@ class Component extends DCLogic {
           team: row.team, total: row.total, est: row.est ? '*' : '', rec: row.rec || '',
           setRec: e => this.setWTRec(conf, row.team, e.target.value),
           setTotal: e => this.setWTTotal(conf, row.team, e.target.value),
-          overPills: mk('over'), underPills: mk('under'),
+          overVal: ov.val, setOver: ov.set, overBorder: ov.border, overColor: ov.color, overName: ov.name,
+          underVal: un.val, setUnder: un.set, underBorder: un.border, underColor: un.color, underName: un.name,
           dot: stt.color, dotTitle: stt.label
         };
       });
@@ -1384,6 +1459,49 @@ class Component extends DCLogic {
       });
       return { name: conf, teams: rows, status: status };
     });
+
+    // win-total tracker cards (picked teams only, grouped by player)
+    const wtCards = PLAYERS.map(p => {
+      const picks = [];
+      Object.keys(DEFAULT_TOTALS).forEach(conf => {
+        ['over', 'under'].forEach(side => {
+          const team = ((st.wtPicks[p.name] || {})[conf] || {})[side];
+          if (!team) return;
+          const row = (st.wt[conf] || []).find(r => r.team === team);
+          if (!row) return;
+          const total = parseFloat(row.total);
+          const need = Math.ceil(total);
+          const m = /^(\d+)\s*-\s*(\d+)$/.exec((row.rec || '').trim());
+          const w = m ? parseInt(m[1], 10) : 0, l = m ? parseInt(m[2], 10) : 0;
+          const stt = this.wtStatus(row, side);
+          const segs = [];
+          for (let i = 0; i < REG_GAMES; i++) segs.push({ bg: i < w ? '#3FBF7F' : i < w + l ? '#E0464C' : '#1B1F25' });
+          let note, sub;
+          if (side === 'over') {
+            const needW = Math.max(0, need - w), afford = (REG_GAMES - need) - l;
+            note = stt.key === 'hit' ? 'Clinched' : stt.key === 'miss' ? 'Dead' : 'Needs ' + needW + ' more win' + (needW === 1 ? '' : 's');
+            sub = stt.key === 'alive' ? 'can afford ' + Math.max(0, afford) + ' more loss' + (afford === 1 ? '' : 'es') : '';
+          } else {
+            const needL = Math.max(0, (REG_GAMES - need + 1) - l), afford = (need - 1) - w;
+            note = stt.key === 'hit' ? 'Clinched' : stt.key === 'miss' ? 'Dead' : 'Needs ' + needL + ' more loss' + (needL === 1 ? '' : 'es');
+            sub = stt.key === 'alive' ? 'can afford ' + Math.max(0, afford) + ' more win' + (afford === 1 ? '' : 's') : '';
+          }
+          picks.push({
+            owner: conf, ownerColor: '#6E767F', team: team,
+            sideLabel: (side === 'over' ? 'O ' : 'U ') + row.total,
+            rec: (m ? w + '-' + l : '0-0'),
+            segs: segs, markPct: (total / REG_GAMES * 100) + '%',
+            markTitle: 'Line: ' + row.total,
+            note: note, noteColor: stt.color === '#3A414A' ? '#E8B84B' : stt.color, sub: sub,
+            sort: side === 'over' ? 0 : 1
+          });
+        });
+      });
+      picks.sort((a, b) => a.sort - b.sort || (a.owner < b.owner ? -1 : 1));
+      const t = this.wtTally(p.name);
+      return { name: p.name, nameColor: p.color, picks: picks, count: picks.length + '/8 · ' + t.hit + ' clinched', empty: picks.length === 0 };
+    });
+    const wtShowTable = this.canEdit() && !!st.wtEdit;
 
     // history
     const weeks = this.weeks();
@@ -1485,10 +1603,7 @@ class Component extends DCLogic {
       isWeek: st.tab === 'week', isBoard: st.tab === 'board', isWT: st.tab === 'wt',
       isHistory: st.tab === 'history', isDogs: st.tab === 'dogs', isTrophy: st.tab === 'trophy',
       canEdit: this.canEdit(), readOnly: !this.canEdit(),
-      modeLabel: this.canEdit() ? 'Commissioner' : 'Read only',
-      modeColor: this.canEdit() ? '#E8B84B' : '#6E767F',
-      toggleMode: () => this.setState({ commish: !st.commish, warn: '' }),
-      modeAction: this.canEdit() ? 'exit' : 'commish mode',
+      playerOpts: [{ v: '', label: '—' }].concat(PLAYERS.map(p => ({ v: p.name, label: p.name }))),
       exportLeague: () => this.exportLeague(),
       exported: st.exported || false,
       stamp: st.updatedAt ? 'Board updated ' + new Date(st.updatedAt).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : 'No picks saved yet',
@@ -1541,6 +1656,12 @@ class Component extends DCLogic {
       board: board, notes: notes,
       confs: confs,
       wtLegend: [{ color: '#3FBF7F', label: 'Clinched' }, { color: '#E8B84B', label: 'Alive' }, { color: '#E0464C', label: 'Dead' }],
+      wtCards: wtCards, wtShowTable: wtShowTable, wtShowCards: !wtShowTable,
+      wtToggle: () => this.setState({ wtEdit: !st.wtEdit }),
+      wtToggleLabel: wtShowTable ? 'Done editing' : 'Edit board',
+      wtSubhead: wtShowTable
+        ? 'One over and one under per man, per conference. Eight picks each. Numbers marked * are placeholders — type over them with the consensus number.'
+        : 'Futures are locked — one over and one under per man, per conference. Green blocks are wins, red are losses; the gold line is the number.',
       playerHeads: PLAYERS.map(p => ({ name: p.name, color: p.color })),
       historyRows: historyRows, hasHistory: historyRows.length > 0, noHistory: historyRows.length === 0,
       dogRows: dogRows, hasDogs: dogRows.length > 0, noDogs: dogRows.length === 0, dogStats: dogStats,
