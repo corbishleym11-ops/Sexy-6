@@ -222,7 +222,7 @@
         <div style="margin-top: 30px; border: 1px solid #23272E; border-radius: 4px; background: #0F1216; padding: 20px 22px;">
           <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 4px;">
             <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 26px; text-transform: uppercase; letter-spacing: 0.02em;">Super Dog</div>
-            <div style="font-size: 13px; color: #7C858F;">+10 or bigger · must be OFF the slate · cover = 0.5, outright = 2</div>
+            <div style="font-size: 13px; color: #7C858F;">+10 or bigger · must be OFF the slate · cover = 0.5 · outright = 2, +1 per extra 10 pts of spread</div>
             <div style="flex: 1;"></div>
             <div style="font-size: 12px; color: #6E767F;">{{ retiredNote }}</div>
           </div>
@@ -732,8 +732,36 @@ class Component extends DCLogic {
     this.fetchFeed();
     this.timer = setInterval(() => this.fetchFeed(true), 90000);
     this.tick = setInterval(() => this.forceUpdate(), 1000);
+    this.fetchRecords();
+    this.recTimer = setInterval(() => this.fetchRecords(), 1800000);
   }
-  componentWillUnmount() { clearInterval(this.timer); clearInterval(this.tick); }
+  componentWillUnmount() { clearInterval(this.timer); clearInterval(this.tick); clearInterval(this.recTimer); }
+
+  async fetchRecords() {
+    try {
+      const r = await fetch('https://site.api.espn.com/apis/v2/sports/football/college-football/standings?level=1');
+      const j = await r.json();
+      const recs = {};
+      const harvest = node => {
+        if (!node) return;
+        (((node.standings || {}).entries) || []).forEach(e => {
+          const loc = e.team && (e.team.location || e.team.shortDisplayName);
+          const ov = (e.stats || []).find(s => s.name === 'overall' && /^\d+-\d+/.test(s.displayValue || ''));
+          if (loc && ov) recs[loc] = ov.displayValue.split('-').slice(0, 2).join('-');
+        });
+        (node.children || []).forEach(harvest);
+      };
+      harvest(j);
+      if (!Object.keys(recs).length) return;
+      const wt = JSON.parse(JSON.stringify(this.state.wt));
+      let changed = false;
+      Object.keys(wt).forEach(conf => (wt[conf] || []).forEach(row => {
+        const v = recs[row.team];
+        if (v && v !== row.rec) { row.rec = v; changed = true; }
+      }));
+      if (changed) this.save({ wt: wt });
+    } catch (e) {}
+  }
 
   nextKickoff() {
     const now = Date.now();
@@ -832,7 +860,7 @@ class Component extends DCLogic {
         known++;
         const home = cs.find(c => c.homeAway === 'home') || cs[0] || {};
         const away = cs.find(c => c.homeAway === 'away') || cs[1] || {};
-        const favIsHome = line.favAbbr ? line.favAbbr === (line.homeAbbr || line.home) : true;
+        const favIsHome = line.favSide ? line.favSide === 'home' : (line.favAbbr ? line.favAbbr === (line.homeAbbr || line.home) : true);
         const fav = favIsHome ? home : away;
         const dog = favIsHome ? away : home;
         const ds = parseInt(dog.score, 10), fs = parseInt(fav.score, 10);
@@ -868,13 +896,29 @@ class Component extends DCLogic {
         const away = cs.find(c => c.homeAway === 'away') || cs[1] || {};
         const odds = (comp.odds || [])[0] || {};
         const st = (ev.status || {}).type || {};
-        let favAbbr = null, spread = null;
-        if (odds.details && odds.details.indexOf(' ') > -1) {
+        let favAbbr = null, spread = null, favSide = null;
+        const hA = ((home.team || {}).abbreviation || '').toUpperCase();
+        const aA = ((away.team || {}).abbreviation || '').toUpperCase();
+        if (typeof odds.spread === 'number' && odds.spread !== 0) {
+          // odds.spread is the HOME line: negative = home favored
+          spread = Math.abs(odds.spread);
+          favSide = odds.spread < 0 ? 'home' : 'away';
+          favAbbr = favSide === 'home' ? hA : aA;
+        } else if (odds.details && odds.details.indexOf(' ') > -1) {
           const parts = odds.details.split(' ');
-          favAbbr = parts[0];
+          favAbbr = parts[0].toUpperCase();
           spread = Math.abs(parseFloat(parts[1]));
+          favSide = favAbbr === hA ? 'home' : favAbbr === aA ? 'away' : null;
         } else if (odds.details === 'EVEN') { spread = 0; }
+        if (spread != null && favSide === null) {
+          const ho = odds.homeTeamOdds || {}, ao = odds.awayTeamOdds || {};
+          if (ho.favorite === true) favSide = 'home';
+          else if (ao.favorite === true) favSide = 'away';
+          else favSide = 'home';
+          favAbbr = favSide === 'home' ? hA : aA;
+        }
         return {
+          favSide: favSide,
           id: ev.id, date: ev.date,
           away: (away.team || {}).location || (away.team || {}).shortDisplayName || '',
           awayName: (away.team || {}).location || (away.team || {}).shortDisplayName || '',
@@ -901,7 +945,7 @@ class Component extends DCLogic {
         const existing = lines[g.id];
         const done = (scores[g.id] || {}).done;
         if (existing && done) return;
-        lines[g.id] = { spread: g.spread, favAbbr: g.favAbbr, away: g.away, home: g.home, awayAbbr: g.awayAbbr, homeAbbr: g.homeAbbr, week: w };
+        lines[g.id] = { spread: g.spread, favAbbr: g.favAbbr, favSide: g.favSide, away: g.away, home: g.home, awayAbbr: g.awayAbbr, homeAbbr: g.homeAbbr, week: w };
       });
       const patch = { pool: games, scores: scores, feed: games.length ? 'live' : 'empty', poolNote: note, lines: lines };
       // Lines float with the feed until the Thursday 7:00 AM ET lock, then freeze at whatever they are.
@@ -913,7 +957,7 @@ class Component extends DCLogic {
           return Object.assign({}, g, {
             spread: live.spread != null ? live.spread : g.spread,
             totalLine: live.totalLine != null ? live.totalLine : g.totalLine,
-            favSide: live.favAbbr ? (live.favAbbr === (live.homeAbbr || live.home) ? 'home' : 'away') : g.favSide,
+            favSide: live.favSide || (live.favAbbr ? (live.favAbbr === (live.homeAbbr || live.home) ? 'home' : 'away') : g.favSide),
             date: live.date || g.date
           });
         });
@@ -1025,7 +1069,11 @@ class Component extends DCLogic {
     }
     if (!s) return null;
     const m = s.own - s.opp;
-    if (m > 0) return { r: 1, pts: 2, outright: true, live: !s.done };
+    if (m > 0) {
+      const sp = sd.spread || 0;
+      const pts = sp >= 20 ? 2 + Math.floor((sp - 10) / 10) : 2;
+      return { r: 1, pts: pts, outright: true, live: !s.done };
+    }
     if (m === 0) return { r: 0.5, pts: 0.25, live: !s.done };
     if (-m < sd.spread) return { r: 1, pts: 0.5, live: !s.done };
     if (-m === sd.spread) return { r: 0.5, pts: 0.25, live: !s.done };
@@ -1221,7 +1269,7 @@ class Component extends DCLogic {
     slates[w].push({
       id: pg.id, away: pg.away, home: pg.home, awayName: pg.awayName, homeName: pg.homeName,
       awayAbbr: pg.awayAbbr, homeAbbr: pg.homeAbbr,
-      favSide: pg.favAbbr ? (pg.favAbbr === (pg.homeAbbr || pg.home) ? 'home' : 'away') : 'home',
+      favSide: pg.favSide || (pg.favAbbr ? (pg.favAbbr === (pg.homeAbbr || pg.home) ? 'home' : 'away') : 'home'),
       spread: pg.spread, totalLine: pg.totalLine, detail: pg.detail
     });
     this.save({ slates: slates, warn: '' });
@@ -1365,15 +1413,13 @@ class Component extends DCLogic {
     const dogCandidates = st.pool
       .filter(g => g.spread != null && g.spread >= 10 && !games.some(x => x.id === g.id))
       .filter(g => !retired[g.away] && !retired[g.home])
-      .sort((a, b) => b.spread - a.spread)
-      .slice(0, 60);
+      .sort((a, b) => b.spread - a.spread);
     const sdSlots = PLAYERS.map(p => {
       const sd = ((st.sdogs[w] || {})[p.name]) || null;
       const sr = this.sdResult(sd);
       const options = [{ v: '', label: sd ? '— clear pick —' : '— select a double-digit dog —' }];
       dogCandidates.forEach(g => {
-        const fh = g.favAbbr === (g.homeAbbr || g.home);
-        const dogSide = fh ? 'away' : 'home';
+        const dogSide = this.favIsHome(g) ? 'away' : 'home';
         const dogT = dogSide === 'home' ? (g.home || g.homeName) : (g.away || g.awayName);
         const favT = dogSide === 'home' ? (g.away || g.awayName) : (g.home || g.homeName);
         options.push({ v: g.id + '|' + dogSide, label: dogT + ' +' + g.spread + ' vs ' + favT });
@@ -1561,7 +1607,7 @@ class Component extends DCLogic {
       { n: '02', text: 'Everybody takes one favorite, one underdog, one over and one under — all four from the slate.' },
       { n: '03', text: 'No duplicate selections. If Adam has the Georgia favorite, that side is gone.' },
       { n: '04', text: 'One point per correct pick. Push is worth a half. Sweep all four and it is a five-point week.' },
-      { n: '05', text: 'Super dog must be +10 or worse and must come from a game NOT on the slate. Half a point for a cover, two full points for an outright win.' },
+      { n: '05', text: 'Super dog must be +10 or worse and must come from a game NOT on the slate. Half a point for a cover. Outright wins scale with the spread: +10 to +19.5 pays 2, +20 to +29.5 pays 3, +30 to +39.5 pays 4, and so on.' },
       { n: '06', text: 'Preseason win totals: one over and one under from the SEC, Big Ten, Big 12 and ACC. One point each, settled after the regular season.' },
       { n: '07', text: 'Records are tracked all the way through — wins, losses and pushes, not just points.' },
       { n: '08', text: 'Bowl season rules to be negotiated in December, as always.' }
