@@ -1,7 +1,7 @@
 {
   "league": "Sexy 6",
   "season": 2026,
-  "updatedAt": 1788444861247,
+  "updatedAt": 1788445106579,
   "slates": {
     "0": [
       {
@@ -104,19 +104,6 @@
         "date": "2026-09-05T01:00Z"
       },
       {
-        "id": "401858433",
-        "away": "Boise State",
-        "home": "Oregon",
-        "awayName": "Boise State",
-        "homeName": "Oregon",
-        "awayAbbr": "BOIS",
-        "homeAbbr": "ORE",
-        "favSide": "home",
-        "spread": 24.5,
-        "totalLine": 51.5,
-        "detail": "9/5 - 3:30 PM EDT"
-      },
-      {
         "id": "401856660",
         "away": "Clemson",
         "home": "LSU",
@@ -167,6 +154,19 @@
         "spread": 1.5,
         "totalLine": 53.5,
         "detail": "9/5 - 10:30 PM EDT"
+      },
+      {
+        "id": "401856776",
+        "away": "Colorado",
+        "home": "Georgia Tech",
+        "awayName": "Colorado",
+        "homeName": "Georgia Tech",
+        "awayAbbr": "COLO",
+        "homeAbbr": "GT",
+        "favSide": "home",
+        "spread": 6.5,
+        "totalLine": 51.5,
+        "detail": "9/3 - 8:00 PM EDT"
       }
     ]
   },
