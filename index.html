@@ -1125,15 +1125,15 @@ class Component extends DCLogic {
     if (settled === 4 && wins === 4) { bonus = 1; pts += 1; }
     const sd = ((this.state.sdogs[w] || {})[name]) || null;
     const sr = this.sdResult(sd);
-    let sdW = 0, sdL = 0, sdP = 0, sdPts = 0, outright = 0;
+    let sdW = 0, sdC = 0, sdL = 0, sdP = 0, sdPts = 0, outright = 0;
     if (sr && (!sr.live || includeLive)) {
       sdPts = sr.pts; pts += sr.pts;
-      if (sr.r === 1) { sdW++; if (sr.outright) outright++; } else if (sr.r === 0.5) sdP++; else sdL++;
+      if (sr.r === 1) { if (sr.outright) { sdW++; outright++; } else sdC++; } else if (sr.r === 0.5) sdP++; else sdL++;
     }
-    return { pts: pts, w: wn + sdW, l: l + sdL, p: p + sdP, bonus: bonus, sdW: sdW, sdL: sdL, sdP: sdP, sdPts: sdPts, outright: outright };
+    return { pts: pts, w: wn, l: l, p: p, bonus: bonus, sdW: sdW, sdC: sdC, sdL: sdL, sdP: sdP, sdPts: sdPts, outright: outright };
   }
   seasonTally(name) {
-    const acc = { pts: 0, w: 0, l: 0, p: 0, sdW: 0, sdL: 0, sdP: 0, sdPts: 0, outright: 0, bonus: 0 };
+    const acc = { pts: 0, w: 0, l: 0, p: 0, sdW: 0, sdC: 0, sdL: 0, sdP: 0, sdPts: 0, outright: 0, bonus: 0 };
     this.weeks().forEach(w => {
       const t = this.weekTally(w, name);
       Object.keys(acc).forEach(k => { acc[k] += t[k] || 0; });
@@ -1141,6 +1141,7 @@ class Component extends DCLogic {
     return acc;
   }
   recStr(t) { return t.p ? (t.w + '-' + t.l + '-' + t.p) : (t.w + '-' + t.l); }
+  sdRecStr(t) { return t.sdW + '-' + t.sdC + '-' + t.sdL + (t.sdP ? ' (' + t.sdP + ' push)' : ''); }
 
   wtTally(name) {
     const picks = this.state.wtPicks[name] || {};
@@ -1370,7 +1371,7 @@ class Component extends DCLogic {
         weekPts: t.pts, seasonPts: season.pts, record: this.recStr(season),
         livePts: tl.pts, hasLive: tl.pts !== t.pts || tl.w + tl.l + tl.p !== t.w + t.l + t.p,
         liveNote: 'if it ends now: ' + tl.pts + ' pts · ' + this.recStr(tl),
-        sdRecord: season.sdW + '-' + season.sdL
+        sdRecord: this.sdRecStr(season)
       };
     });
 
@@ -1455,7 +1456,7 @@ class Component extends DCLogic {
       tag: ranked[0].s.pts === 0 ? (rings[r.p.name] ? rings[r.p.name] + '× champ' : 'Still ringless') : tags[i],
       pts: r.s.pts, record: this.recStr(r.s),
       liveNote: r.live.pts ? 'in play this week: ' + r.live.pts + ' pts' : '',
-      sd: r.s.sdW + '-' + r.s.sdL + ' · ' + r.s.sdPts + ' pts',
+      sd: this.sdRecStr(r.s) + ' · ' + r.s.sdPts + ' pts',
       wt: r.wt.hit + '/' + (r.wt.hit + r.wt.miss + r.wt.alive) + ' hit',
       rings: rings[r.p.name] || 0
     }));
@@ -1579,7 +1580,7 @@ class Component extends DCLogic {
     });
     const dogStats = PLAYERS.map(p => {
       const s = this.seasonTally(p.name);
-      return { name: p.name, color: p.color, record: s.sdW + '-' + s.sdL + (s.sdP ? '-' + s.sdP : ''), pts: s.sdPts, outright: s.outright };
+      return { name: p.name, color: p.color, record: this.sdRecStr(s), pts: s.sdPts, outright: s.outright };
     });
 
     // trophies + awards
@@ -1609,7 +1610,7 @@ class Component extends DCLogic {
       { n: '04', text: 'One point per correct pick. Push is worth a half. Sweep all four and it is a five-point week.' },
       { n: '05', text: 'Super dog must be +10 or worse and must come from a game NOT on the slate. Half a point for a cover. Outright wins scale with the spread: +10 to +19.5 pays 2, +20 to +29.5 pays 3, +30 to +39.5 pays 4, and so on.' },
       { n: '06', text: 'Preseason win totals: one over and one under from the SEC, Big Ten, Big 12 and ACC. One point each, settled after the regular season.' },
-      { n: '07', text: 'Records are tracked all the way through — wins, losses and pushes, not just points.' },
+      { n: '07', text: 'Records are tracked all the way through — wins, losses and pushes, not just points. Super dogs keep their own book, separate from the pick record: wins-covers-losses.' },
       { n: '08', text: 'Bowl season rules to be negotiated in December, as always.' }
     ];
 
