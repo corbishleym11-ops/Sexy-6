@@ -1,7 +1,7 @@
 {
   "league": "Sexy 6",
   "season": 2026,
-  "updatedAt": 1789845853381,
+  "updatedAt": 1789873828720,
   "slates": {
     "0": [
       {
@@ -491,6 +491,14 @@
         "label": "Purdue +14",
         "team": "Purdue",
         "opp": "UCLA"
+      },
+      "Shaq": {
+        "gameId": "401856694",
+        "side": "away",
+        "spread": 16.5,
+        "label": "Kentucky +16.5",
+        "team": "Kentucky",
+        "opp": "Texas A&M"
       }
     }
   },
@@ -506,13 +514,13 @@
         "team": "Georgia",
         "total": 9.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Alabama",
         "total": 8.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "LSU",
@@ -524,13 +532,13 @@
         "team": "Texas A&M",
         "total": 8.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "2-1"
       },
       {
         "team": "Oklahoma",
         "total": 7.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Ole Miss",
@@ -542,55 +550,55 @@
         "team": "Tennessee",
         "total": 7.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Florida",
         "total": 7.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Missouri",
         "total": 6.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Auburn",
         "total": 6.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "2-1"
       },
       {
         "team": "South Carolina",
         "total": 6.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "2-1"
       },
       {
         "team": "Vanderbilt",
         "total": 5.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Arkansas",
         "total": 4.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "1-2"
       },
       {
         "team": "Mississippi State",
         "total": 4.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Kentucky",
         "total": 4.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       }
     ],
     "Big Ten": [
@@ -604,67 +612,67 @@
         "team": "Indiana",
         "total": 10.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Penn State",
         "total": 9.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Ohio State",
         "total": 9.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Michigan",
         "total": 8.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "USC",
         "total": 8.5,
         "est": false,
-        "rec": "3-0"
+        "rec": "4-0"
       },
       {
         "team": "Illinois",
         "total": 7.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Washington",
         "total": 7.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Iowa",
         "total": 7.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Wisconsin",
         "total": 6.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Nebraska",
         "total": 6.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Minnesota",
         "total": 6.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "UCLA",
@@ -676,7 +684,7 @@
         "team": "Northwestern",
         "total": 5.5,
         "est": false,
-        "rec": "1-0"
+        "rec": "2-0"
       },
       {
         "team": "Maryland",
@@ -688,13 +696,13 @@
         "team": "Rutgers",
         "total": 4.5,
         "est": false,
-        "rec": "0-2"
+        "rec": "0-3"
       },
       {
         "team": "Michigan State",
         "total": 3.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "2-1"
       },
       {
         "team": "Purdue",
@@ -714,7 +722,7 @@
         "team": "Utah",
         "total": 8.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "BYU",
@@ -744,7 +752,7 @@
         "team": "Baylor",
         "total": 6.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "TCU",
@@ -756,49 +764,49 @@
         "team": "Arizona State",
         "total": 6.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Oklahoma State",
         "total": 5.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Cincinnati",
         "total": 5.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "UCF",
         "total": 5.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Kansas",
         "total": 5.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "1-2"
       },
       {
         "team": "West Virginia",
         "total": 5.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "Iowa State",
         "total": 4.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Colorado",
         "total": 4.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "2-1"
       }
     ],
     "ACC": [
@@ -812,19 +820,19 @@
         "team": "SMU",
         "total": 8.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "2-1"
       },
       {
         "team": "Clemson",
         "total": 7.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Louisville",
         "total": 7.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Pittsburgh",
@@ -836,7 +844,7 @@
         "team": "Virginia",
         "total": 7.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "2-1"
       },
       {
         "team": "Virginia Tech",
@@ -848,7 +856,7 @@
         "team": "NC State",
         "total": 7.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "1-2"
       },
       {
         "team": "Georgia Tech",
@@ -860,13 +868,13 @@
         "team": "Florida State",
         "total": 6.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "1-2"
       },
       {
         "team": "California",
         "total": 6.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       },
       {
         "team": "Wake Forest",
@@ -878,13 +886,13 @@
         "team": "Duke",
         "total": 5.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "3-0"
       },
       {
         "team": "North Carolina",
         "total": 4.5,
         "est": false,
-        "rec": "2-0"
+        "rec": "2-1"
       },
       {
         "team": "Syracuse",
@@ -896,13 +904,13 @@
         "team": "Stanford",
         "total": 3.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "1-2"
       },
       {
         "team": "Boston College",
         "total": 3.5,
         "est": false,
-        "rec": "1-1"
+        "rec": "2-1"
       }
     ]
   },
@@ -1177,25 +1185,81 @@
       "state": "post"
     },
     "401856685": {
-      "a": 0,
-      "h": 0,
-      "done": false,
-      "detail": "Delayed",
-      "state": "in"
+      "a": 36,
+      "h": 50,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401856686": {
       "a": 45,
-      "h": 10,
+      "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856687": {
+      "a": 44,
+      "h": 39,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856688": {
+      "a": 24,
+      "h": 32,
       "done": false,
-      "detail": "0:51 - 4th",
+      "detail": "4:59 - 4th",
       "state": "in"
     },
-    "401856695": {
-      "a": 24,
+    "401856689": {
+      "a": 17,
+      "h": 27,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856690": {
+      "a": 6,
       "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856691": {
+      "a": 41,
+      "h": 34,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856692": {
+      "a": 9,
+      "h": 42,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856693": {
+      "a": 6,
+      "h": 30,
       "done": false,
-      "detail": "3:07 - 3rd",
+      "detail": "2:00 - 4th",
       "state": "in"
+    },
+    "401856694": {
+      "a": 31,
+      "h": 21,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856695": {
+      "a": 31,
+      "h": 35,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401856766": {
       "a": 15,
@@ -1386,12 +1450,75 @@
       "detail": "Final",
       "state": "post"
     },
+    "401856793": {
+      "a": 10,
+      "h": 7,
+      "done": false,
+      "detail": "3:13 - 1st",
+      "state": "in"
+    },
+    "401856795": {
+      "a": 41,
+      "h": 15,
+      "done": false,
+      "detail": "6:42 - 4th",
+      "state": "in"
+    },
+    "401856796": {
+      "a": 7,
+      "h": 41,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856797": {
+      "a": 31,
+      "h": 35,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401856798": {
       "a": 7,
       "h": 55,
-      "done": false,
-      "detail": "2:22 - 4th",
-      "state": "in"
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856799": {
+      "a": 7,
+      "h": 31,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856800": {
+      "a": 30,
+      "h": 44,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856801": {
+      "a": 0,
+      "h": 33,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856802": {
+      "a": 38,
+      "h": 27,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856803": {
+      "a": 0,
+      "h": 59,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401856810": {
       "a": 17,
@@ -1409,10 +1536,10 @@
     },
     "401856812": {
       "a": 24,
-      "h": 7,
-      "done": false,
-      "detail": "8:07 - 4th",
-      "state": "in"
+      "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401858201": {
       "a": 27,
@@ -1576,11 +1703,11 @@
       "state": "post"
     },
     "401858227": {
-      "a": 3,
-      "h": 19,
-      "done": false,
-      "detail": "2:50 - 2nd",
-      "state": "in"
+      "a": 16,
+      "h": 22,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401858228": {
       "a": 11,
@@ -1590,11 +1717,39 @@
       "state": "post"
     },
     "401858229": {
-      "a": 17,
-      "h": 15,
+      "a": 20,
+      "h": 28,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858230": {
+      "a": 31,
+      "h": 41,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858231": {
+      "a": 7,
+      "h": 35,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858232": {
+      "a": 35,
+      "h": 26,
       "done": false,
-      "detail": "Delayed",
+      "detail": "2:51 - 4th",
       "state": "in"
+    },
+    "401858233": {
+      "a": 7,
+      "h": 49,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401858422": {
       "a": 7,
@@ -1779,25 +1934,53 @@
       "state": "post"
     },
     "401858448": {
-      "a": 7,
-      "h": 28,
-      "done": false,
-      "detail": "5:41 - 2nd",
-      "state": "in"
+      "a": 10,
+      "h": 48,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858449": {
+      "a": 0,
+      "h": 38,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858450": {
+      "a": 17,
+      "h": 52,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401858451": {
       "a": 7,
       "h": 41,
-      "done": false,
-      "detail": "3:28 - 4th",
-      "state": "in"
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858452": {
+      "a": 7,
+      "h": 34,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858453": {
+      "a": 10,
+      "h": 27,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401858454": {
-      "a": 0,
+      "a": 3,
       "h": 59,
-      "done": false,
-      "detail": "5:50 - 4th",
-      "state": "in"
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401858455": {
       "a": 0,
@@ -1813,12 +1996,40 @@
       "detail": "Final",
       "state": "post"
     },
+    "401858457": {
+      "a": 42,
+      "h": 35,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858458": {
+      "a": 0,
+      "h": 7,
+      "done": false,
+      "detail": "11:56 - 1st",
+      "state": "in"
+    },
+    "401858459": {
+      "a": 16,
+      "h": 48,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401858460": {
       "a": 10,
-      "h": 41,
-      "done": false,
-      "detail": "11:16 - 4th",
-      "state": "in"
+      "h": 54,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858471": {
+      "a": 0,
+      "h": 55,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401859184": {
       "a": 0,
@@ -1876,16 +2087,58 @@
       "detail": "Final",
       "state": "post"
     },
+    "401860885": {
+      "a": 14,
+      "h": 14,
+      "done": false,
+      "detail": "7:42 - 2nd",
+      "state": "in"
+    },
+    "401860886": {
+      "a": 0,
+      "h": 0,
+      "done": false,
+      "detail": "12:52 - 1st",
+      "state": "in"
+    },
+    "401860887": {
+      "a": 13,
+      "h": 0,
+      "done": false,
+      "detail": "10:11 - 2nd",
+      "state": "in"
+    },
+    "401860888": {
+      "a": 0,
+      "h": 0,
+      "done": false,
+      "detail": "12:58 - 1st",
+      "state": "in"
+    },
     "401860889": {
       "a": 35,
-      "h": 42,
-      "done": false,
-      "detail": "5:24 - 4th",
-      "state": "in"
+      "h": 49,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401860890": {
+      "a": 7,
+      "h": 48,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401861962": {
       "a": 7,
       "h": 56,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401861963": {
+      "a": 48,
+      "h": 20,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -1988,12 +2241,61 @@
       "detail": "Final",
       "state": "post"
     },
+    "401862710": {
+      "a": 20,
+      "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862771": {
+      "a": 10,
+      "h": 16,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862772": {
+      "a": 21,
+      "h": 45,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862773": {
+      "a": 28,
+      "h": 21,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401862774": {
-      "a": 3,
-      "h": 7,
+      "a": 48,
+      "h": 49,
+      "done": true,
+      "detail": "Final/OT",
+      "state": "post"
+    },
+    "401862775": {
+      "a": 0,
+      "h": 41,
       "done": false,
-      "detail": "8:10 - 1st",
+      "detail": "1:49 - 4th",
       "state": "in"
+    },
+    "401862776": {
+      "a": 14,
+      "h": 21,
+      "done": false,
+      "detail": "1:54 - 4th",
+      "state": "in"
+    },
+    "401862777": {
+      "a": 17,
+      "h": 59,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401864424": {
       "a": 7,
@@ -2012,6 +2314,13 @@
     "401864432": {
       "a": 14,
       "h": 49,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401864443": {
+      "a": 20,
+      "h": 27,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -2100,12 +2409,19 @@
       "detail": "Final",
       "state": "post"
     },
+    "401864507": {
+      "a": 14,
+      "h": 0,
+      "done": false,
+      "detail": "5:36 - 1st",
+      "state": "in"
+    },
     "401864508": {
       "a": 10,
       "h": 24,
-      "done": false,
-      "detail": "14:56 - 4th",
-      "state": "in"
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401864570": {
       "a": 17,
@@ -2120,6 +2436,13 @@
       "done": true,
       "detail": "Final",
       "state": "post"
+    },
+    "401864574": {
+      "a": 7,
+      "h": 13,
+      "done": false,
+      "detail": "End of 2nd",
+      "state": "in"
     },
     "401864575": {
       "a": 24,
@@ -2247,6 +2570,27 @@
       "detail": "Final",
       "state": "post"
     },
+    "401866422": {
+      "a": 15,
+      "h": 51,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401866423": {
+      "a": 36,
+      "h": 41,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401866424": {
+      "a": 14,
+      "h": 36,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401866623": {
       "a": 10,
       "h": 59,
@@ -2264,6 +2608,13 @@
     "401867796": {
       "a": 14,
       "h": 45,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401867804": {
+      "a": 19,
+      "h": 36,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -2331,6 +2682,13 @@
       "detail": "Final",
       "state": "post"
     },
+    "401868317": {
+      "a": 38,
+      "h": 35,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401868326": {
       "a": 17,
       "h": 34,
@@ -2366,6 +2724,13 @@
       "detail": "Final",
       "state": "post"
     },
+    "401869948": {
+      "a": 27,
+      "h": 31,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401869955": {
       "a": 31,
       "h": 17,
@@ -2387,6 +2752,13 @@
       "detail": "Final",
       "state": "post"
     },
+    "401870764": {
+      "a": 0,
+      "h": 59,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401870790": {
       "a": 14,
       "h": 51,
@@ -2404,6 +2776,13 @@
     "401871046": {
       "a": 14,
       "h": 48,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401871047": {
+      "a": 30,
+      "h": 24,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -2771,7 +3150,7 @@
       "week": 3
     },
     "401856691": {
-      "spread": 3.5,
+      "spread": 3,
       "favAbbr": "SC",
       "favSide": "home",
       "away": "Mississippi State",
@@ -3090,7 +3469,7 @@
       "week": 3
     },
     "401856793": {
-      "spread": 33.5,
+      "spread": 34.5,
       "favAbbr": "ARIZ",
       "favSide": "home",
       "away": "Northern Illinois",
@@ -3768,7 +4147,7 @@
       "week": 2
     },
     "401858449": {
-      "spread": 44.5,
+      "spread": 45.5,
       "favAbbr": "IU",
       "favSide": "home",
       "away": "Western Kentucky",
@@ -3998,7 +4377,7 @@
       "week": 3
     },
     "401860888": {
-      "spread": 5.5,
+      "spread": 4,
       "favAbbr": "FRES",
       "favSide": "away",
       "away": "Fresno State",
@@ -4038,7 +4417,7 @@
       "week": 1
     },
     "401861963": {
-      "spread": 3,
+      "spread": 3.5,
       "favAbbr": "CONN",
       "favSide": "away",
       "away": "UConn",
@@ -4197,7 +4576,7 @@
       "week": 3
     },
     "401862771": {
-      "spread": 6.5,
+      "spread": 5.5,
       "favAbbr": "FAU",
       "favSide": "home",
       "away": "Florida International",
@@ -4207,7 +4586,7 @@
       "week": 3
     },
     "401862772": {
-      "spread": 34.5,
+      "spread": 33.5,
       "favAbbr": "MEM",
       "favSide": "home",
       "away": "UT Martin",
@@ -4237,7 +4616,7 @@
       "week": 3
     },
     "401862775": {
-      "spread": 42.5,
+      "spread": 41.5,
       "favAbbr": "TLSA",
       "favSide": "home",
       "away": "East Texas A&M",
@@ -4465,7 +4844,7 @@
       "week": 2
     },
     "401864574": {
-      "spread": 17.5,
+      "spread": 16.5,
       "favAbbr": "APP",
       "favSide": "home",
       "away": "Charlotte",
@@ -4653,7 +5032,7 @@
       "week": 2
     },
     "401866422": {
-      "spread": 14,
+      "spread": 14.5,
       "favAbbr": "LIB",
       "favSide": "home",
       "away": "Ball State",
@@ -4713,7 +5092,7 @@
       "week": 2
     },
     "401867804": {
-      "spread": 19.5,
+      "spread": 20.5,
       "favAbbr": "BAY",
       "favSide": "home",
       "away": "Louisiana Tech",
