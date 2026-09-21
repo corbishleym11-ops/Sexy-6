@@ -1074,9 +1074,9 @@ class Component extends DCLogic {
       const pts = sp >= 20 ? 2 + Math.floor((sp - 10) / 10) : 2;
       return { r: 1, pts: pts, outright: true, live: !s.done };
     }
-    if (m === 0) return { r: 0.5, pts: 0.25, live: !s.done };
+    if (m === 0) return { r: 0.5, pts: 0, live: !s.done };
     if (-m < sd.spread) return { r: 1, pts: 0.5, live: !s.done };
-    if (-m === sd.spread) return { r: 0.5, pts: 0.25, live: !s.done };
+    if (-m === sd.spread) return { r: 0.5, pts: 0, live: !s.done };
     return { r: 0, pts: 0, live: !s.done };
   }
   // Any super dog that was PICKED and won outright — permanent honours, and retired from the kennel.
@@ -1608,7 +1608,7 @@ class Component extends DCLogic {
       { n: '02', text: 'Everybody takes one favorite, one underdog, one over and one under — all four from the slate.' },
       { n: '03', text: 'No duplicate selections. If Adam has the Georgia favorite, that side is gone.' },
       { n: '04', text: 'One point per correct pick. Push is worth a half. Sweep all four and it is a five-point week.' },
-      { n: '05', text: 'Super dog must be +10 or worse and must come from a game NOT on the slate. Half a point for a cover. Outright wins scale with the spread: +10 to +19.5 pays 2, +20 to +29.5 pays 3, +30 to +39.5 pays 4, and so on.' },
+      { n: '05', text: 'Super dog must be +10 or worse and must come from a game NOT on the slate. Half a point for a cover, nothing for a push. Outright wins scale with the spread: +10 to +19.5 pays 2, +20 to +29.5 pays 3, +30 to +39.5 pays 4, and so on.' },
       { n: '06', text: 'Preseason win totals: one over and one under from the SEC, Big Ten, Big 12 and ACC. One point each, settled after the regular season.' },
       { n: '07', text: 'Records are tracked all the way through — wins, losses and pushes, not just points. Super dogs keep their own book, separate from the pick record: wins-covers-losses.' },
       { n: '08', text: 'Bowl season rules to be negotiated in December, as always.' }
