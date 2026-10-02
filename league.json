@@ -1,7 +1,7 @@
 {
   "league": "Sexy 6",
   "season": 2026,
-  "updatedAt": 1790874565428,
+  "updatedAt": 1790968768577,
   "slates": {
     "0": [
       {
@@ -612,6 +612,26 @@
         "fav": "401856699",
         "under": "401856699"
       }
+    },
+    "5": {
+      "Matt": {
+        "dog": "401858473",
+        "over": "401858478",
+        "under": "401858250",
+        "fav": "401856818"
+      },
+      "Adam": {
+        "fav": "401858473",
+        "over": "401856707",
+        "under": "401856818",
+        "dog": "401856818"
+      },
+      "Shaq": {
+        "fav": "401856708",
+        "dog": "401858478",
+        "under": "401858473",
+        "over": "401856708"
+      }
     }
   },
   "sdogs": {
@@ -717,6 +737,32 @@
         "label": "App State +14",
         "team": "App State",
         "opp": "NC State"
+      }
+    },
+    "5": {
+      "Matt": {
+        "gameId": "401862788",
+        "side": "home",
+        "spread": 12.5,
+        "label": "Rice +12.5",
+        "team": "Rice",
+        "opp": "UTSA"
+      },
+      "Adam": {
+        "gameId": "401856819",
+        "side": "away",
+        "spread": 11.5,
+        "label": "UCF +11.5",
+        "team": "UCF",
+        "opp": "Houston"
+      },
+      "Shaq": {
+        "gameId": "401866432",
+        "side": "home",
+        "spread": 13.5,
+        "label": "Buffalo +13.5",
+        "team": "Buffalo",
+        "opp": "Western Michigan"
       }
     }
   },
@@ -2879,6 +2925,13 @@
       "detail": "Final",
       "state": "post"
     },
+    "401862786": {
+      "a": 45,
+      "h": 44,
+      "done": true,
+      "detail": "Final/OT",
+      "state": "post"
+    },
     "401864424": {
       "a": 7,
       "h": 42,
@@ -3501,6 +3554,13 @@
       "done": true,
       "detail": "Final",
       "state": "post"
+    },
+    "401871049": {
+      "a": 13,
+      "h": 34,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     }
   },
   "lines": {
@@ -4005,7 +4065,7 @@
       "week": 5
     },
     "401856706": {
-      "spread": 53.5,
+      "spread": 52.5,
       "favAbbr": "LSU",
       "favSide": "home",
       "away": "McNeese",
@@ -4035,7 +4095,7 @@
       "week": 5
     },
     "401856709": {
-      "spread": 3,
+      "spread": 2.5,
       "favAbbr": "SC",
       "favSide": "home",
       "away": "Kentucky",
@@ -4045,7 +4105,7 @@
       "week": 5
     },
     "401856710": {
-      "spread": 7,
+      "spread": 6.5,
       "favAbbr": "TENN",
       "favSide": "home",
       "away": "Auburn",
@@ -4464,7 +4524,7 @@
       "week": 4
     },
     "401856807": {
-      "spread": 18.5,
+      "spread": 19.5,
       "favAbbr": "KU",
       "favSide": "home",
       "away": "Middle Tennessee",
@@ -4554,7 +4614,7 @@
       "week": 5
     },
     "401856818": {
-      "spread": 6,
+      "spread": 6.5,
       "favAbbr": "BYU",
       "favSide": "away",
       "away": "BYU",
@@ -4574,7 +4634,7 @@
       "week": 5
     },
     "401856820": {
-      "spread": 6.5,
+      "spread": 7,
       "favAbbr": "ARIZ",
       "favSide": "home",
       "away": "Cincinnati",
@@ -4584,7 +4644,7 @@
       "week": 5
     },
     "401856821": {
-      "spread": 12.5,
+      "spread": 13.5,
       "favAbbr": "TTU",
       "favSide": "away",
       "away": "Texas Tech",
@@ -5042,7 +5102,7 @@
       "week": 5
     },
     "401858249": {
-      "spread": 16.5,
+      "spread": 15.5,
       "favAbbr": "MIA",
       "favSide": "away",
       "away": "Miami",
@@ -5062,7 +5122,7 @@
       "week": 5
     },
     "401858251": {
-      "spread": 13.5,
+      "spread": 14,
       "favAbbr": "WAKE",
       "favSide": "home",
       "away": "Stanford",
@@ -5072,7 +5132,7 @@
       "week": 5
     },
     "401858252": {
-      "spread": 6.5,
+      "spread": 7,
       "favAbbr": "SYR",
       "favSide": "away",
       "away": "Syracuse",
@@ -5082,7 +5142,7 @@
       "week": 5
     },
     "401858253": {
-      "spread": 2.5,
+      "spread": 1.5,
       "favAbbr": "UVA",
       "favSide": "away",
       "away": "Virginia",
@@ -5582,7 +5642,7 @@
       "week": 5
     },
     "401858473": {
-      "spread": 14.5,
+      "spread": 14,
       "favAbbr": "OSU",
       "favSide": "away",
       "away": "Ohio State",
@@ -5592,7 +5652,7 @@
       "week": 5
     },
     "401858474": {
-      "spread": 5.5,
+      "spread": 6,
       "favAbbr": "MICH",
       "favSide": "away",
       "away": "Michigan",
@@ -5612,7 +5672,7 @@
       "week": 5
     },
     "401858476": {
-      "spread": 3,
+      "spread": 2.5,
       "favAbbr": "PSU",
       "favSide": "away",
       "away": "Penn State",
@@ -5632,7 +5692,7 @@
       "week": 5
     },
     "401858478": {
-      "spread": 9.5,
+      "spread": 8.5,
       "favAbbr": "USC",
       "favSide": "home",
       "away": "Washington",
@@ -5642,7 +5702,7 @@
       "week": 5
     },
     "401858479": {
-      "spread": 10,
+      "spread": 9.5,
       "favAbbr": "WIS",
       "favSide": "home",
       "away": "Michigan State",
@@ -5862,7 +5922,7 @@
       "week": 4
     },
     "401860898": {
-      "spread": 20.5,
+      "spread": 18.5,
       "favAbbr": "BOIS",
       "favSide": "home",
       "away": "Utah State",
@@ -5872,7 +5932,7 @@
       "week": 5
     },
     "401860899": {
-      "spread": 6,
+      "spread": 6.5,
       "favAbbr": "ORST",
       "favSide": "away",
       "away": "Oregon State",
@@ -5882,7 +5942,7 @@
       "week": 5
     },
     "401860900": {
-      "spread": 7.5,
+      "spread": 8.5,
       "favAbbr": "TXST",
       "favSide": "away",
       "away": "Texas State",
@@ -6231,7 +6291,7 @@
       "week": 4
     },
     "401862786": {
-      "spread": 1.5,
+      "spread": 2.5,
       "favAbbr": "UNT",
       "favSide": "away",
       "away": "North Texas",
@@ -6251,7 +6311,7 @@
       "week": 5
     },
     "401862788": {
-      "spread": 11.5,
+      "spread": 12.5,
       "favAbbr": "UTSA",
       "favSide": "away",
       "away": "UTSA",
@@ -6261,7 +6321,7 @@
       "week": 5
     },
     "401862790": {
-      "spread": 43.5,
+      "spread": 44.5,
       "favAbbr": "FAU",
       "favSide": "home",
       "away": "Texas Southern",
@@ -6271,7 +6331,7 @@
       "week": 5
     },
     "401862791": {
-      "spread": 3.5,
+      "spread": 3,
       "favAbbr": "AFA",
       "favSide": "home",
       "away": "Navy",
@@ -6281,7 +6341,7 @@
       "week": 5
     },
     "401862792": {
-      "spread": 6.5,
+      "spread": 6,
       "favAbbr": "USF",
       "favSide": "home",
       "away": "Temple",
@@ -6540,7 +6600,7 @@
       "week": 5
     },
     "401864515": {
-      "spread": 17.5,
+      "spread": 16.5,
       "favAbbr": "NDSU",
       "favSide": "home",
       "away": "Wyoming",
@@ -6877,7 +6937,7 @@
       "week": 5
     },
     "401866431": {
-      "spread": 20.5,
+      "spread": 21,
       "favAbbr": "TOL",
       "favSide": "away",
       "away": "Toledo",
@@ -6887,7 +6947,7 @@
       "week": 5
     },
     "401866432": {
-      "spread": 14,
+      "spread": 13.5,
       "favAbbr": "WMU",
       "favSide": "away",
       "away": "Western Michigan",
@@ -6917,7 +6977,7 @@
       "week": 5
     },
     "401866477": {
-      "spread": 13.5,
+      "spread": 12.5,
       "favAbbr": "M-OH",
       "favSide": "home",
       "away": "Bowling Green",
@@ -7107,7 +7167,7 @@
       "week": 1
     },
     "401869842": {
-      "spread": 2.5,
+      "spread": 1.5,
       "favAbbr": "ARMY",
       "favSide": "away",
       "away": "Army",
@@ -7207,7 +7267,7 @@
       "week": 4
     },
     "401869962": {
-      "spread": 18.5,
+      "spread": 17.5,
       "favAbbr": "JMU",
       "favSide": "home",
       "away": "Marshall",
@@ -7307,7 +7367,7 @@
       "week": 5
     },
     "401871050": {
-      "spread": 7,
+      "spread": 6.5,
       "favAbbr": "LIB",
       "favSide": "away",
       "away": "Liberty",
