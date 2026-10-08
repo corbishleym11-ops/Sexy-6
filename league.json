@@ -1,7 +1,7 @@
 {
   "league": "Sexy 6",
   "season": 2026,
-  "updatedAt": 1790968768577,
+  "updatedAt": 1791486220723,
   "slates": {
     "0": [
       {
@@ -510,6 +510,88 @@
         "detail": "10/3 - 7:00 PM EDT",
         "date": "2026-10-03T23:00Z"
       }
+    ],
+    "6": [
+      {
+        "id": "401856717",
+        "away": "Texas",
+        "home": "Oklahoma",
+        "awayName": "Texas",
+        "homeName": "Oklahoma",
+        "awayAbbr": "TEX",
+        "homeAbbr": "OU",
+        "favSide": "away",
+        "spread": 7.5,
+        "totalLine": 39.5,
+        "detail": "10/10 - 3:30 PM EDT",
+        "date": "2026-10-10T19:30Z"
+      },
+      {
+        "id": "401858484",
+        "away": "UCLA",
+        "home": "Oregon",
+        "awayName": "UCLA",
+        "homeName": "Oregon",
+        "awayAbbr": "UCLA",
+        "homeAbbr": "ORE",
+        "favSide": "home",
+        "spread": 11.5,
+        "totalLine": 58.5,
+        "detail": "10/10 - 3:30 PM EDT",
+        "date": "2026-10-10T19:30Z"
+      },
+      {
+        "id": "401856712",
+        "away": "Georgia",
+        "home": "Alabama",
+        "awayName": "Georgia",
+        "homeName": "Alabama",
+        "awayAbbr": "UGA",
+        "homeAbbr": "ALA",
+        "favSide": "home",
+        "spread": 1.5,
+        "totalLine": 51.5,
+        "detail": "10/10 - 7:30 PM EDT"
+      },
+      {
+        "id": "401858481",
+        "away": "Indiana",
+        "home": "Nebraska",
+        "awayName": "Indiana",
+        "homeName": "Nebraska",
+        "awayAbbr": "IU",
+        "homeAbbr": "NEB",
+        "favSide": "away",
+        "spread": 7.5,
+        "totalLine": 48.5,
+        "detail": "10/10 - 12:00 PM EDT"
+      },
+      {
+        "id": "401860901",
+        "away": "Boise State",
+        "home": "Fresno State",
+        "awayName": "Boise State",
+        "homeName": "Fresno State",
+        "awayAbbr": "BOIS",
+        "homeAbbr": "FRES",
+        "favSide": "away",
+        "spread": 6.5,
+        "totalLine": 48.5,
+        "detail": "10/10 - 10:30 PM EDT"
+      },
+      {
+        "id": "401858254",
+        "away": "Florida State",
+        "home": "Louisville",
+        "awayName": "Florida State",
+        "homeName": "Louisville",
+        "awayAbbr": "FSU",
+        "homeAbbr": "LOU",
+        "favSide": "home",
+        "spread": 3.5,
+        "totalLine": 59.5,
+        "detail": "10/9 - 7:00 PM EDT"
+      }
     ]
   },
   "picks": {
@@ -778,25 +860,25 @@
         "team": "Georgia",
         "total": 9.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "5-0"
       },
       {
         "team": "Alabama",
         "total": 8.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "5-0"
       },
       {
         "team": "LSU",
         "total": 8.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "Texas A&M",
         "total": 8.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "3-2"
       },
       {
         "team": "Oklahoma",
@@ -814,55 +896,55 @@
         "team": "Tennessee",
         "total": 7.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "Florida",
         "total": 7.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "4-1"
       },
       {
         "team": "Missouri",
         "total": 6.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "Auburn",
         "total": 6.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "3-2"
       },
       {
         "team": "South Carolina",
         "total": 6.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       },
       {
         "team": "Vanderbilt",
         "total": 5.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "3-2"
       },
       {
         "team": "Arkansas",
         "total": 4.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       },
       {
         "team": "Mississippi State",
         "total": 4.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "4-1"
       },
       {
         "team": "Kentucky",
         "total": 4.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       }
     ],
     "Big Ten": [
@@ -876,67 +958,67 @@
         "team": "Indiana",
         "total": 10.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "5-0"
       },
       {
         "team": "Penn State",
         "total": 9.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "3-2"
       },
       {
         "team": "Ohio State",
         "total": 9.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "Michigan",
         "total": 8.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "3-2"
       },
       {
         "team": "USC",
         "total": 8.5,
         "est": false,
-        "rec": "4-1"
+        "rec": "5-1"
       },
       {
         "team": "Illinois",
         "total": 7.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       },
       {
         "team": "Washington",
         "total": 7.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "3-2"
       },
       {
         "team": "Iowa",
         "total": 7.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "4-1"
       },
       {
         "team": "Wisconsin",
         "total": 6.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "Nebraska",
         "total": 6.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "5-0"
       },
       {
         "team": "Minnesota",
         "total": 6.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "UCLA",
@@ -948,31 +1030,31 @@
         "team": "Northwestern",
         "total": 5.5,
         "est": false,
-        "rec": "2-1"
+        "rec": "3-1"
       },
       {
         "team": "Maryland",
         "total": 4.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       },
       {
         "team": "Rutgers",
         "total": 4.5,
         "est": false,
-        "rec": "1-3"
+        "rec": "1-4"
       },
       {
         "team": "Michigan State",
         "total": 3.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       },
       {
         "team": "Purdue",
         "total": 3.5,
         "est": false,
-        "rec": "1-3"
+        "rec": "2-3"
       }
     ],
     "Big 12": [
@@ -980,7 +1062,7 @@
         "team": "Texas Tech",
         "total": 11.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "5-0"
       },
       {
         "team": "Utah",
@@ -992,19 +1074,19 @@
         "team": "BYU",
         "total": 8.5,
         "est": false,
-        "rec": "3-0"
+        "rec": "4-0"
       },
       {
         "team": "Houston",
         "total": 7.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "Arizona",
         "total": 7.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "Kansas State",
@@ -1016,19 +1098,19 @@
         "team": "Baylor",
         "total": 6.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "TCU",
         "total": 6.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       },
       {
         "team": "Arizona State",
         "total": 6.5,
         "est": false,
-        "rec": "2-1"
+        "rec": "2-2"
       },
       {
         "team": "Oklahoma State",
@@ -1040,37 +1122,37 @@
         "team": "Cincinnati",
         "total": 5.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "4-1"
       },
       {
         "team": "UCF",
         "total": 5.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "3-2"
       },
       {
         "team": "Kansas",
         "total": 5.5,
         "est": false,
-        "rec": "1-2"
+        "rec": "2-2"
       },
       {
         "team": "West Virginia",
         "total": 5.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "3-2"
       },
       {
         "team": "Iowa State",
         "total": 4.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "3-2"
       },
       {
         "team": "Colorado",
         "total": 4.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       }
     ],
     "ACC": [
@@ -1078,49 +1160,49 @@
         "team": "Miami",
         "total": 10.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "5-0"
       },
       {
         "team": "SMU",
         "total": 8.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "Clemson",
         "total": 7.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "3-2"
       },
       {
         "team": "Louisville",
         "total": 7.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       },
       {
         "team": "Pittsburgh",
         "total": 7.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "5-0"
       },
       {
         "team": "Virginia",
         "total": 7.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "3-2"
       },
       {
         "team": "Virginia Tech",
         "total": 7.5,
         "est": false,
-        "rec": "4-0"
+        "rec": "4-1"
       },
       {
         "team": "NC State",
         "total": 7.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "3-2"
       },
       {
         "team": "Georgia Tech",
@@ -1132,19 +1214,19 @@
         "team": "Florida State",
         "total": 6.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "3-2"
       },
       {
         "team": "California",
         "total": 6.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       },
       {
         "team": "Wake Forest",
         "total": 5.5,
         "est": false,
-        "rec": "3-1"
+        "rec": "4-1"
       },
       {
         "team": "Duke",
@@ -1156,25 +1238,25 @@
         "team": "North Carolina",
         "total": 4.5,
         "est": false,
-        "rec": "2-1"
+        "rec": "2-2"
       },
       {
         "team": "Syracuse",
         "total": 4.5,
         "est": false,
-        "rec": "1-2"
+        "rec": "2-2"
       },
       {
         "team": "Stanford",
         "total": 3.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       },
       {
         "team": "Boston College",
         "total": 3.5,
         "est": false,
-        "rec": "2-2"
+        "rec": "2-3"
       }
     ]
   },
@@ -1581,6 +1663,55 @@
       "detail": "Final",
       "state": "post"
     },
+    "401856705": {
+      "a": 14,
+      "h": 38,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856706": {
+      "a": 14,
+      "h": 63,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856707": {
+      "a": 56,
+      "h": 23,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856708": {
+      "a": 17,
+      "h": 45,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856709": {
+      "a": 35,
+      "h": 34,
+      "done": true,
+      "detail": "Final/OT",
+      "state": "post"
+    },
+    "401856710": {
+      "a": 14,
+      "h": 24,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856711": {
+      "a": 7,
+      "h": 34,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401856766": {
       "a": 15,
       "h": 10,
@@ -1861,6 +1992,13 @@
       "detail": "Final",
       "state": "post"
     },
+    "401856807": {
+      "a": 0,
+      "h": 55,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401856810": {
       "a": 17,
       "h": 28,
@@ -1906,6 +2044,48 @@
     "401856816": {
       "a": 31,
       "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856817": {
+      "a": 55,
+      "h": 19,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856818": {
+      "a": 17,
+      "h": 10,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856819": {
+      "a": 17,
+      "h": 27,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856820": {
+      "a": 7,
+      "h": 34,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856821": {
+      "a": 29,
+      "h": 7,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856822": {
+      "a": 42,
+      "h": 45,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -2193,6 +2373,69 @@
     "401858244": {
       "a": 7,
       "h": 62,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858245": {
+      "a": 35,
+      "h": 33,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858246": {
+      "a": 16,
+      "h": 25,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858247": {
+      "a": 31,
+      "h": 39,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858248": {
+      "a": 28,
+      "h": 31,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858249": {
+      "a": 41,
+      "h": 13,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858250": {
+      "a": 37,
+      "h": 26,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858251": {
+      "a": 3,
+      "h": 57,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858252": {
+      "a": 42,
+      "h": 41,
+      "done": true,
+      "detail": "Final/OT",
+      "state": "post"
+    },
+    "401858253": {
+      "a": 7,
+      "h": 38,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -2547,6 +2790,62 @@
       "detail": "Final",
       "state": "post"
     },
+    "401858472": {
+      "a": 24,
+      "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858473": {
+      "a": 31,
+      "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858474": {
+      "a": 14,
+      "h": 20,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858475": {
+      "a": 23,
+      "h": 48,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858476": {
+      "a": 13,
+      "h": 34,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858477": {
+      "a": 47,
+      "h": 15,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858478": {
+      "a": 21,
+      "h": 25,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858479": {
+      "a": 3,
+      "h": 31,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401859184": {
       "a": 0,
       "h": 52,
@@ -2690,6 +2989,34 @@
     "401860897": {
       "a": 32,
       "h": 7,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401860898": {
+      "a": 18,
+      "h": 37,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401860899": {
+      "a": 56,
+      "h": 26,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401860900": {
+      "a": 29,
+      "h": 31,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401860921": {
+      "a": 26,
+      "h": 6,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -2932,6 +3259,48 @@
       "detail": "Final/OT",
       "state": "post"
     },
+    "401862787": {
+      "a": 59,
+      "h": 8,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862788": {
+      "a": 16,
+      "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862790": {
+      "a": 10,
+      "h": 66,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862791": {
+      "a": 9,
+      "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862792": {
+      "a": 17,
+      "h": 13,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862793": {
+      "a": 14,
+      "h": 33,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401864424": {
       "a": 7,
       "h": 42,
@@ -3082,6 +3451,27 @@
     "401864512": {
       "a": 38,
       "h": 10,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401864513": {
+      "a": 20,
+      "h": 16,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401864514": {
+      "a": 7,
+      "h": 61,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401864515": {
+      "a": 0,
+      "h": 28,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -3310,6 +3700,48 @@
       "detail": "Final",
       "state": "post"
     },
+    "401866430": {
+      "a": 17,
+      "h": 41,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401866431": {
+      "a": 39,
+      "h": 24,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401866432": {
+      "a": 20,
+      "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401866433": {
+      "a": 38,
+      "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401866434": {
+      "a": 13,
+      "h": 10,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401866477": {
+      "a": 24,
+      "h": 20,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401866623": {
       "a": 10,
       "h": 59,
@@ -3450,9 +3882,23 @@
       "detail": "Final",
       "state": "post"
     },
+    "401869842": {
+      "a": 29,
+      "h": 31,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401869931": {
       "a": 14,
       "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401869932": {
+      "a": 20,
+      "h": 23,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -3471,6 +3917,13 @@
       "detail": "Final",
       "state": "post"
     },
+    "401869942": {
+      "a": 31,
+      "h": 24,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401869948": {
       "a": 27,
       "h": 31,
@@ -3485,6 +3938,13 @@
       "detail": "Final",
       "state": "post"
     },
+    "401869956": {
+      "a": 10,
+      "h": 42,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401869960": {
       "a": 13,
       "h": 20,
@@ -3495,6 +3955,13 @@
     "401869961": {
       "a": 46,
       "h": 20,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401869962": {
+      "a": 17,
+      "h": 45,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -3558,6 +4025,41 @@
     "401871049": {
       "a": 13,
       "h": 34,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401871050": {
+      "a": 30,
+      "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401871051": {
+      "a": 27,
+      "h": 26,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401871066": {
+      "a": 3,
+      "h": 22,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401871089": {
+      "a": 35,
+      "h": 52,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401871090": {
+      "a": 34,
+      "h": 55,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -4065,7 +4567,7 @@
       "week": 5
     },
     "401856706": {
-      "spread": 52.5,
+      "spread": 53.5,
       "favAbbr": "LSU",
       "favSide": "home",
       "away": "McNeese",
@@ -4105,7 +4607,7 @@
       "week": 5
     },
     "401856710": {
-      "spread": 6.5,
+      "spread": 6,
       "favAbbr": "TENN",
       "favSide": "home",
       "away": "Auburn",
@@ -4115,7 +4617,7 @@
       "week": 5
     },
     "401856711": {
-      "spread": 14,
+      "spread": 13.5,
       "favAbbr": "TA&M",
       "favSide": "home",
       "away": "Arkansas",
@@ -4123,6 +4625,76 @@
       "awayAbbr": "ARK",
       "homeAbbr": "TA&M",
       "week": 5
+    },
+    "401856712": {
+      "spread": 1.5,
+      "favAbbr": "ALA",
+      "favSide": "home",
+      "away": "Georgia",
+      "home": "Alabama",
+      "awayAbbr": "UGA",
+      "homeAbbr": "ALA",
+      "week": 6
+    },
+    "401856713": {
+      "spread": 13.5,
+      "favAbbr": "TENN",
+      "favSide": "away",
+      "away": "Tennessee",
+      "home": "Arkansas",
+      "awayAbbr": "TENN",
+      "homeAbbr": "ARK",
+      "week": 6
+    },
+    "401856714": {
+      "spread": 11.5,
+      "favAbbr": "FLA",
+      "favSide": "home",
+      "away": "South Carolina",
+      "home": "Florida",
+      "awayAbbr": "SC",
+      "homeAbbr": "FLA",
+      "week": 6
+    },
+    "401856715": {
+      "spread": 8.5,
+      "favAbbr": "LSU",
+      "favSide": "away",
+      "away": "LSU",
+      "home": "Kentucky",
+      "awayAbbr": "LSU",
+      "homeAbbr": "UK",
+      "week": 6
+    },
+    "401856716": {
+      "spread": 3.5,
+      "favAbbr": "MIZ",
+      "favSide": "home",
+      "away": "Texas A&M",
+      "home": "Missouri",
+      "awayAbbr": "TA&M",
+      "homeAbbr": "MIZ",
+      "week": 6
+    },
+    "401856717": {
+      "spread": 7.5,
+      "favAbbr": "TEX",
+      "favSide": "away",
+      "away": "Texas",
+      "home": "Oklahoma",
+      "awayAbbr": "TEX",
+      "homeAbbr": "OU",
+      "week": 6
+    },
+    "401856718": {
+      "spread": 9.5,
+      "favAbbr": "MISS",
+      "favSide": "away",
+      "away": "Ole Miss",
+      "home": "Vanderbilt",
+      "awayAbbr": "MISS",
+      "homeAbbr": "VAN",
+      "week": 6
     },
     "401856766": {
       "spread": 7.5,
@@ -4524,7 +5096,7 @@
       "week": 4
     },
     "401856807": {
-      "spread": 19.5,
+      "spread": 21.5,
       "favAbbr": "KU",
       "favSide": "home",
       "away": "Middle Tennessee",
@@ -4532,6 +5104,16 @@
       "awayAbbr": "MTSU",
       "homeAbbr": "KU",
       "week": 5
+    },
+    "401856808": {
+      "spread": 20.5,
+      "favAbbr": "ASU",
+      "favSide": "home",
+      "away": "Hawai'i",
+      "home": "Arizona State",
+      "awayAbbr": "HAW",
+      "homeAbbr": "ASU",
+      "week": 6
     },
     "401856810": {
       "spread": 7.5,
@@ -4614,7 +5196,7 @@
       "week": 5
     },
     "401856818": {
-      "spread": 6.5,
+      "spread": 5.5,
       "favAbbr": "BYU",
       "favSide": "away",
       "away": "BYU",
@@ -4624,7 +5206,7 @@
       "week": 5
     },
     "401856819": {
-      "spread": 11.5,
+      "spread": 10.5,
       "favAbbr": "HOU",
       "favSide": "home",
       "away": "UCF",
@@ -4662,6 +5244,56 @@
       "awayAbbr": "WVU",
       "homeAbbr": "ISU",
       "week": 5
+    },
+    "401856823": {
+      "spread": 3,
+      "favAbbr": "ARIZ",
+      "favSide": "away",
+      "away": "Arizona",
+      "home": "West Virginia",
+      "awayAbbr": "ARIZ",
+      "homeAbbr": "WVU",
+      "week": 6
+    },
+    "401856824": {
+      "spread": 10.5,
+      "favAbbr": "OKST",
+      "favSide": "home",
+      "away": "UCF",
+      "home": "Oklahoma State",
+      "awayAbbr": "UCF",
+      "homeAbbr": "OKST",
+      "week": 6
+    },
+    "401856825": {
+      "spread": 2.5,
+      "favAbbr": "KSU",
+      "favSide": "home",
+      "away": "Houston",
+      "home": "Kansas State",
+      "awayAbbr": "HOU",
+      "homeAbbr": "KSU",
+      "week": 6
+    },
+    "401856826": {
+      "spread": 10.5,
+      "favAbbr": "BYU",
+      "favSide": "home",
+      "away": "Iowa State",
+      "home": "BYU",
+      "awayAbbr": "ISU",
+      "homeAbbr": "BYU",
+      "week": 6
+    },
+    "401856827": {
+      "spread": 15.5,
+      "favAbbr": "UTAH",
+      "favSide": "home",
+      "away": "Kansas",
+      "home": "Utah",
+      "awayAbbr": "KU",
+      "homeAbbr": "UTAH",
+      "week": 6
     },
     "401856881": {
       "spread": 1.5,
@@ -5062,7 +5694,7 @@
       "week": 4
     },
     "401858245": {
-      "spread": 2.5,
+      "spread": 1.5,
       "favAbbr": "VT",
       "favSide": "home",
       "away": "Pittsburgh",
@@ -5082,7 +5714,7 @@
       "week": 5
     },
     "401858247": {
-      "spread": 2.5,
+      "spread": 1.5,
       "favAbbr": "UNLV",
       "favSide": "home",
       "away": "California",
@@ -5092,7 +5724,7 @@
       "week": 5
     },
     "401858248": {
-      "spread": 3.5,
+      "spread": 5.5,
       "favAbbr": "LOU",
       "favSide": "away",
       "away": "Louisville",
@@ -5102,7 +5734,7 @@
       "week": 5
     },
     "401858249": {
-      "spread": 15.5,
+      "spread": 14,
       "favAbbr": "MIA",
       "favSide": "away",
       "away": "Miami",
@@ -5122,7 +5754,7 @@
       "week": 5
     },
     "401858251": {
-      "spread": 14,
+      "spread": 14.5,
       "favAbbr": "WAKE",
       "favSide": "home",
       "away": "Stanford",
@@ -5132,7 +5764,7 @@
       "week": 5
     },
     "401858252": {
-      "spread": 7,
+      "spread": 6.5,
       "favAbbr": "SYR",
       "favSide": "away",
       "away": "Syracuse",
@@ -5150,6 +5782,76 @@
       "awayAbbr": "UVA",
       "homeAbbr": "FSU",
       "week": 5
+    },
+    "401858254": {
+      "spread": 3.5,
+      "favAbbr": "LOU",
+      "favSide": "home",
+      "away": "Florida State",
+      "home": "Louisville",
+      "awayAbbr": "FSU",
+      "homeAbbr": "LOU",
+      "week": 6
+    },
+    "401858255": {
+      "spread": 6.5,
+      "favAbbr": "DUKE",
+      "favSide": "away",
+      "away": "Duke",
+      "home": "Georgia Tech",
+      "awayAbbr": "DUKE",
+      "homeAbbr": "GT",
+      "week": 6
+    },
+    "401858256": {
+      "spread": 3.5,
+      "favAbbr": "PITT",
+      "favSide": "home",
+      "away": "North Carolina",
+      "home": "Pittsburgh",
+      "awayAbbr": "UNC",
+      "homeAbbr": "PITT",
+      "week": 6
+    },
+    "401858257": {
+      "spread": 38.5,
+      "favAbbr": "ND",
+      "favSide": "home",
+      "away": "Stanford",
+      "home": "Notre Dame",
+      "awayAbbr": "STAN",
+      "homeAbbr": "ND",
+      "week": 6
+    },
+    "401858258": {
+      "spread": 9.5,
+      "favAbbr": "UVA",
+      "favSide": "home",
+      "away": "Syracuse",
+      "home": "Virginia",
+      "awayAbbr": "SYR",
+      "homeAbbr": "UVA",
+      "week": 6
+    },
+    "401858259": {
+      "spread": 10,
+      "favAbbr": "VT",
+      "favSide": "away",
+      "away": "Virginia Tech",
+      "home": "California",
+      "awayAbbr": "VT",
+      "homeAbbr": "CAL",
+      "week": 6
+    },
+    "401858260": {
+      "spread": 3.5,
+      "favAbbr": "WAKE",
+      "favSide": "away",
+      "away": "Wake Forest",
+      "home": "NC State",
+      "awayAbbr": "WAKE",
+      "homeAbbr": "NCSU",
+      "week": 6
     },
     "401858422": {
       "spread": 42.5,
@@ -5642,7 +6344,7 @@
       "week": 5
     },
     "401858473": {
-      "spread": 14,
+      "spread": 14.5,
       "favAbbr": "OSU",
       "favSide": "away",
       "away": "Ohio State",
@@ -5652,7 +6354,7 @@
       "week": 5
     },
     "401858474": {
-      "spread": 6,
+      "spread": 6.5,
       "favAbbr": "MICH",
       "favSide": "away",
       "away": "Michigan",
@@ -5662,7 +6364,7 @@
       "week": 5
     },
     "401858475": {
-      "spread": 14.5,
+      "spread": 15.5,
       "favAbbr": "NEB",
       "favSide": "home",
       "away": "Maryland",
@@ -5672,7 +6374,7 @@
       "week": 5
     },
     "401858476": {
-      "spread": 2.5,
+      "spread": 3,
       "favAbbr": "PSU",
       "favSide": "away",
       "away": "Penn State",
@@ -5692,7 +6394,7 @@
       "week": 5
     },
     "401858478": {
-      "spread": 8.5,
+      "spread": 7.5,
       "favAbbr": "USC",
       "favSide": "home",
       "away": "Washington",
@@ -5702,7 +6404,7 @@
       "week": 5
     },
     "401858479": {
-      "spread": 9.5,
+      "spread": 8.5,
       "favAbbr": "WIS",
       "favSide": "home",
       "away": "Michigan State",
@@ -5710,6 +6412,86 @@
       "awayAbbr": "MSU",
       "homeAbbr": "WIS",
       "week": 5
+    },
+    "401858480": {
+      "spread": 2.5,
+      "favAbbr": "ILL",
+      "favSide": "away",
+      "away": "Illinois",
+      "home": "Michigan State",
+      "awayAbbr": "ILL",
+      "homeAbbr": "MSU",
+      "week": 6
+    },
+    "401858481": {
+      "spread": 7.5,
+      "favAbbr": "IU",
+      "favSide": "away",
+      "away": "Indiana",
+      "home": "Nebraska",
+      "awayAbbr": "IU",
+      "homeAbbr": "NEB",
+      "week": 6
+    },
+    "401858482": {
+      "spread": 37.5,
+      "favAbbr": "NU",
+      "favSide": "home",
+      "away": "Ball State",
+      "home": "Northwestern",
+      "awayAbbr": "BALL",
+      "homeAbbr": "NU",
+      "week": 6
+    },
+    "401858483": {
+      "spread": 34.5,
+      "favAbbr": "OSU",
+      "favSide": "home",
+      "away": "Maryland",
+      "home": "Ohio State",
+      "awayAbbr": "MD",
+      "homeAbbr": "OSU",
+      "week": 6
+    },
+    "401858484": {
+      "spread": 11.5,
+      "favAbbr": "ORE",
+      "favSide": "home",
+      "away": "UCLA",
+      "home": "Oregon",
+      "awayAbbr": "UCLA",
+      "homeAbbr": "ORE",
+      "week": 6
+    },
+    "401858485": {
+      "spread": 1.5,
+      "favAbbr": "PSU",
+      "favSide": "home",
+      "away": "USC",
+      "home": "Penn State",
+      "awayAbbr": "USC",
+      "homeAbbr": "PSU",
+      "week": 6
+    },
+    "401858486": {
+      "spread": 2.5,
+      "favAbbr": "MINN",
+      "favSide": "away",
+      "away": "Minnesota",
+      "home": "Purdue",
+      "awayAbbr": "MINN",
+      "homeAbbr": "PUR",
+      "week": 6
+    },
+    "401858487": {
+      "spread": 3,
+      "favAbbr": "WASH",
+      "favSide": "home",
+      "away": "Iowa",
+      "home": "Washington",
+      "awayAbbr": "IOWA",
+      "homeAbbr": "WASH",
+      "week": 6
     },
     "401859184": {
       "spread": 44.5,
@@ -5922,7 +6704,7 @@
       "week": 4
     },
     "401860898": {
-      "spread": 18.5,
+      "spread": 19.5,
       "favAbbr": "BOIS",
       "favSide": "home",
       "away": "Utah State",
@@ -5932,7 +6714,7 @@
       "week": 5
     },
     "401860899": {
-      "spread": 6.5,
+      "spread": 7,
       "favAbbr": "ORST",
       "favSide": "away",
       "away": "Oregon State",
@@ -5942,7 +6724,7 @@
       "week": 5
     },
     "401860900": {
-      "spread": 8.5,
+      "spread": 9.5,
       "favAbbr": "TXST",
       "favSide": "away",
       "away": "Texas State",
@@ -5951,8 +6733,28 @@
       "homeAbbr": "SDSU",
       "week": 5
     },
+    "401860901": {
+      "spread": 6.5,
+      "favAbbr": "BOIS",
+      "favSide": "away",
+      "away": "Boise State",
+      "home": "Fresno State",
+      "awayAbbr": "BOIS",
+      "homeAbbr": "FRES",
+      "week": 6
+    },
+    "401860902": {
+      "spread": 15.5,
+      "favAbbr": "ORST",
+      "favSide": "home",
+      "away": "San Diego State",
+      "home": "Oregon State",
+      "awayAbbr": "SDSU",
+      "homeAbbr": "ORST",
+      "week": 6
+    },
     "401860921": {
-      "spread": 1.5,
+      "spread": 2.5,
       "favAbbr": "WSU",
       "favSide": "home",
       "away": "Fresno State",
@@ -5960,6 +6762,16 @@
       "awayAbbr": "FRES",
       "homeAbbr": "WSU",
       "week": 5
+    },
+    "401860922": {
+      "spread": 5.5,
+      "favAbbr": "USU",
+      "favSide": "home",
+      "away": "Washington State",
+      "home": "Utah State",
+      "awayAbbr": "WSU",
+      "homeAbbr": "USU",
+      "week": 6
     },
     "401861962": {
       "spread": 19.5,
@@ -5980,6 +6792,16 @@
       "awayAbbr": "CONN",
       "homeAbbr": "USM",
       "week": 3
+    },
+    "401861964": {
+      "spread": 3.5,
+      "favAbbr": "TEM",
+      "favSide": "home",
+      "away": "UConn",
+      "home": "Temple",
+      "awayAbbr": "CONN",
+      "homeAbbr": "TEM",
+      "week": 6
     },
     "401861970": {
       "spread": 2.5,
@@ -6301,7 +7123,7 @@
       "week": 5
     },
     "401862787": {
-      "spread": 20.5,
+      "spread": 18.5,
       "favAbbr": "MEM",
       "favSide": "away",
       "away": "Memphis",
@@ -6321,7 +7143,7 @@
       "week": 5
     },
     "401862790": {
-      "spread": 44.5,
+      "spread": 47.5,
       "favAbbr": "FAU",
       "favSide": "home",
       "away": "Texas Southern",
@@ -6331,7 +7153,7 @@
       "week": 5
     },
     "401862791": {
-      "spread": 3,
+      "spread": 2.5,
       "favAbbr": "AFA",
       "favSide": "home",
       "away": "Navy",
@@ -6341,7 +7163,7 @@
       "week": 5
     },
     "401862792": {
-      "spread": 6,
+      "spread": 5.5,
       "favAbbr": "USF",
       "favSide": "home",
       "away": "Temple",
@@ -6351,7 +7173,7 @@
       "week": 5
     },
     "401862793": {
-      "spread": 30.5,
+      "spread": 31.5,
       "favAbbr": "UAB",
       "favSide": "home",
       "away": "Samford",
@@ -6359,6 +7181,66 @@
       "awayAbbr": "SAM",
       "homeAbbr": "UAB",
       "week": 5
+    },
+    "401862794": {
+      "spread": 6.5,
+      "favAbbr": "UTSA",
+      "favSide": "home",
+      "away": "South Florida",
+      "home": "UTSA",
+      "awayAbbr": "USF",
+      "homeAbbr": "UTSA",
+      "week": 6
+    },
+    "401862795": {
+      "spread": 3,
+      "favAbbr": "ARMY",
+      "favSide": "home",
+      "away": "Tulane",
+      "home": "Army",
+      "awayAbbr": "TULN",
+      "homeAbbr": "ARMY",
+      "week": 6
+    },
+    "401862796": {
+      "spread": 28.5,
+      "favAbbr": "UNT",
+      "favSide": "home",
+      "away": "Charlotte",
+      "home": "North Texas",
+      "awayAbbr": "CLT",
+      "homeAbbr": "UNT",
+      "week": 6
+    },
+    "401862797": {
+      "spread": 10,
+      "favAbbr": "ECU",
+      "favSide": "home",
+      "away": "Rice",
+      "home": "East Carolina",
+      "awayAbbr": "RICE",
+      "homeAbbr": "ECU",
+      "week": 6
+    },
+    "401862798": {
+      "spread": 14,
+      "favAbbr": "MEM",
+      "favSide": "home",
+      "away": "UAB",
+      "home": "Memphis",
+      "awayAbbr": "UAB",
+      "homeAbbr": "MEM",
+      "week": 6
+    },
+    "401862799": {
+      "spread": 2.5,
+      "favAbbr": "NAVY",
+      "favSide": "home",
+      "away": "Tulsa",
+      "home": "Navy",
+      "awayAbbr": "TLSA",
+      "homeAbbr": "NAVY",
+      "week": 6
     },
     "401864424": {
       "spread": 31.5,
@@ -6580,7 +7462,7 @@
       "week": 4
     },
     "401864513": {
-      "spread": 3,
+      "spread": 2.5,
       "favAbbr": "HAW",
       "favSide": "home",
       "away": "San José State",
@@ -6590,7 +7472,7 @@
       "week": 5
     },
     "401864514": {
-      "spread": 22.5,
+      "spread": 23.5,
       "favAbbr": "UNM",
       "favSide": "home",
       "away": "UTEP",
@@ -6600,7 +7482,7 @@
       "week": 5
     },
     "401864515": {
-      "spread": 16.5,
+      "spread": 17.5,
       "favAbbr": "NDSU",
       "favSide": "home",
       "away": "Wyoming",
@@ -6608,6 +7490,46 @@
       "awayAbbr": "WYO",
       "homeAbbr": "NDSU",
       "week": 5
+    },
+    "401864516": {
+      "spread": 7.5,
+      "favAbbr": "AFA",
+      "favSide": "away",
+      "away": "Air Force",
+      "home": "Northern Illinois",
+      "awayAbbr": "AFA",
+      "homeAbbr": "NIU",
+      "week": 6
+    },
+    "401864517": {
+      "spread": 10,
+      "favAbbr": "NEV",
+      "favSide": "away",
+      "away": "Nevada",
+      "home": "UTEP",
+      "awayAbbr": "NEV",
+      "homeAbbr": "UTEP",
+      "week": 6
+    },
+    "401864518": {
+      "spread": 3,
+      "favAbbr": "NDSU",
+      "favSide": "away",
+      "away": "North Dakota State",
+      "home": "UNLV",
+      "awayAbbr": "NDSU",
+      "homeAbbr": "UNLV",
+      "week": 6
+    },
+    "401864519": {
+      "spread": 4.5,
+      "favAbbr": "SJSU",
+      "favSide": "home",
+      "away": "Wyoming",
+      "home": "San José State",
+      "awayAbbr": "WYO",
+      "homeAbbr": "SJSU",
+      "week": 6
     },
     "401864570": {
       "spread": 31.5,
@@ -6927,7 +7849,7 @@
       "week": 4
     },
     "401866430": {
-      "spread": 6.5,
+      "spread": 7,
       "favAbbr": "CMU",
       "favSide": "home",
       "away": "Akron",
@@ -6937,7 +7859,7 @@
       "week": 5
     },
     "401866431": {
-      "spread": 21,
+      "spread": 20.5,
       "favAbbr": "TOL",
       "favSide": "away",
       "away": "Toledo",
@@ -6976,8 +7898,68 @@
       "homeAbbr": "KENT",
       "week": 5
     },
+    "401866435": {
+      "spread": 6.5,
+      "favAbbr": "EMU",
+      "favSide": "away",
+      "away": "Eastern Michigan",
+      "home": "Akron",
+      "awayAbbr": "EMU",
+      "homeAbbr": "AKR",
+      "week": 6
+    },
+    "401866436": {
+      "spread": 7.5,
+      "favAbbr": "BGSU",
+      "favSide": "home",
+      "away": "Sacramento State",
+      "home": "Bowling Green",
+      "awayAbbr": "SAC",
+      "homeAbbr": "BGSU",
+      "week": 6
+    },
+    "401866437": {
+      "spread": 21,
+      "favAbbr": "TOL",
+      "favSide": "home",
+      "away": "Buffalo",
+      "home": "Toledo",
+      "awayAbbr": "BUFF",
+      "homeAbbr": "TOL",
+      "week": 6
+    },
+    "401866438": {
+      "spread": 3,
+      "favAbbr": "OHIO",
+      "favSide": "home",
+      "away": "Central Michigan",
+      "home": "Ohio",
+      "awayAbbr": "CMU",
+      "homeAbbr": "OHIO",
+      "week": 6
+    },
+    "401866439": {
+      "spread": 13.5,
+      "favAbbr": "WMU",
+      "favSide": "home",
+      "away": "Kent State",
+      "home": "Western Michigan",
+      "awayAbbr": "KENT",
+      "homeAbbr": "WMU",
+      "week": 6
+    },
+    "401866440": {
+      "spread": 2.5,
+      "favAbbr": "M-OH",
+      "favSide": "away",
+      "away": "Miami (OH)",
+      "home": "Massachusetts",
+      "awayAbbr": "M-OH",
+      "homeAbbr": "MASS",
+      "week": 6
+    },
     "401866477": {
-      "spread": 12.5,
+      "spread": 10.5,
       "favAbbr": "M-OH",
       "favSide": "home",
       "away": "Bowling Green",
@@ -7168,13 +8150,23 @@
     },
     "401869842": {
       "spread": 1.5,
-      "favAbbr": "ARMY",
-      "favSide": "away",
+      "favAbbr": "LT",
+      "favSide": "home",
       "away": "Army",
       "home": "Louisiana Tech",
       "awayAbbr": "ARMY",
       "homeAbbr": "LT",
       "week": 5
+    },
+    "401869843": {
+      "spread": 9.5,
+      "favAbbr": "APP",
+      "favSide": "home",
+      "away": "Old Dominion",
+      "home": "App State",
+      "awayAbbr": "ODU",
+      "homeAbbr": "APP",
+      "week": 6
     },
     "401869931": {
       "spread": 6.5,
@@ -7187,7 +8179,7 @@
       "week": 4
     },
     "401869932": {
-      "spread": 6.5,
+      "spread": 4.5,
       "favAbbr": "UL",
       "favSide": "home",
       "away": "Arkansas State",
@@ -7195,6 +8187,16 @@
       "awayAbbr": "ARST",
       "homeAbbr": "UL",
       "week": 5
+    },
+    "401869933": {
+      "spread": 3,
+      "favAbbr": "ARST",
+      "favSide": "home",
+      "away": "South Alabama",
+      "home": "Arkansas State",
+      "awayAbbr": "USA",
+      "homeAbbr": "ARST",
+      "week": 6
     },
     "401869940": {
       "spread": 5.5,
@@ -7207,7 +8209,7 @@
       "week": 3
     },
     "401869942": {
-      "spread": 1.5,
+      "spread": 2.5,
       "favAbbr": "GASO",
       "favSide": "away",
       "away": "Georgia Southern",
@@ -7215,6 +8217,16 @@
       "awayAbbr": "GASO",
       "homeAbbr": "CCU",
       "week": 5
+    },
+    "401869943": {
+      "spread": 4,
+      "favAbbr": "MRSH",
+      "favSide": "home",
+      "away": "Coastal Carolina",
+      "home": "Marshall",
+      "awayAbbr": "CCU",
+      "homeAbbr": "MRSH",
+      "week": 6
     },
     "401869948": {
       "spread": 3.5,
@@ -7225,6 +8237,16 @@
       "awayAbbr": "GASO",
       "homeAbbr": "JXST",
       "week": 3
+    },
+    "401869949": {
+      "spread": 7.5,
+      "favAbbr": "JMU",
+      "favSide": "away",
+      "away": "James Madison",
+      "home": "Georgia Southern",
+      "awayAbbr": "JMU",
+      "homeAbbr": "GASO",
+      "week": 6
     },
     "401869955": {
       "spread": 7.5,
@@ -7237,7 +8259,7 @@
       "week": 2
     },
     "401869956": {
-      "spread": 2.5,
+      "spread": 1.5,
       "favAbbr": "GAST",
       "favSide": "home",
       "away": "Old Dominion",
@@ -7267,7 +8289,7 @@
       "week": 4
     },
     "401869962": {
-      "spread": 17.5,
+      "spread": 15.5,
       "favAbbr": "JMU",
       "favSide": "home",
       "away": "Marshall",
@@ -7275,6 +8297,16 @@
       "awayAbbr": "MRSH",
       "homeAbbr": "JMU",
       "week": 5
+    },
+    "401869965": {
+      "spread": 3,
+      "favAbbr": "LT",
+      "favSide": "home",
+      "away": "Louisiana",
+      "home": "Louisiana Tech",
+      "awayAbbr": "UL",
+      "homeAbbr": "LT",
+      "week": 6
     },
     "401870745": {
       "spread": 40.5,
@@ -7305,6 +8337,16 @@
       "awayAbbr": "NICH",
       "homeAbbr": "SHSU",
       "week": 3
+    },
+    "401870766": {
+      "spread": 13.5,
+      "favAbbr": "LIB",
+      "favSide": "home",
+      "away": "Sam Houston",
+      "home": "Liberty",
+      "awayAbbr": "SHSU",
+      "homeAbbr": "LIB",
+      "week": 6
     },
     "401870790": {
       "spread": 28.5,
@@ -7367,7 +8409,7 @@
       "week": 5
     },
     "401871050": {
-      "spread": 6.5,
+      "spread": 7,
       "favAbbr": "LIB",
       "favSide": "away",
       "away": "Liberty",
@@ -7376,8 +8418,18 @@
       "homeAbbr": "DEL",
       "week": 5
     },
+    "401871052": {
+      "spread": 1.5,
+      "favAbbr": "MOST",
+      "favSide": "away",
+      "away": "Missouri State",
+      "home": "Western Kentucky",
+      "awayAbbr": "MOST",
+      "homeAbbr": "WKU",
+      "week": 6
+    },
     "401871089": {
-      "spread": 14,
+      "spread": 13.5,
       "favAbbr": "USA",
       "favSide": "home",
       "away": "UL Monroe",
