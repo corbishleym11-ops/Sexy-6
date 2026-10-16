@@ -1,7 +1,7 @@
 {
   "league": "Sexy 6",
   "season": 2026,
-  "updatedAt": 1792159536091,
+  "updatedAt": 1792162751139,
   "slates": {
     "0": [
       {
@@ -815,6 +815,26 @@
         "over": "401858484",
         "dog": "401860901"
       }
+    },
+    "7": {
+      "Shaq": {
+        "fav": "401858488",
+        "dog": "401858266",
+        "over": "401856809",
+        "under": "401858488"
+      },
+      "Matt": {
+        "over": "401858488",
+        "dog": "401858488",
+        "fav": "401856721",
+        "under": "401856831"
+      },
+      "Adam": {
+        "over": "401856723",
+        "under": "401856721",
+        "dog": "401856721",
+        "fav": "401858266"
+      }
     }
   },
   "sdogs": {
@@ -972,6 +992,32 @@
         "label": "San Diego State +15.5",
         "team": "San Diego State",
         "opp": "Oregon State"
+      }
+    },
+    "7": {
+      "Adam": {
+        "gameId": "401858265",
+        "side": "home",
+        "spread": 15.5,
+        "label": "Syracuse +15.5",
+        "team": "Syracuse",
+        "opp": "Louisville"
+      },
+      "Matt": {
+        "gameId": "401858263",
+        "side": "away",
+        "spread": 21.5,
+        "label": "Florida State +21.5",
+        "team": "Florida State",
+        "opp": "Miami"
+      },
+      "Shaq": {
+        "gameId": "401864521",
+        "side": "home",
+        "spread": 14.5,
+        "label": "Hawai'i +14.5",
+        "team": "Hawai'i",
+        "opp": "New Mexico"
       }
     }
   },
