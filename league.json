@@ -1,7 +1,7 @@
 {
   "league": "Sexy 6",
   "season": 2026,
-  "updatedAt": 1792761913553,
+  "updatedAt": 1792785497832,
   "slates": {
     "0": [
       {
@@ -918,6 +918,26 @@
         "dog": "401856721",
         "fav": "401858266"
       }
+    },
+    "8": {
+      "Shaq": {
+        "fav": "401858496",
+        "over": "401856728",
+        "dog": "401858500",
+        "under": "401858500"
+      },
+      "Adam": {
+        "dog": "401856728",
+        "fav": "401856732",
+        "over": "401856732",
+        "under": "401856728"
+      },
+      "Matt": {
+        "fav": "401856837",
+        "under": "401856732",
+        "dog": "401856732",
+        "over": "401858496"
+      }
     }
   },
   "sdogs": {
@@ -1101,6 +1121,32 @@
         "label": "Hawai'i +14.5",
         "team": "Hawai'i",
         "opp": "New Mexico"
+      }
+    },
+    "8": {
+      "Matt": {
+        "gameId": "401856840",
+        "side": "home",
+        "spread": 11.5,
+        "label": "Cincinnati +11.5",
+        "team": "Cincinnati",
+        "opp": "Texas Tech"
+      },
+      "Adam": {
+        "gameId": "401866447",
+        "side": "away",
+        "spread": 14.5,
+        "label": "Sacramento State +14.5",
+        "team": "Sacramento State",
+        "opp": "Ball State"
+      },
+      "Shaq": {
+        "gameId": "401866449",
+        "side": "away",
+        "spread": 10,
+        "label": "Eastern Michigan +10",
+        "team": "Eastern Michigan",
+        "opp": "Ohio"
       }
     }
   },
@@ -6630,7 +6676,7 @@
       "week": 7
     },
     "401856834": {
-      "spread": 2.5,
+      "spread": 1.5,
       "favAbbr": "BAY",
       "favSide": "away",
       "away": "Baylor",
@@ -6640,7 +6686,7 @@
       "week": 8
     },
     "401856835": {
-      "spread": 7,
+      "spread": 7.5,
       "favAbbr": "BYU",
       "favSide": "away",
       "away": "BYU",
@@ -7358,7 +7404,7 @@
       "week": 7
     },
     "401858270": {
-      "spread": 18.5,
+      "spread": 19.5,
       "favAbbr": "SMU",
       "favSide": "home",
       "away": "California",
@@ -7378,7 +7424,7 @@
       "week": 8
     },
     "401858272": {
-      "spread": 6.5,
+      "spread": 7.5,
       "favAbbr": "NCSU",
       "favSide": "away",
       "away": "NC State",
@@ -7388,7 +7434,7 @@
       "week": 8
     },
     "401858273": {
-      "spread": 5.5,
+      "spread": 6,
       "favAbbr": "GT",
       "favSide": "home",
       "away": "Boston College",
@@ -7398,7 +7444,7 @@
       "week": 8
     },
     "401858274": {
-      "spread": 19.5,
+      "spread": 20.5,
       "favAbbr": "MIA",
       "favSide": "home",
       "away": "Pittsburgh",
@@ -7408,7 +7454,7 @@
       "week": 8
     },
     "401858275": {
-      "spread": 9.5,
+      "spread": 8.5,
       "favAbbr": "UNC",
       "favSide": "home",
       "away": "Syracuse",
@@ -8138,7 +8184,7 @@
       "week": 7
     },
     "401858495": {
-      "spread": 9.5,
+      "spread": 10,
       "favAbbr": "ORE",
       "favSide": "away",
       "away": "Oregon",
@@ -8158,7 +8204,7 @@
       "week": 8
     },
     "401858497": {
-      "spread": 7,
+      "spread": 7.5,
       "favAbbr": "IOWA",
       "favSide": "away",
       "away": "Iowa",
@@ -8168,7 +8214,7 @@
       "week": 8
     },
     "401858498": {
-      "spread": 16.5,
+      "spread": 15.5,
       "favAbbr": "NU",
       "favSide": "home",
       "away": "Rutgers",
@@ -8558,7 +8604,7 @@
       "week": 6
     },
     "401861965": {
-      "spread": 14.5,
+      "spread": 12.5,
       "favAbbr": "CONN",
       "favSide": "home",
       "away": "Massachusetts",
@@ -9077,7 +9123,7 @@
       "week": 8
     },
     "401862809": {
-      "spread": 7.5,
+      "spread": 8.5,
       "favAbbr": "FAU",
       "favSide": "home",
       "away": "Rice",
@@ -9087,7 +9133,7 @@
       "week": 8
     },
     "401862810": {
-      "spread": 2.5,
+      "spread": 3,
       "favAbbr": "UNT",
       "favSide": "away",
       "away": "North Texas",
@@ -9993,7 +10039,7 @@
       "week": 8
     },
     "401866449": {
-      "spread": 11.5,
+      "spread": 10,
       "favAbbr": "OHIO",
       "favSide": "home",
       "away": "Eastern Michigan",
@@ -10013,7 +10059,7 @@
       "week": 8
     },
     "401866476": {
-      "spread": 3,
+      "spread": 3.5,
       "favAbbr": "M-OH",
       "favSide": "away",
       "away": "Miami (OH)",
