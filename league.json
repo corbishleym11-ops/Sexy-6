@@ -1,7 +1,7 @@
 {
   "league": "Sexy 6",
   "season": 2026,
-  "updatedAt": 1793295557586,
+  "updatedAt": 1793373043845,
   "slates": {
     "0": [
       {
@@ -1024,6 +1024,26 @@
         "dog": "401856732",
         "over": "401858496"
       }
+    },
+    "9": {
+      "Adam": {
+        "under": "401858282",
+        "over": "401858509",
+        "fav": "401856734",
+        "dog": "401858282"
+      },
+      "Matt": {
+        "fav": "401856842",
+        "dog": "401858509",
+        "under": "401858505",
+        "over": "401858282"
+      },
+      "Shaq": {
+        "fav": "401858282",
+        "dog": "401858505",
+        "under": "401858509",
+        "over": "401858505"
+      }
     }
   },
   "sdogs": {
@@ -1233,6 +1253,32 @@
         "label": "Eastern Michigan +10",
         "team": "Eastern Michigan",
         "opp": "Ohio"
+      }
+    },
+    "9": {
+      "Matt": {
+        "gameId": "401858501",
+        "side": "away",
+        "spread": 20.5,
+        "label": "Minnesota +20.5",
+        "team": "Minnesota",
+        "opp": "Indiana"
+      },
+      "Shaq": {
+        "gameId": "401856735",
+        "side": "away",
+        "spread": 11.5,
+        "label": "Auburn +11.5",
+        "team": "Auburn",
+        "opp": "Ole Miss"
+      },
+      "Adam": {
+        "gameId": "401858284",
+        "side": "away",
+        "spread": 12.5,
+        "label": "Virginia +12.5",
+        "team": "Virginia",
+        "opp": "Wake Forest"
       }
     }
   },
@@ -4494,6 +4540,13 @@
       "detail": "Final",
       "state": "post"
     },
+    "401862812": {
+      "a": 41,
+      "h": 48,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
     "401864424": {
       "a": 7,
       "h": 42,
@@ -5444,6 +5497,13 @@
       "h": 45,
       "done": true,
       "detail": "Final",
+      "state": "post"
+    },
+    "401869963": {
+      "a": 24,
+      "h": 21,
+      "done": true,
+      "detail": "Final/OT",
       "state": "post"
     },
     "401869965": {
@@ -6484,7 +6544,7 @@
       "week": 9
     },
     "401856735": {
-      "spread": 12.5,
+      "spread": 11.5,
       "favAbbr": "MISS",
       "favSide": "home",
       "away": "Auburn",
@@ -6494,7 +6554,7 @@
       "week": 9
     },
     "401856736": {
-      "spread": 4.5,
+      "spread": 3.5,
       "favAbbr": "OU",
       "favSide": "home",
       "away": "South Carolina",
@@ -7293,7 +7353,7 @@
       "week": 9
     },
     "401856845": {
-      "spread": 5.5,
+      "spread": 6.5,
       "favAbbr": "TCU",
       "favSide": "home",
       "away": "Kansas",
@@ -7323,7 +7383,7 @@
       "week": 9
     },
     "401856848": {
-      "spread": 6.5,
+      "spread": 7,
       "favAbbr": "UTAH",
       "favSide": "away",
       "away": "Utah",
@@ -8091,7 +8151,7 @@
       "week": 9
     },
     "401858281": {
-      "spread": 7.5,
+      "spread": 8.5,
       "favAbbr": "PITT",
       "favSide": "home",
       "away": "Georgia Tech",
@@ -8911,7 +8971,7 @@
       "week": 9
     },
     "401858502": {
-      "spread": 3.5,
+      "spread": 2.5,
       "favAbbr": "IOWA",
       "favSide": "home",
       "away": "Wisconsin",
@@ -8951,7 +9011,7 @@
       "week": 9
     },
     "401858506": {
-      "spread": 9.5,
+      "spread": 10.5,
       "favAbbr": "PSU",
       "favSide": "home",
       "away": "Purdue",
@@ -8961,7 +9021,7 @@
       "week": 9
     },
     "401858507": {
-      "spread": 15.5,
+      "spread": 16.5,
       "favAbbr": "MICH",
       "favSide": "away",
       "away": "Michigan",
@@ -9361,7 +9421,7 @@
       "week": 6
     },
     "401860924": {
-      "spread": 5.5,
+      "spread": 6,
       "favAbbr": "ORST",
       "favSide": "away",
       "away": "Oregon State",
@@ -9970,7 +10030,7 @@
       "week": 9
     },
     "401862813": {
-      "spread": 9.5,
+      "spread": 8.5,
       "favAbbr": "TULN",
       "favSide": "away",
       "away": "Tulane",
@@ -9980,7 +10040,7 @@
       "week": 9
     },
     "401862814": {
-      "spread": 6,
+      "spread": 6.5,
       "favAbbr": "MEM",
       "favSide": "home",
       "away": "Army",
@@ -9990,7 +10050,7 @@
       "week": 9
     },
     "401862815": {
-      "spread": 5.5,
+      "spread": 4.5,
       "favAbbr": "ECU",
       "favSide": "home",
       "away": "Temple",
@@ -10399,7 +10459,7 @@
       "week": 9
     },
     "401864530": {
-      "spread": 24.5,
+      "spread": 23.5,
       "favAbbr": "UNLV",
       "favSide": "home",
       "away": "Northern Illinois",
@@ -10946,7 +11006,7 @@
       "week": 8
     },
     "401866451": {
-      "spread": 7.5,
+      "spread": 7,
       "favAbbr": "KENT",
       "favSide": "away",
       "away": "Kent State",
@@ -11296,7 +11356,7 @@
       "week": 6
     },
     "401869944": {
-      "spread": 6,
+      "spread": 4.5,
       "favAbbr": "GAST",
       "favSide": "home",
       "away": "Coastal Carolina",
@@ -11656,7 +11716,7 @@
       "week": 9
     },
     "401871097": {
-      "spread": 5.5,
+      "spread": 6,
       "favAbbr": "LT",
       "favSide": "away",
       "away": "Louisiana Tech",
