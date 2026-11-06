@@ -1,7 +1,7 @@
 {
   "league": "Sexy 6",
   "season": 2026,
-  "updatedAt": 1793982154598,
+  "updatedAt": 1793987174871,
   "slates": {
     "0": [
       {
@@ -1128,6 +1128,25 @@
         "under": "401858509",
         "over": "401858502"
       }
+    },
+    "10": {
+      "Matt": {
+        "fav": "401856740",
+        "dog": "401858514",
+        "under": "401856849",
+        "over": "401856741"
+      },
+      "Shaq": {
+        "fav": "401856741",
+        "dog": "401858291",
+        "over": "401856849"
+      },
+      "Adam": {
+        "over": "401858291",
+        "under": "401856743",
+        "dog": "401856743",
+        "fav": "401858514"
+      }
     }
   },
   "sdogs": {
@@ -1363,6 +1382,32 @@
         "label": "Virginia +12.5",
         "team": "Virginia",
         "opp": "Wake Forest"
+      }
+    },
+    "10": {
+      "Adam": {
+        "gameId": "401858287",
+        "side": "home",
+        "spread": 14.5,
+        "label": "Georgia Tech +14.5",
+        "team": "Georgia Tech",
+        "opp": "Louisville"
+      },
+      "Shaq": {
+        "gameId": "401858511",
+        "side": "away",
+        "spread": 14.5,
+        "label": "Michigan State +14.5",
+        "team": "Michigan State",
+        "opp": "Michigan"
+      },
+      "Matt": {
+        "gameId": "401858517",
+        "side": "away",
+        "spread": 19.5,
+        "label": "Rutgers +19.5",
+        "team": "Rutgers",
+        "opp": "Wisconsin"
       }
     }
   },
@@ -7107,7 +7152,7 @@
       "week": 10
     },
     "401856743": {
-      "spread": 2.5,
+      "spread": 3,
       "favAbbr": "TEX",
       "favSide": "away",
       "away": "Texas",
@@ -7127,7 +7172,7 @@
       "week": 10
     },
     "401856745": {
-      "spread": 6.5,
+      "spread": 5.5,
       "favAbbr": "TENN",
       "favSide": "home",
       "away": "Kentucky",
@@ -8894,7 +8939,7 @@
       "week": 10
     },
     "401858291": {
-      "spread": 7.5,
+      "spread": 7,
       "favAbbr": "ND",
       "favSide": "home",
       "away": "Miami",
@@ -9844,7 +9889,7 @@
       "week": 10
     },
     "401858517": {
-      "spread": 18.5,
+      "spread": 19.5,
       "favAbbr": "WIS",
       "favSide": "home",
       "away": "Rutgers",
@@ -10913,7 +10958,7 @@
       "week": 10
     },
     "401862818": {
-      "spread": 2.5,
+      "spread": 1.5,
       "favAbbr": "ECU",
       "favSide": "home",
       "away": "South Florida",
@@ -10963,7 +11008,7 @@
       "week": 10
     },
     "401862823": {
-      "spread": 3,
+      "spread": 4,
       "favAbbr": "ARMY",
       "favSide": "home",
       "away": "Air Force",
@@ -12739,7 +12784,7 @@
       "week": 10
     },
     "401871075": {
-      "spread": 17.5,
+      "spread": 16.5,
       "favAbbr": "JXST",
       "favSide": "home",
       "away": "Sam Houston",
