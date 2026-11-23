@@ -1,7 +1,7 @@
 {
   "league": "Sexy 6",
   "season": 2026,
-  "updatedAt": 1794364525311,
+  "updatedAt": 1795191585782,
   "slates": {
     "0": [
       {
@@ -76,9 +76,9 @@
       },
       {
         "id": "401864494",
-        "away": "San José State",
+        "away": "San Jos\u00e9 State",
         "home": "USC",
-        "awayName": "San José State",
+        "awayName": "San Jos\u00e9 State",
         "homeName": "USC",
         "awayAbbr": "SJSU",
         "homeAbbr": "USC",
@@ -6112,25 +6112,25 @@
       "state": "post"
     },
     "401866458": {
-      "a": 35,
-      "h": 7,
-      "done": false,
-      "detail": "11:44 - 4th",
-      "state": "in"
+      "a": 42,
+      "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401866459": {
-      "a": 14,
-      "h": 27,
-      "done": false,
-      "detail": "15:00 - 3rd",
-      "state": "in"
+      "a": 28,
+      "h": 33,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401866460": {
       "a": 17,
-      "h": 0,
-      "done": false,
-      "detail": "2:00 - 2nd",
-      "state": "in"
+      "h": 34,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
     },
     "401866476": {
       "a": 28,
@@ -6821,6 +6821,454 @@
     "401871098": {
       "a": 41,
       "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856857": {
+      "a": 26,
+      "h": 13,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856858": {
+      "a": 7,
+      "h": 28,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856859": {
+      "a": 13,
+      "h": 41,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856860": {
+      "a": 32,
+      "h": 42,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856861": {
+      "a": 37,
+      "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856862": {
+      "a": 10,
+      "h": 20,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856863": {
+      "a": 52,
+      "h": 27,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856864": {
+      "a": 40,
+      "h": 39,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856882": {
+      "a": 6,
+      "h": 34,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856883": {
+      "a": 21,
+      "h": 48,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856884": {
+      "a": 21,
+      "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856885": {
+      "a": 22,
+      "h": 21,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856886": {
+      "a": 41,
+      "h": 9,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856887": {
+      "a": 17,
+      "h": 24,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856888": {
+      "a": 22,
+      "h": 7,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401856889": {
+      "a": 21,
+      "h": 6,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858293": {
+      "a": 16,
+      "h": 10,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858294": {
+      "a": 7,
+      "h": 41,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858295": {
+      "a": 7,
+      "h": 36,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858296": {
+      "a": 25,
+      "h": 36,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858297": {
+      "a": 20,
+      "h": 6,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858298": {
+      "a": 16,
+      "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858299": {
+      "a": 40,
+      "h": 22,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858300": {
+      "a": 34,
+      "h": 31,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858301": {
+      "a": 49,
+      "h": 7,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858518": {
+      "a": 13,
+      "h": 27,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858519": {
+      "a": 7,
+      "h": 28,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858520": {
+      "a": 21,
+      "h": 24,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858521": {
+      "a": 21,
+      "h": 14,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858522": {
+      "a": 19,
+      "h": 28,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858523": {
+      "a": 7,
+      "h": 31,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858524": {
+      "a": 14,
+      "h": 42,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858525": {
+      "a": 31,
+      "h": 0,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401858526": {
+      "a": 14,
+      "h": 22,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401860914": {
+      "a": 41,
+      "h": 46,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401860915": {
+      "a": 13,
+      "h": 30,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401860916": {
+      "a": 35,
+      "h": 37,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401860917": {
+      "a": 7,
+      "h": 73,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401861967": {
+      "a": 22,
+      "h": 46,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862824": {
+      "a": 52,
+      "h": 41,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862825": {
+      "a": 17,
+      "h": 16,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862826": {
+      "a": 21,
+      "h": 38,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862827": {
+      "a": 16,
+      "h": 35,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862828": {
+      "a": 20,
+      "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401862829": {
+      "a": 36,
+      "h": 10,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401864536": {
+      "a": 28,
+      "h": 7,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401864537": {
+      "a": 21,
+      "h": 13,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401864538": {
+      "a": 3,
+      "h": 24,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401864539": {
+      "a": 21,
+      "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401864540": {
+      "a": 27,
+      "h": 15,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401866461": {
+      "a": 28,
+      "h": 7,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401866462": {
+      "a": 7,
+      "h": 28,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401866463": {
+      "a": 0,
+      "h": 24,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401869928": {
+      "a": 20,
+      "h": 16,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401869937": {
+      "a": 21,
+      "h": 28,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401869952": {
+      "a": 34,
+      "h": 17,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401869969": {
+      "a": 42,
+      "h": 21,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401870752": {
+      "a": 24,
+      "h": 34,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401870769": {
+      "a": 26,
+      "h": 7,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401870796": {
+      "a": 21,
+      "h": 27,
+      "done": true,
+      "detail": "Final/OT",
+      "state": "post"
+    },
+    "401871060": {
+      "a": 16,
+      "h": 24,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401871061": {
+      "a": 23,
+      "h": 28,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401871099": {
+      "a": 31,
+      "h": 63,
+      "done": true,
+      "detail": "Final",
+      "state": "post"
+    },
+    "401871100": {
+      "a": 14,
+      "h": 27,
       "done": true,
       "detail": "Final",
       "state": "post"
@@ -10909,7 +11357,7 @@
       "favAbbr": "FRES",
       "favSide": "away",
       "away": "Fresno State",
-      "home": "San José State",
+      "home": "San Jos\u00e9 State",
       "awayAbbr": "FRES",
       "homeAbbr": "SJSU",
       "week": 3
@@ -12056,7 +12504,7 @@
     "401864494": {
       "spread": 37.5,
       "favAbbr": "USC",
-      "away": "San José State",
+      "away": "San Jos\u00e9 State",
       "home": "USC",
       "awayAbbr": "SJSU",
       "homeAbbr": "USC",
@@ -12066,7 +12514,7 @@
       "spread": 3,
       "favAbbr": "EMU",
       "favSide": "home",
-      "away": "San José State",
+      "away": "San Jos\u00e9 State",
       "home": "Eastern Michigan",
       "awayAbbr": "SJSU",
       "homeAbbr": "EMU",
@@ -12147,7 +12595,7 @@
       "favAbbr": "SJSU",
       "favSide": "home",
       "away": "Cal Poly",
-      "home": "San José State",
+      "home": "San Jos\u00e9 State",
       "awayAbbr": "CP",
       "homeAbbr": "SJSU",
       "week": 2
@@ -12236,7 +12684,7 @@
       "spread": 2.5,
       "favAbbr": "HAW",
       "favSide": "home",
-      "away": "San José State",
+      "away": "San Jos\u00e9 State",
       "home": "Hawai'i",
       "awayAbbr": "SJSU",
       "homeAbbr": "HAW",
@@ -12297,7 +12745,7 @@
       "favAbbr": "SJSU",
       "favSide": "home",
       "away": "Wyoming",
-      "home": "San José State",
+      "home": "San Jos\u00e9 State",
       "awayAbbr": "WYO",
       "homeAbbr": "SJSU",
       "week": 6
@@ -12336,7 +12784,7 @@
       "spread": 7,
       "favAbbr": "SJSU",
       "favSide": "away",
-      "away": "San José State",
+      "away": "San Jos\u00e9 State",
       "home": "UTEP",
       "awayAbbr": "SJSU",
       "homeAbbr": "UTEP",
@@ -12386,7 +12834,7 @@
       "spread": 5.5,
       "favAbbr": "NEV",
       "favSide": "home",
-      "away": "San José State",
+      "away": "San Jos\u00e9 State",
       "home": "Nevada",
       "awayAbbr": "SJSU",
       "homeAbbr": "NEV",
@@ -12397,7 +12845,7 @@
       "favAbbr": "UNM",
       "favSide": "away",
       "away": "New Mexico",
-      "home": "San José State",
+      "home": "San Jos\u00e9 State",
       "awayAbbr": "UNM",
       "homeAbbr": "SJSU",
       "week": 9
@@ -12447,7 +12895,7 @@
       "favAbbr": "SJSU",
       "favSide": "home",
       "away": "Northern Illinois",
-      "home": "San José State",
+      "home": "San Jos\u00e9 State",
       "awayAbbr": "NIU",
       "homeAbbr": "SJSU",
       "week": 10
@@ -12486,7 +12934,7 @@
       "spread": 12.5,
       "favAbbr": "AFA",
       "favSide": "home",
-      "away": "San José State",
+      "away": "San Jos\u00e9 State",
       "home": "Air Force",
       "awayAbbr": "SJSU",
       "homeAbbr": "AFA",

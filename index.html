@@ -815,7 +815,15 @@ class Component extends DCLogic {
     this.setState({ exported: 'league.json downloaded and copied to your clipboard — commit it to the repo.' });
     setTimeout(() => this.setState({ exported: '' }), 6000);
   }
-  canEdit() { return location.hostname.indexOf('github.io') === -1; }
+  canEdit() {
+    if (location.hostname.indexOf('github.io') === -1) return true;
+    try {
+      const q = new URLSearchParams(location.search);
+      if (q.has('commish')) { localStorage.setItem('sexy6-commish', '1'); return true; }
+      if (q.has('viewer')) { localStorage.removeItem('sexy6-commish'); return false; }
+      return localStorage.getItem('sexy6-commish') === '1';
+    } catch (e) { return false; }
+  }
   guard() { this.warn('Read-only board. Matt enters the picks and publishes updates.'); }
 
   save(patch) {
